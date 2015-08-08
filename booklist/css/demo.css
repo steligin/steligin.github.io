@@ -1,11 +1,11 @@
 
-a {
+a1 {
 	text-decoration: none;
 	color: #48a770;
 	outline: none;
 }
 
-a:hover, a:focus {
+a1:hover, a1:focus {
 	color: #2c774b;
 	outline: none;
 }
@@ -22,6 +22,7 @@ a:hover, a:focus {
 }
 
 button {
+    width: 100%;
 	border: none;
 	padding: 0.6em 1.2em;
 	background: #999999;
@@ -32,10 +33,10 @@ button {
 	text-transform: uppercase;
 	cursor: pointer;
 	display: inline-block;
-	margin: 3px 2px;
+	margin: 2px 0px 2px 0px;
 	border-radius1: 2px;
 }
 
 button:hover {
-	background: #000000;
+	background: #ff0000;
 }

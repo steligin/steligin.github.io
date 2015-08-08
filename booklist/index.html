@@ -33,7 +33,7 @@ box-shadow1: 0 2px 0 0 #000000, 0 0 2px 0 #000000;
 }
 
 div.title {
-width1: 50%;
+width: 50%;
 background: #ff0000; /* Цвет фона */
 color: #ffffff; /* Цвет текста */
 border-top: 0px solid #ff0000;
@@ -41,6 +41,9 @@ border-bottom: 0px solid #ff0000;
 border-left: 0px solid #ff0000;
 border-right: 0px solid #ff0000;
 margin-bottom: 2px;
+text-transform: uppercase;
+font-weight: 700;
+box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
 }
 
 div.keylist {
@@ -321,16 +324,17 @@ color: #ffffff;
 background: #999999;
 color: #ffffff;
 width: 100%;
-float1: center;
 text-align: center;
+text-transform: uppercase;
+
 }
 
 .work {
 background: #ffffff;
 width: 100%;
 float1: left;
-margin-top: 1px;
-margin-bottom: 1px;
+margin-top: 2px;
+margin-bottom: 2px;
 padding-left1: 10px;
 padding-right1: 10px;
 text-align: center;
@@ -338,15 +342,22 @@ border-top: 1px solid #999999;
 border-bottom: 1px solid #999999;
 border-left: 1px solid #999999;
 border-right: 1px solid #999999;
-position1: relative;
-box-shadow1: 0 0 2px rgba(0, 0, 0, 0.2);
+position: relative;
+box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
 }
 
 .work div {
 position: relative;
 }
 
-
+.genretitle {
+background: #999999;
+color: #ffffff;
+width: 100%;
+text-align: center;
+text-transform: uppercase;
+display: none;
+}
 
 
 #message {
@@ -363,8 +374,199 @@ position: relative;
             text-decoration: none;
             border-bottom: 1px dashed;
         }
-    
 
+
+		
+
+		
+		
+.demo {
+    max-width: 50%;
+    padding: 1px;
+    margin: 4px auto;
+    background-color: #F5F5F5;
+    border: 1px solid #E3E3E3;
+    border-radius: 4px;
+    text-align: center;
+}
+/* аЁбаИаЛаИ аМаОаДаАаЛбаНаОаГаО аОаКаНаА */
+.modal-header h2 {
+    color: #555;  
+    font-size: 2em;
+    font-weight: normal;
+    line-height: 1;    
+    margin: 0;
+}
+/* аКаНаОаПаКаА аЗаАаКбббаИб аОаКаНаА */
+.modal .btno-close {
+    color: #aaa;
+    cursor: pointer;
+    font-size: 30px;
+    text-decoration: none;
+    position: absolute;
+    right: 5px;
+    top: 0;
+}
+.modal .btno-close:hover {
+    color: red;
+}
+/* баЛаОаЙ аЗаАбаЕаМаНаЕаНаИб */
+.modal-wrap:before {
+    content: "";
+    display: none;
+    background: rgba(0, 0, 0, .3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 101;
+}
+.modal-overlay {
+    bottom: 0;
+    display: none;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 102;
+}
+/* аАаКбаИаВаАбаИб баЛаОб аЗаАбаЕаМаНаЕаНаИб аИ аМаОаДаАаЛбаНаОаГаО аБаЛаОаКаА */
+.modal-open:checked ~ .modal-wrap:before,
+.modal-open:checked ~ .modal-wrap .modal-overlay {
+    display: block;
+}
+.modal-open:checked ~ .modal-wrap .modal-dialog {
+    -webkit-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    top: 20%;
+}
+/* баЛаЕаМаЕаНбб аМаОаДаАаЛбаНаОаГаО аОаКаНаА */
+.modal-dialog {
+    background: #fefefe;
+    border: none;
+    border-radius: 0px;
+    position: fixed;
+    width: 50%;
+    max-width1: 500px;
+    left: 50%;
+    top: -100%;
+    -webkit-box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);
+    -moz-box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);
+    box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);
+    -webkit-transform: translate(-50%, -500%);
+    -ms-transform: translate(-50%, -500%);
+    -o-transform: translate(-50%, -500%);
+    transform: translate(-50%, -500%);
+    -webkit-transition: -webkit-transform 0.5s ease-out;
+    -moz-transition: -moz-transform 0.5s ease-out;
+    -o-transition: -o-transform 0.5s ease-out;
+    transition: transform 0.5s ease-out;
+    z-index: 103;
+}
+.modal-body {
+  padding: 20px;
+}
+.modal-body p {
+    margin: 0;
+}
+.modal-header,
+.modal-footer {
+    padding: 20px 20px;
+}
+.modal-header {
+    border-bottom: #eaeaea solid 1px;
+}
+.modal-header h2 {
+    font-size: 1.5em;
+    margin: 0;
+}
+.modal-footer {
+    border-top: #eaeaea solid 1px;
+    text-align: right;
+}
+/* аАаДаАаПбаИаВаНбаЕ аКаАббаИаНаКаИ аВ аМаОаДаАаЛбаНаОаМ аБаЛаОаКаЕ */
+.modal-body img { 
+    max-width: 100%;
+    height: auto;
+}
+/* аКаНаОаПаКаИ */
+.btno {
+    background: #ffffff;
+    border: #999999 solid 1px;
+    border-radius1: 3px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.5em;
+    padding: 1px 2px;
+    text-decoration: none;
+    text-align: center;
+    min-width1: 60px;
+    position: relative;
+}
+.btno:hover, .btno:focus {
+    background: #f2f2f2;
+}
+.btno-primary {
+    background: #428bca;
+    border-color: #357ebd;
+    color: #fff;
+}
+.btno-primary:hover{
+    background: #66A1D3;
+}
+
+/* а­аЛаЕаМаЕаНбб баОбаМб аКаОаНбаАаКбаОаВ */
+.textbox{
+    height:45px;
+    width:100%;
+    border-radius:3px;
+    border:rgba(0,0,0,.3) 1px solid;
+    box-sizing:border-box;
+    font-size:14px; 
+    padding:8px;
+    margin-bottom:20px;  
+}
+.message:focus,
+.textbox:focus{
+    outline:none;
+    border:rgba(24,149,215,1) 1px solid;
+    color:rgba(24,149,215,1);
+}
+.message{
+	background: rgba(255, 255, 255, 0.4); 
+    width:100%;
+    height: 120px;
+    border:rgba(0,0,0,.3) 1px solid;
+    box-sizing:border-box;
+    -moz-border-radius: 3px;
+    font-size:14px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px; 
+    display:block;
+    padding:10px;
+    margin-bottom:20px;
+    overflow:hidden;
+}
+/* аКаНаОаПаКаА "аОбаПбаАаВаИбб" баОбаМб */
+.btno-form{
+    width:100%;
+    height:45px;  
+    border:rgba(0,0,0,.2) 1px solid;
+    box-sizing:border-box;
+    background: #dedede;
+    color:#555;
+    transition:background .4s;
+}
+/* ааЗаМаЕаНаЕаНаИаЕ баОаНаА аКаНаОаПаКаИ аПбаИ аНаАаВаЕаДаЕаНаИаИ */
+.btno-form:hover{
+    background: #f2f2f2;
+}
+		
+		
+	
 	
 
 
@@ -402,8 +604,6 @@ $(document).ready(function() {
 });
 </script>
 
-
-
 <script>
 
         $(function() {
@@ -429,21 +629,23 @@ $(document).ready(function() {
     
 </script>
 
-
-
 </head>
 
 <body>
 
 <center>
 
+<div class="title"><br>
+Список книг<br><br>
+</div>
+</div>
 		<div id="st-container" class="st-container">
 			<!-- 	
 				example menus 
 				these menus will be on top of the push wrapper
 			-->
 			<nav class="st-menu st-effect-1" id="menu-1">
-				<h2 class="icon icon-lab">Жанры non-fiction</h2>
+				<h2>Жанры non-fiction</h2>
 				<ul>
 				
 <li id="filter" class="clearfix"><a href="" class="current btn" data-filter="*">Весь список</a></li>
@@ -483,6 +685,53 @@ $(document).ready(function() {
 			</nav>
 			
 			
+						<nav class="st-menu st-effect-2" id="menu-2">
+				<h2>Жанры fiction</h2>
+				<ul>
+				
+<li id="filter" class="clearfix"><a href="" class="current btn" data-filter="*">Весь список</a></li>
+<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".fict">Все книги (279)</a></li>
+<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".antiutop">антиутопия</a></li>
+<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".vojna">война</a></li>
+<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".gotrom">готический роман</a></li>
+<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".detekt">детектив</a></li>
+<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".drama">драма</a></li>
+<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".istorf">история</a></li>
+<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".kiberp">киберпанк</a></li>
+<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".kontrkul">контркультура</a></li>
+<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".nfant">науч.фантастика</a></li>
+<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".prikl">приключения</a></li>
+<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".pritcha">притча</a></li>
+<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".postapok">постапокалипсис</a></li>
+<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".manga">манга</a></li>
+<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".piesa">пьеса</a></li>
+<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".revol">революция</a></li>
+<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".satira">сатира</a></li>
+<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".skazka">сказка</a></li>
+<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".sotsrom">социальный роман</a></li>
+<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".utop">утопия</a></li>
+<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".fant">фантастика</a></li>
+<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".horror">хоррор</a></li>
+<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".bezperf">Без перевода</a></li>
+<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".donef">Прочитанные (45)</a></li>
+<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".unfinishedf">Недочитанные (35)</a></li>
+<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".neverf"><font color="#cc00cc">Оценка 1</font></a></li>
+<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".boringf"><font color="#3399ff">Оценка 2</font></a></li>
+<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".goodf"><font color="#00cc00">Оценка 3</font></a></li>
+<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".verygoodf"><font color="#ffcc00">Оценка 4</font></a></li>
+<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".wonderfulf"><font color="#ff0000">Оценка 5</font></a></li>
+<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".lovef">Любимые книги</a></li>
+<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".keylist">Обозначения</a></li><br>
+			
+				</ul>
+			</nav>
+			
+			
+			
+			
+			
+			
+			
 
 			<!-- content push wrapper -->
 			<div class="st-pusher">
@@ -497,7 +746,10 @@ $(document).ready(function() {
 
 						<div class="main clearfix">
 							<div id="st-trigger-effects">
-								<button class="" data-effect="st-effect-1">Выбор жанра</button>
+								<button data-effect="st-effect-1">Жанры нехудожественных книг</button>
+							</div>
+							<div id="st-trigger-effects">
+								<button data-effect="st-effect-2">Жанры художественных книг</button>
 							</div>
 
 <!--
@@ -531,13 +783,68 @@ $(document).ready(function() {
 </div>
 </div>
 
+<div class="work genretitle bisn">
+<br>- Бизнес -<br><br>
+</div>
+
+<div class="work genretitle biogr">
+<br>- Биография -<br><br>
+</div>
+
+<div class="work genretitle biol">
+<br>- Биология -<br><br>
+</div>
+
+<div class="work genretitle dizajn">
+<br>- Дизайн -<br><br>
+</div>
+
+<div class="work genretitle psih">
+<br>- Психология -<br><br>
+</div>
 
 <!-- Адлер, Альфред -->
 <div class="work nonfict authora titlen psih unfinished">
 <br>
 Наука жить / Альфред Адлер<br>
-The Science of Living / Alfred Adler, 1929<br>
+The Science of Living / Alfred Adler, 1929 
+<a class="demo"><label class="btno1" for="modal-1" title="Стандартное модальное окно">[отзыв]</label></a><br>
 </div>
+
+
+
+<div class="modal">
+  <input class="modal-open" id="modal-1" type="checkbox" hidden>
+  <div class="modal-wrap" aria-hidden="true" role="dialog">
+    <label class="modal-overlay" for="modal-1"></label>
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h2>Отзыв на книгу Ололоева Ололоя "Не сидеть мне на этом месте больше"</h2>
+        <label class="btno-close" for="modal-1" aria-hidden="true">×</label>
+      </div>
+      <div class="modal-body">
+        <p>Это всего лишь один небольшой пример :D</p>
+		<p>Это всего лишь один небольшой пример :D</p>
+		<p>Это всего лишь один небольшой пример :D</p>
+		<p>Это всего лишь один небольшой пример :D</p>
+		<p>Это всего лишь один небольшой пример :D</p>
+		<p>Это всего лишь один небольшой пример :D</p>
+		<p>Это всего лишь один небольшой пример :D</p>
+		<p>Это всего лишь один небольшой пример :D</p>
+		<p>Это всего лишь один небольшой пример :D</p>
+		<p>Это всего лишь один небольшой пример :D</p>
+		<p>Это всего лишь один небольшой пример :D</p>
+		<p>Это всего лишь один небольшой пример :D</p>
+      </div>
+      <div class="modal-footer">
+        <label class="btno btno-primary" for="modal-1">Закрыть</label>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 <div class="work nonfict authora titlev psih">
 <br>
 Воспитание детей / Альфред Адлер<br>
@@ -1275,6 +1582,1674 @@ Geometry of Design: Studies in Proportion and Composition / Kimberly Elam, 2001<
 Анти-Дюринг / Фридрих Энгельс [советуют: Анатолий Вассерман]<br>
 Herrn Eugen Duhrings Umwalzung der Wissenschaft / Friedrich Engels, 1878<br><br>
 </div>
+
+
+
+
+
+
+<!-- = Художественные книги = -->
+<div>
+<div class="work fict">
+<div class="namelist"><br>
+= Художественные книги =<br><br>
+</div>
+</div>
+
+<!-- Азимов, Айзек -->
+<div class="work fict azimov authora titleja nfant"><br>
+Я, Робот / Айзек Азимов<br>
+I, Robot / Isaac Asimov, 1950<br><br>
+</div>
+<div class="work fict azimov authora titleo nfant"><br>
+Основание / Айзек Азимов<br>
+Foundation / Isaac Asimov, 1951<br><br>
+</div>
+<div class="work fict azimov authora titleo nfant"><br>
+Основание и Империя / Айзек Азимов<br>
+Foundation and Empire / Isaac Asimov, 1952<br><br>
+</div>
+<div class="work fict azimov authora titlev nfant"><br>
+Второе основание / Айзек Азимов<br>
+Second Foundation / Isaac Asimov, 1953<br><br>
+</div>
+<div class="work fict azimov authora titlek nfant"><br>
+Конец вечности / Айзек Азимов<br>
+The End of Eternity / Isaac Asimov, 1955<br><br>
+</div>
+<div class="work fict azimov authora titles nfant"><br>
+Сами боги / Айзек Азимов<br>
+The Gods Themselves / Isaac Asimov, 1972<br><br>
+</div>
+
+<!-- Артур, Роберт -->
+<div class="work fict authora titlet detekt donef goodf"><br>
+Тайна пропавшего сокровища / Роберт Артур<br>
+The Mystery of the Vanishing Treasure / Robert Arthur Jr., 1966<br>
+</div>
+<div class="work fict authora titlet detekt donef goodf"><br>
+Тайна говорящего черепа / Роберт Артур<br>
+The Mystery of the Talking Skull / Robert Arthur Jr., 1969<br>
+</div>
+
+<!-- Бах, Ричард -->
+<div class="work fict authorb titlech pritcha donef goodf"><br>
+Чайка по имени Джонатан Ливингстон / Ричард Бах<br>
+Jonathan Livingston Seagull / Richard Bach, 1970<br>
+</div>
+
+<!-- Бегбедер, Фредерик -->
+<div class="work fict authorb titled satira"><br>
+99 франков / Фредерик Бегбедер<br>
+99 francs / Frédéric Beigbeder, 2000<br><br>
+</div>
+
+<!-- Беллами, Эдуард -->
+<div class="work fict authorb titlev utop"><br>
+Взгляд назад / Эдуард Беллами [советуют: Жак Фреско]<br>
+Looking Backward, 2000—1887 / Edward Bellamy, 1888<br><br>
+</div>
+<div class="work fict authorb titler utop"><br>
+Равенство / Эдуард Беллами<br>
+Equality / Edward Bellamy, 1897<br><br>
+</div>
+
+<!-- Беляев, Александр Романович -->
+<div class="work fict authorb titleg fant donef verygoodf"><br>
+Голова профессора Доуэля / А.Р. Беляев, 1925<br>
+</div>
+<div class="work fict authorb titlep fant"><br>
+Последний человек из Атлантиды / А.Р. Беляев, 1925<br><br>
+</div>
+<div class="work fict authorb titlev fant"><br>
+Властелин мира / А.Р. Беляев, 1926<br><br>
+</div>
+<div class="work fict authorb titleo prikl"><br>
+Остров погибших кораблей / А.Р. Беляев, 1927<br><br>
+</div>
+<div class="work fict authorb titleb fant"><br>
+Борьба в эфире / А.Р. Беляев, 1927<br><br>
+</div>
+<div class="work fict authorb titlech fant"><br>
+Человек-амфибия / А.Р. Беляев, 1928<br><br>
+</div>
+<div class="work fict authorb titlev fant"><br>
+Вечный хлеб / А.Р. Беляев, 1928<br><br>
+</div>
+
+
+
+
+
+
+<!-- Бёрджесс, Энтони -->
+<div class="work fict authorb titlez kontrkul"><br>
+Заводной апельсин / Энтони Бёрджесс<br>
+A Clockwork Orange / Anthony Burgess, 1962<br><br>
+</div>
+
+<!-- Берроуз, Уильям -->
+<div class="work fict authorb titleg kontrkul"><br>
+Голый завтрак / Уильям Берроуз<br>
+Naked Lunch / William Burroughs, 1959<br><br>
+</div>
+
+<!-- Бестер, Альфред -->
+<div class="work fict authorb titlech nfant"><br>
+Человек без лица / Альфред Бестер<br>
+The Demolished Man / Alfred Bester, 1952<br><br>
+</div>
+
+<!-- Брэдбери, Рэй -->
+<div class="work fict bredberi authorb titlem nfant"><br>
+Марсианские хроники / Рэй Брэдбери<br>
+The Martian Chronicles / Ray Bradbury, 1950<br><br>
+</div>
+<div class="work fict bredberi authorb titlech antiutop donef verygoodf"><br>
+451 градус по Фаренгейту / Рэй Брэдбери<br>
+Fahrenheit 451 / Ray Bradbury, 1953<br>
+</div>
+<div class="work fict bredberi authorb titlen fant"><br>
+Надвигается беда / Рэй Брэдбери<br>
+Something wicked this way comes / Ray Bradbury, 1962<br><br>
+</div>
+<div class="work fict bredberi authorb titles detekt"><br>
+Смерть - дело одинокое / Рэй Брэдбери<br>
+Death is a Lonely Business / Ray Bradbury, 1985<br><br>
+</div>
+
+<!-- Булгаков, Михаил Афанасьевич -->
+<div class="work fict authorb titlep satira"><br>
+Похождения Чичикова / М.А. Булгаков, 1922<br><br>
+</div>
+<div class="work fict authorb titled fant"><br>
+Дьяволиада / М.А. Булгаков, 1924<br><br>
+</div>
+<div class="work fict authorb titled fant"><br>
+Багровый остров / М.А. Булгаков, 1924<br><br>
+</div>
+<div class="work fict authorb titled fant"><br>
+Роковые яйца / М.А. Булгаков, 1925<br><br>
+</div>
+<div class="work fict authorb titled fant unfinishedf"><br>
+Собачье сердце / М.А. Булгаков, 1925 (публ. 1987)<br>
+</div>
+<div class="work fict authorb titled drama"><br>
+Записки юного врача / М.А. Булгаков, 1926<br><br>
+</div>
+<div class="work fict authorb titlem drama donef verygoodf"><br>
+Морфий / М.А. Булгаков, 1926<br>
+</div>
+<div class="work fict authorb titled fant"><br>
+Копыто инженера / М.А. Булгаков, 1929<br><br>
+</div>
+<div class="work fict authorb titleb istorf vojna revol"><br>
+Белая гвардия / М.А. Булгаков, 1927, 1929<br><br>
+</div>
+<div class="work fict authorb titlep piesa satira donef verygoodf"><br>
+Иван Васильевич / М.А. Булгаков, 1936<br>
+</div>
+<div class="work fict authorb titles fant"><br>
+Мастер и Маргарита / М.А. Булгаков, 1940 (публ. 1966)<br><br>
+</div>
+
+<!-- Буль, Пьер -->
+<div class="work fict authorb titleb fant"><br>
+Бесконечная ночь / Пьер Буль<br>
+Une nuit interminable / Pierre Boulle, 1952<br><br>
+</div>
+<div class="work fict authorb titleb fant"><br>
+Планета обезьян / Пьер Буль<br>
+La Planète des Singes / Pierre Boulle, 1963<br><br>
+</div>
+
+<!-- Веркор -->
+<div class="work fict authorv titlel fant"><br>
+Люди или животные? / Веркор<br>
+Les Animaux dénaturés / Vercors, 1952<br><br>
+</div>
+
+<!-- Верн, Жюль -->
+<div class="work fict vern authorv titlep prikl donef goodf"><br>
+Зимовка во льдах / Жюль Верн<br>
+Un hivernage dans les glaces / Jules Verne, 1855<br>
+</div>
+<div class="work fict vern authorv titlep prikl donef verygoodf"><br>
+Пять недель на воздушном шаре / Жюль Верн<br>
+Cinq semaines en ballon / Jules Verne, 1863<br>
+</div>
+<div class="work fict vern authorv titlep prikl fant"><br>
+Путешествие к центру Земли / Жюль Верн<br>
+Voyage au centre de la Terre / Jules Verne, 1864<br><br>
+</div>
+<div class="work fict vern authorv titlep prikl"><br>
+Путешествия и приключения капитана Гаттераса / Жюль Верн<br>
+Les Aventures du capitaine Hatteras / Jules Verne, 1865<br><br>
+</div>
+<div class="work fict vern authorv titles prikl fant"><br>
+С Земли на Луну / Жюль Верн<br>
+De la Terre à la Lune / Jules Verne, 1865<br><br>
+</div>
+<div class="work fict vern authorv titled prikl donef wonderfulf lovef"><br>
+Дети капитана Гранта / Жюль Верн<br>
+Les Enfants du capitaine Grant / Jules Verne, 1867<br>
+</div>
+<div class="work fict vern authorv titlev prikl fant"><br>
+Вокруг Луны / Жюль Верн<br>
+Autour de la Lune / Jules Verne, 1869<br><br>
+</div>
+<div class="work fict vern authorv titled prikl fant donef wonderfulf lovef"><br>
+Двадцать тысяч льё под водой / Жюль Верн<br>
+Vingt mille lieues sous les mers / Jules Verne, 1869<br>
+</div>
+<div class="work fict vern authorv titlep prikl fant"><br>
+Плавающий город / Жюль Верн<br>
+Une ville flottante / Jules Verne, 1870<br><br>
+</div>
+<div class="work fict vern authorv titlep prikl"><br>
+Приключения трёх русских и трёх англичан в Южной Африке / Жюль Верн<br>
+Aventures de trois Russes et de trois Anglais dans l’Afrique Australe / Jules Verne, 1872<br><br>
+</div>
+<div class="work fict vern authorv titlev prikl donef verygoodf"><br>
+Вокруг света за восемьдесят дней / Жюль Верн<br>
+Le tour du monde en quatre-vingts jours / Jules Verne, 1873<br>
+</div>
+<div class="work fict vern authorv titlev prikl unfinishedf"><br>
+В стране мехов / Жюль Верн<br>
+Le Pays des fourrures / Jules Verne, 1873<br>
+</div>
+<div class="work fict vern authorv titlet prikl"><br>
+Таинственный остров / Жюль Верн<br>
+L'Île mystérieuse / Jules Verne, 1874<br><br>
+</div>
+<div class="work fict vern authorv titlech prikl"><br>
+Ченслер / Жюль Верн<br>
+Le Chancellor / Jules Verne, 1875<br><br>
+</div>
+<div class="work fict vern authorv titlem prikl"><br>
+Михаил Строгов / Жюль Верн<br>
+Michel Strogoff / Jules Verne, 1876<br><br>
+</div>
+<div class="work fict vern authorv titleg prikl"><br>
+Гектор Сервадак / Жюль Верн<br>
+Hector Servadac / Jules Verne, 1877<br><br>
+</div>
+<div class="work fict vern authorv titlech prikl donef goodf"><br>
+Чёрная Индия / Жюль Верн<br>
+Les Indes noires / Jules Verne, 1877<br>
+</div>
+<div class="work fict vern authorv titlep prikl donef verygoodf"><br>
+Пятнадцатилетний капитан / Жюль Верн<br>
+Un capitaine de quinze ans / Jules Verne, 1878<br>
+</div>
+<div class="work fict vern authorv titlep prikl donef wonderfulf lovef"><br>
+Пятьсот миллионов Бегумы / Жюль Верн, Андре Лори<br>
+Les Cinq Cents Millions de la Bégum / Jules Verne, 1879<br>
+</div>
+<div class="work fict vern authorv titlet prikl"><br>
+Треволнения одного китайца в Китае / Жюль Верн<br>
+Les Tribulations d’un Chinois en Chine / Jules Verne, 1879<br><br>
+</div>
+<div class="work fict vern authorv titlep prikl donef goodf"><br>
+Паровой дом / Жюль Верн<br>
+La Maison à vapeur / Jules Verne, 1880<br>
+</div>
+<div class="work fict vern authorv titlezh prikl"><br>
+Жангада / Жюль Верн<br>
+La Jangada / Jules Verne, 1881<br><br>
+</div>
+<div class="work fict vern authorv titlesh prikl"><br>
+Школа Робинзонов / Жюль Верн<br>
+L'École des Robinsons / Jules Verne, 1882<br><br>
+</div>
+<div class="work fict vern authorv titlez prikl donef boringf"><br>
+Зелёный луч / Жюль Верн<br>
+Le Rayon vert / Jules Verne, 1882<br>
+</div>
+<div class="work fict vern authorv titleu prikl"><br>
+Упрямец Керабан / Жюль Верн<br>
+Kéraban-le-têtu / Jules Verne, 1883<br><br>
+</div>
+<div class="work fict vern authorv titleju prikl donef goodf"><br>
+Южная звезда / Жюль Верн, Андре Лори<br>
+L’Étoile du sud / Jules Verne, 1884<br>
+</div>
+<div class="work fict vern authorv titlea prikl"><br>
+Архипелаг в огне / Жюль Верн<br>
+L’Archipel en feu / Jules Verne, 1884<br><br>
+</div>
+<div class="work fict vern authorv titlen prikl"><br>
+Найдёныш с погибшей "Цинтии" / Жюль Верн, Андре Лори<br>
+L’Épave du Cynthia / Jules Verne, 1885<br><br>
+</div>
+<div class="work fict vern authorv titlem prikl unfinishedf"><br>
+Матиас Шандор / Жюль Верн<br>
+Mathias Sandorf / Jules Verne, 1885<br>
+</div>
+<div class="work fict vern authorv titlel prikl"><br>
+Лотерейный билет №9672 / Жюль Верн<br>
+Un billet de loterie: le numéro 9672 / Jules Verne, 1886<br><br>
+</div>
+<div class="work fict vern authorv titler prikl"><br>
+Робур-Завоеватель / Жюль Верн<br>
+Robur le Conquérant / Jules Verne, 1886<br><br>
+</div>
+<div class="work fict vern authorv titles prikl"><br>
+Север против Юга / Жюль Верн<br>
+Nord contre Sud / Jules Verne, 1887<br><br>
+</div>
+<div class="work fict vern authorv titles prikl"><br>
+Дорога во Францию / Жюль Верн<br>
+Le Chemin de France / Jules Verne, 1887<br><br>
+</div>
+<div class="work fict vern authorv titles prikl"><br>
+Два года каникул / Жюль Верн<br>
+Deux ans de vacances / Jules Verne, 1888<br><br>
+</div>
+<div class="work fict vern authorv titles prikl"><br>
+Семья без имени / Жюль Верн<br>
+Famille-sans-nom / Jules Verne, 1889<br><br>
+</div>
+<div class="work fict vern authorv titles prikl"><br>
+Вверх дном / Жюль Верн<br>
+Sans dessus dessous / Jules Verne, 1889<br><br>
+</div>
+<div class="work fict vern authorv titles prikl"><br>
+Цезарь Каскабель / Жюль Верн<br>
+César Cascabel / Jules Verne, 1890<br><br>
+</div>
+<div class="work fict vern authorv titles prikl"><br>
+Миссис Бреникен / Жюль Верн<br>
+Mistress Branican / Jules Verne, 1891<br><br>
+</div>
+<div class="work fict vern authorv titles prikl unfinishedf"><br>
+Замок в Карпатах / Жюль Верн<br>
+Le Château des Carpathes / Jules Verne, 1892<br>
+</div>
+<div class="work fict vern authorv titles prikl"><br>
+Клодиус Бомбарнак / Жюль Верн<br>
+Claudius Bombarnac / Jules Verne, 1892<br><br>
+</div>
+<div class="work fict vern authorv titles prikl"><br>
+Малыш / Жюль Верн<br>
+P'tit-Bonhomme / Jules Verne, 1893<br><br>
+</div>
+<div class="work fict vern authorv titles prikl"><br>
+Удивительные приключения дядюшки Антифера / Жюль Верн<br>
+Mirifiques Aventures de Maître Antifer / Jules Verne, 1894<br><br>
+</div>
+<div class="work fict vern authorv titles prikl"><br>
+Плавучий остров / Жюль Верн<br>
+L'Île à hélice / Jules Verne, 1895<br><br>
+</div>
+<div class="work fict vern authorv titles prikl"><br>
+Флаг родины / Жюль Верн<br>
+Face au drapeau / Jules Verne, 1896<br><br>
+</div>
+<div class="work fict vern authorv titles prikl"><br>
+Кловис Дардантор / Жюль Верн<br>
+Clovis Dardentor / Jules Verne, 1896<br><br>
+</div>
+<div class="work fict vern authorv titles prikl unfinishedf"><br>
+Ледяной сфинкс / Жюль Верн<br>
+Le Sphinx des glaces / Jules Verne, 1897<br>
+</div>
+<div class="work fict vern authorv titles prikl"><br>
+Великолепная Ориноко / Жюль Верн<br>
+Le Superbe Orénoque / Jules Verne, 1898<br><br>
+</div>
+<div class="work fict vern authorv titles prikl"><br>
+Завещание чудака / Жюль Верн<br>
+Le Testament d'un excentrique / Jules Verne, 1899<br><br>
+</div>
+<div class="work fict vern authorv titles prikl"><br>
+Вторая родина / Жюль Верн<br>
+Seconde Patrie / Jules Verne, 1900<br><br>
+</div>
+<div class="work fict vern authorv titles prikl"><br>
+Деревня в воздухе / Жюль Верн<br>
+Le Village aérien / Jules Verne, 1901<br><br>
+</div>
+<div class="work fict vern authorv titles prikl"><br>
+Истории Жана-Мари Кабидулена / Жюль Верн<br>
+Les Histoires de Jean-Marie Cabidoulin / Jules Verne, 1901<br><br>
+</div>
+<div class="work fict vern authorv titles prikl"><br>
+Братья Кип / Жюль Верн<br>
+Les Frères Kip / Jules Verne, 1902<br><br>
+</div>
+<div class="work fict vern authorv titles prikl"><br>
+Путешествие стипендиатов / Жюль Верн<br>
+Bourses de voyage / Jules Verne, 1903<br><br>
+</div>
+<div class="work fict vern authorv titles prikl"><br>
+Драма в Лифляндии / Жюль Верн<br>
+Un Drame en Livonie / Jules Verne, 1904<br><br>
+</div>
+<div class="work fict vern authorv titles prikl"><br>
+Властелин мира / Жюль Верн<br>
+Maître du monde / Jules Verne, 1904<br><br>
+</div>
+<div class="work fict vern authorv titles prikl"><br>
+Вторжение моря / Жюль Верн<br>
+L'Invasion de la mer / Jules Verne, 1905<br><br>
+</div>
+<div class="work fict vern authorv titles prikl"><br>
+Маяк на краю света / Жюль Верн<br>
+Le Phare du bout du monde / Jules Verne, 1905<br><br>
+</div>
+<div class="work fict vern authorv titles prikl donef boringf"><br>
+Золотой вулкан / Жюль Верн<br>
+Le Volcan d’or / Jules Verne, 1906<br>
+</div>
+<div class="work fict vern authorv titles prikl"><br>
+Агентство Томпсон и Kо / Жюль Верн<br>
+L'Agence Thompson and Co / Jules Verne, 1907<br><br>
+</div>
+<div class="work fict vern authorv titles prikl"><br>
+В погоне за метеором / Жюль Верн<br>
+La Chasse au météore / Jules Verne, 1908<br><br>
+</div>
+<div class="work fict vern authorv titles prikl"><br>
+Дунайский лоцман / Жюль Верн<br>
+Le Danube pilote / Jules Verne, 1908<br><br>
+</div>
+<div class="work fict vern authorv titles prikl"><br>
+Кораблекрушение "Джонатана" / Жюль Верн<br>
+Les naufragés du "Jonathan" / Jules Verne, 1909<br><br>
+</div>
+<div class="work fict vern authorv titles prikl"><br>
+Тайна Вильгельма Шторица / Жюль Верн<br>
+Le Secret de Wilhem Storitz / Jules Verne, 1910<br><br>
+</div>
+<div class="work fict vern authorv titles prikl"><br>
+Необыкновенные приключения экспедиции Барсака / Жюль Верн<br>
+L'Étonnante Aventure de la mission Barsac / Jules Verne, 1914<br><br>
+</div>
+<div class="work fict vern authorv titles prikl"><br>
+Париж в XX веке / Жюль Верн<br>
+Paris au XXe siècle / Jules Verne, 1864 (публ. 1994)<br><br>
+</div>
+
+<!-- Воннегут, Курт -->
+<div class="work fict vonnegut authorv titlem antiutop"><br>
+Механическое пианино / Курт Воннегут<br>
+Player Piano / Kurt Vonnegut, 1952<br><br>
+</div>
+<div class="work fict vonnegut authorv titles nfant"><br>
+Сирены Титана / Курт Воннегут<br>
+The Sirens of Titan / Kurt Vonnegut, 1959<br><br>
+</div>
+<div class="work fict vonnegut authorv titlek nfant"><br>
+Колыбель для кошки / Курт Воннегут<br>
+Cat's Cradle / Kurt Vonnegut, 1963<br><br>
+</div>
+<div class="work fict vonnegut authorv titlek fant vojna"><br>
+Бойня номер пять, или Крестовый поход детей / Курт Воннегут<br>
+Slaughterhouse-Five, or The Children’s Crusade / Kurt Vonnegut, 1969<br><br>
+</div>
+
+<!-- Гашек, Ярослав -->
+<div class="work fict authorg titlep satira vojna"><br>
+Похождения бравого солдата Швейка / Ярослав Гашек<br>
+Osudy dobrého vojáka Švejka za světové války / Jaroslav Hašek, 1922<br><br>
+</div>
+
+<!-- Герберт, Фрэнк -->
+<div class="work fict gerbert authorg titled nfant"><br>
+Дюна / Фрэнк Герберт<br>
+Dune / Frank Herbert, 1965<br><br>
+</div>
+<div class="work fict gerbert authorg titlem nfant"><br>
+Мессия Дюны / Фрэнк Герберт<br>
+Dune Messiah / Frank Herbert, 1969<br><br>
+</div>
+<div class="work fict gerbert authorg titled nfant"><br>
+Дети Дюны / Фрэнк Герберт<br>
+Children of Dune / Frank Herbert, 1976<br><br>
+</div>
+<div class="work fict gerbert authorg titleb nfant"><br>
+Бог-император Дюны / Фрэнк Герберт<br>
+God Emperor of Dune / Frank Herbert, 1981<br><br>
+</div>
+<div class="work fict gerbert authorg titlee nfant"><br>
+Еретики Дюны / Фрэнк Герберт<br>
+Heretics of Dune / Frank Herbert, 1984<br><br>
+</div>
+<div class="work fict gerbert authorg titlek nfant"><br>
+Капитул Дюны / Фрэнк Герберт<br>
+Chapterhouse: Dune / Frank Herbert, 1985<br><br>
+</div>
+
+<!-- Гибсон, Уильям -->
+<div class="work fict authorg titlen nfant kiberp"><br>
+Нейромант / Уильям Гибсон<br>
+Neuromancer / William Gibson, 1984<br><br>
+</div>
+<div class="work fict authorg titleg nfant kiberp"><br>
+Граф Ноль / Уильям Гибсон<br>
+Count Zero / William Gibson, 1986<br><br>
+</div>
+<div class="work fict authorg titlem nfant kiberp"><br>
+Мона Лиза Овердрайв / Уильям Гибсон<br>
+Mona Lisa Overdrive / William Gibson, 1988<br><br>
+</div>
+
+<!-- Гинзберг, Аллен -->
+<div class="work fict authorg titlev kontrkul"><br>
+Вопль / Аллен Гинзберг<br>
+Howl / Allen Ginsberg, 1955<br><br>
+</div>
+
+<!-- Горький, Максим -->
+<div class="work fict authorg titled biogr drama unfinishedf"><br>
+Детство / Максим Горький, 1914<br>
+</div>
+<div class="work fict authorg titled biogr drama unfinishedf"><br>
+В людях / Максим Горький, 1916<br>
+</div>
+<div class="work fict authorg titled biogr drama unfinishedf"><br>
+Мои университеты / Максим Горький, 1923<br>
+</div>
+
+<!-- Гюго, Виктор -->
+<div class="work fict gugo authorg titles istorf"><br>
+Собор Парижской Богоматери / Виктор Гюго<br>
+Notre-Dame de Paris / Victor Hugo, 1831<br><br>
+</div>
+<div class="work fict gugo authorg titleo istorf"><br>
+Отверженные / Виктор Гюго<br>
+Les Misérables / Victor Hugo, 1862<br><br>
+</div>
+<div class="work fict gugo authorg titles istorf"><br>
+Человек, который смеётся / Виктор Гюго<br>
+L’Homme qui rit / Victor Hugo, 1869<br><br>
+</div>
+<div class="work fict gugo authorg titled istorf"><br>
+Девяносто третий год / Виктор Гюго<br>
+Quatrevingt-treize / Victor Hugo, 1874<br><br>
+</div>
+
+<!-- Дефо, Даниель -->
+<div class="work fict defo authord titler prikl donef goodf"><br>
+Робинзон Крузо / Даниель Дефо<br>
+Robinson Crusoe / Daniel Defoe, 1719<br>
+</div>
+<div class="work fict defo authord titled prikl"><br>
+Дальнейшие приключения Робинзона Крузо / Даниель Дефо<br>
+The Farther Adventures of Robinson Crusoe / Daniel Defoe, 1719<br><br>
+</div>
+<div class="work fict defo authord titles prikl bezperf"><br>
+Серьёзные размышления Робинзона Крузо / Даниель Дефо (перевода нет)<br>
+Serious Reflections of Robinson Crusoe / Daniel Defoe, 1720<br><br>
+</div>
+<div class="work fict defo authord titlek prikl"><br>
+Капитан Сингльтон / Даниель Дефо<br>
+The Life, Adventures and Piracies of the Famous Captain Singleton / Daniel Defoe, 1720<br><br>
+</div>
+<div class="work fict defo authord titled istorf"><br>
+Дневник чумного года / Даниель Дефо<br>
+A Journal of the Plague Year / Daniel Defoe, 1722<br><br>
+</div>
+
+<!-- Джефферис, Ричард -->
+<div class="work fict authord titlep fant postapok"><br>
+После Лондона / Ричард Джефферис<br>
+After London, or Wild England / Richard Jefferies, 1885<br><br>
+</div>
+
+<!-- Дик, Филип -->
+<div class="work fict authord titlem nfant kiberp"><br>
+Мечтают ли андроиды об электроовцах? / Филип Дик<br>
+Do Androids Dream of Electric Sheep? / Philip Dick, 1968<br><br>
+</div>
+
+<!-- Диккенс, Чарльз -->
+<div class="work fict authord titlem "><br>
+Посмертные записки Пиквикского клуба / Чарльз Диккенс<br>
+The Posthumous Papers of the Pickwick Club / Charles Dickens, 1837<br><br>
+</div>
+
+
+
+
+
+<!-- Достоевский, Фёдор Михайлович -->
+<div class="work fict authorg titled drama unfinishedf"><br>
+Преступление и наказание / Ф.М. Достоевский, 1866<br><br>
+</div>
+
+<!-- Ефремов, Иван Антонович -->
+<div class="work fict efremov authore titlez nfant"><br>
+Звёздные корабли / И.А. Ефремов, 1948<br><br>
+</div>
+<div class="work fict efremov authore titlen nfant"><br>
+На краю Ойкумены / И.А. Ефремов, 1949, 1953<br><br>
+</div>
+<div class="work fict efremov authore titlet nfant"><br>
+Туманность Андромеды / И.А. Ефремов, 1957<br><br>
+</div>
+<div class="work fict efremov authore titlel nfant"><br>
+Лезвие бритвы / И.А. Ефремов, 1964<br><br>
+</div>
+<div class="work fict efremov authore titlech nfant"><br>
+Час быка / И.А. Ефремов, 1970<br><br>
+</div>
+<div class="work fict efremov authore titlet nfant"><br>
+Таис Афинская / И.А. Ефремов, 1973<br><br>
+</div>
+
+<!-- Желязны, Роджер  -->
+<div class="work fict authorzh titled fant neverf"><br>
+Девять принцев Эмбера / Роджер Желязны<br>
+Nine Princes in Amber / Roger Zelazny, 1970<br>
+</div>
+<div class="work fict authorzh titler fant"><br>
+Ружья Авалона / Роджер Желязны<br>
+The Guns of Avalon / Roger Zelazny, 1972<br><br>
+</div>
+<div class="work fict authorzh titlez fant"><br>
+Знак Единорога / Роджер Желязны<br>
+Sign of the Unicorn / Roger Zelazny, 1975<br><br>
+</div>
+<div class="work fict authorzh titler fant"><br>
+Рука Оберона / Роджер Желязны<br>
+The Hand of Oberon / Roger Zelazny, 1976<br><br>
+</div>
+<div class="work fict authorzh titlev fant"><br>
+Владения Хаоса / Роджер Желязны<br>
+The Courts of Chaos / Roger Zelazny, 1978<br><br>
+</div>
+<div class="work fict authorzh titlek fant"><br>
+Карты судьбы / Роджер Желязны<br>
+Trumps of Doom / Roger Zelazny, 1985<br><br>
+</div>
+<div class="work fict authorzh titlek fant"><br>
+Кровь Эмбера / Роджер Желязны<br>
+Blood of Amber / Roger Zelazny, 1986<br><br>
+</div>
+<div class="work fict authorzh titlez fant"><br>
+Знак Хаоса / Роджер Желязны<br>
+Sign of Chaos / Roger Zelazny, 1987<br><br>
+</div>
+<div class="work fict authorzh titler fant"><br>
+Рыцарь Теней / Роджер Желязны<br>
+Knight of Shadows / Roger Zelazny, 1989<br><br>
+</div>
+<div class="work fict authorzh titlep fant"><br>
+Принц Хаоса / Роджер Желязны<br>
+Prince of Chaos / Roger Zelazny, 1991<br><br>
+</div>
+
+<!-- Замятин, Евгений Иванович -->
+<div class="work fict zamyatin authorz titlem antiutop"><br>
+Мы / Е.И. Замятин, 1920<br><br>
+</div>
+
+<!-- Ильф и Петров -->
+<div class="work fict authori titles satira"><br>
+Светлая личность / Илья Ильф, Евгений Петров, 1928<br><br>
+</div>
+<div class="work fict authori titles satira"><br>
+Двенадцать стульев / Илья Ильф, Евгений Петров, 1928<br><br>
+</div>
+<div class="work fict authori titles satira"><br>
+Золотой телёнок / Илья Ильф, Евгений Петров, 1931<br><br>
+</div>
+<div class="work fict authori titles satira"><br>
+Одноэтажная Америка / Илья Ильф, Евгений Петров, 1937<br><br>
+</div>
+
+<!-- Ито, Дзюндзи -->
+<div class="work fict authori titles manga horror unfinishedf"><br>
+Спираль / Дзюндзи Ито<br>
+うずまき / 伊藤 潤二, 1998-1999 (3巻)<br>
+</div>
+<div class="work fict authori titler manga horror unfinishedf"><br>
+Рыба / Дзюндзи Ито<br>
+ギョ / 伊藤 潤二, 2001-2002 (2巻)<br>
+</div>
+
+<!-- Каверин, Вениамин Александрович -->
+<div class="work fict authork titled prikl"><br>
+Два капитана / В.А. Каверин, 1920<br><br>
+</div>
+
+<!-- Камю, Альбер -->
+<div class="work fict authork titlech vojna"><br>
+Чума / Альбер Камю<br>
+La Peste / Albert Camus, 1947<br><br>
+</div>
+
+<!-- Карсак, Франсис -->
+<div class="work fict authork titleb nfant"><br>
+Бегство Земли / Франсис Карсак<br>
+Terre en fuite / Francis Carsac, 1960<br><br>
+</div>
+
+<!-- Каттнер, Генри -->
+<div class="work fict authork titleb nfant"><br>
+Тёмный мир / Генри Каттнер<br>
+The Dark World / Henry Kuttner, 1946<br><br>
+</div>
+
+<!-- Керуак, Джек -->
+<div class="work fict authork titlev kontrkul"><br>
+В дороге / Джек Керуак<br>
+On the Road / Jack Kerouac, 1957<br><br>
+</div>
+
+<!-- Киз, Дэниел -->
+<div class="work fict authork titlets nfant"><br>
+Цветы для Элджернона / Дэниел Киз<br>
+Flowers for Algernon / Daniel Keyes, 1959<br><br>
+</div>
+
+<!-- Кизи, Кен -->
+<div class="work fict authork titlen kontrkul"><br>
+Над кукушкиным гнездом / Кен Кизи<br>
+One Flew Over the Cuckoo's Nest / Ken Kesey, 1962<br><br>
+</div>
+
+<!-- Кинг, Стивен -->
+<div class="work fict authork titles fant horror"><br>
+Сияние / Стивен Кинг<br>
+The Shining / Stephen King, 1977<br><br>
+</div>
+<div class="work fict authork titlep fant horror"><br>
+Противостояние / Стивен Кинг<br>
+The Stand / Stephen King, 1978<br><br>
+</div>
+<div class="work fict authork titlet fant horror"><br>
+Туман / Стивен Кинг<br>
+The Mist / Stephen King, 1980<br><br>
+</div>
+<div class="work fict authork titler fant horror"><br>
+Рита Хейуорт и спасение из Шоушенка / Стивен Кинг<br>
+Rita Hayworth and Shawshank Redemption / Stephen King, 1982<br><br>
+</div>
+<div class="work fict authork titlech fant horror donef boringf"><br>
+1408 / Стивен Кинг<br>
+1408 / Stephen King, 1997<br>
+</div>
+
+<!-- Киширо, Юкито -->
+<div class="work fict authork titlem manga nfant"><br>
+Мечты оружия / Юкито Киширо<br>
+銃夢 / 木城 ゆきと, 1990-1995 (9巻)<br><br>
+</div>
+
+
+
+
+
+
+<!-- Кларк, Артур -->
+<div class="work fict klark authork titlech nfant"><br>
+Черты будущего / Артур Кларк<br>
+Profiles of the Future / Arthur Clarke, 1962<br><br>
+</div>
+<div class="work fict klark authork titled nfant"><br>
+2001: Космическая одиссея / Артур Кларк<br>
+2001: A Space Odyssey / Arthur Clarke, 1968<br><br>
+</div>
+<div class="work fict klark authork titled nfant"><br>
+2010: Одиссея два / Артур Кларк<br>
+2010: Odyssey Two / Arthur Clarke, 1982<br><br>
+</div>
+<div class="work fict klark authork titled nfant"><br>
+2061: Одиссея три / Артур Кларк<br>
+2061: Odyssey Three / Arthur Clarke, 1987<br><br>
+</div>
+<div class="work fict klark authork titlet nfant"><br>
+3001: Последняя одиссея / Артур Кларк<br>
+3001: The Final Odyssey / Arthur Clarke, 1997<br><br>
+</div>
+
+<!-- Крайтон, Майкл -->
+<div class="work fict krajton authork titlesh nfant"><br>
+Штамм "Андромеда" / Майкл Крайтон<br>
+The Andromeda Strain / Michael Crichton, 1969<br><br>
+</div>
+<div class="work fict krajton authork titles nfant"><br>
+Сфера / Майкл Крайтон<br>
+Sphere / Michael Crichton, 1987<br><br>
+</div>
+<div class="work fict krajton authork titlep nfant"><br>
+Парк Юрского периода / Майкл Крайтон<br>
+Jurassic Park / Michael Crichton, 1990<br><br>
+</div>
+<div class="work fict krajton authork titlez nfant"><br>
+Затерянный мир / Майкл Крайтон<br>
+The Lost World / Michael Crichton, 1995<br><br>
+</div>
+
+<!-- Кэмпбелл, Джон -->
+<div class="work fict authork titlek fant donef goodf"><br>
+Кто здесь? / Джон Кэмпбелл<br>
+Who Goes There? / John Campbell, 1938<br>
+</div>
+<div class="work fict authork titlel nfant"><br>
+Лунный ад / Джон Кэмпбелл<br>
+The Moon Is Hell! / John Campbell, 1950<br><br>
+</div>
+
+<!-- Лавкрафт, Говард Филлипс -->
+<div class="work fict lavkrafrt authorl titlez fant horror donef goodf"><br>
+Заброшенный дом / Говард Филлипс Лавкрафт<br>
+The Shunned House / Howard Phillips Lovecraft, 1924<br>
+</div>
+<div class="work fict lavkrafrt authorl titlets fant horror"><br>
+Цвет из иных миров / Говард Филлипс Лавкрафт<br>
+The Colour Out of Space / Howard Phillips Lovecraft, 1927<br><br>
+</div>
+<div class="work fict lavkrafrt authorl titlei fant horror"><br>
+История Чарльза Декстера Варда / Говард Филлипс Лавкрафт<br>
+The Case of Charles Dexter Ward / Howard Phillips Lovecraft, 1927<br><br>
+</div>
+<div class="work fict lavkrafrt authorl titlez fant horror unfinishedf"><br>
+Зов Ктулху / Говард Филлипс Лавкрафт<br>
+The Call of Cthulhu / Howard Phillips Lovecraft, 1928<br>
+</div>
+<div class="work fict lavkrafrt authorl titleh fant horror donef verygoodf"><br>
+Хребты Безумия / Говард Филлипс Лавкрафт<br>
+At the Mountains of Madness/ Howard Phillips Lovecraft, 1931<br>
+</div>
+<div class="work fict lavkrafrt authorl titlet fant horror"><br>
+Тень над Иннсмаутом / Говард Филлипс Лавкрафт<br>
+The Shadow over Innsmouth / Howard Phillips Lovecraft, 1931<br><br>
+</div>
+<div class="work fict lavkrafrt authorl titleo fant horror"><br>
+Обитающий во тьме / Говард Филлипс Лавкрафт<br>
+The Haunter of the Dark / Howard Phillips Lovecraft, 1935<br><br>
+</div>
+
+<!-- Лассвиц, Курд -->
+<div class="work fict authorl titlen nfant"><br>
+На двух планетах / Курд Лассвиц<br>
+Auf zwei Planeten / Kurd Laßwitz, 1897<br><br>
+</div>
+
+<!-- Лермонтов, Михаил Юрьевич -->
+<div class="work fict authorg titled drama unfinishedf"><br>
+Герой нашего времени / М.Ю. Лермонтов, 1840<br><br>
+</div>
+
+<!-- Лондон, Джек -->
+<div class="work fict london authorl titlem prikl"><br>
+Морской волк / Джек Лондон<br>
+The Sea-Wolf / Jack London, 1904<br><br>
+</div>
+<div class="work fict london authorl titlel prikl donef goodf"><br>
+Любовь к жизни / Джек Лондон<br>
+Love of Life / Jack London, 1905<br>
+</div>
+<div class="work fict london authorl titleb prikl unfinishedf"><br>
+Белый клык / Джек Лондон<br>
+White Fang / Jack London, 1906<br>
+</div>
+<div class="work fict london authorl titlezh fant antiutop"><br>
+Железня пята / Джек Лондон<br>
+The Iron Heel / Jack London, 1908<br><br>
+</div>
+<div class="work fict london authorl titlem drama"><br>
+Мартин Иден / Джек Лондон<br>
+Martin Eden / Jack London, 1909<br><br>
+</div>
+<div class="work fict london authorl titlea fant postapok"><br>
+Алая чума / Джек Лондон<br>
+The Scarlet Plague / Jack London, 1912<br><br>
+</div>
+<div class="work fict london authorl titlel fant utop"><br>
+Лунная долина / Джек Лондон<br>
+The Valley of the Moon / Jack London, 1913<br><br>
+</div>
+<div class="work fict london authorl titlem prikl"><br>
+Мятеж на «Эльсиноре» / Джек Лондон<br>
+The Mutiny of the Elsinore / Jack London, 1914<br><br>
+</div>
+<div class="work fict london authorl titles prikl"><br>
+Сердца трёх / Джек Лондон<br>
+Hearts of Three / Jack London, 1920<br><br>
+</div>
+
+<!-- Макото, Юкимура -->
+<div class="work fict authorm titleb manga istorf prikl unfinishedf"><br>
+Сага о Винланде / Юкимура Макото<br>
+Vinland Saga / 幸村 誠, 2005-... (14巻)<br>
+</div>
+
+<!-- Марриет, Фредерик -->
+<div class="work fict authorm titlek prikl fant"><br>
+Корабль-призрак / Фредерик Марриет<br>
+The Fantom Ship / Frederick Marryat, 1839<br><br>
+</div>
+
+<!-- Масаши, Кишимото -->
+<div class="work fict authorm titleb manga prikl fant unfinishedf lovef"><br>
+Наруто / Кишимото Масаши<br>
+Naruto / 三浦 建太郎, 1999-2014 (72巻)<br>
+</div>
+
+<!-- Мейчен, Артур -->
+<div class="work fict authorm titlev fant horror"><br>
+Великий бог Пан / Артур Мейчен<br>
+The Great God Pan / Arthur Machen, 1894<br><br>
+</div>
+<div class="work fict authorm titlet fant horror"><br>
+Три самозванца / Артур Мейчен<br>
+The Three Impostors / Arthur Machen, 1895<br><br>
+</div>
+<div class="work fict authorm titleh fant horror"><br>
+Холм грёз / Артур Мейчен<br>
+The Hill of Dreams / Arthur Machen, 1897<br><br>
+</div>
+<div class="work fict authorm titleb fant horror"><br>
+Белые люди / Артур Мейчен<br>
+The White People / Arthur Machen, 1899<br><br>
+</div>
+
+<!-- Мерль, Робер -->
+<div class="work fict authorm titles fant postapok"><br>
+Мальвиль / Робер Мерль<br>
+Malevil / Robert Merle, 1972<br><br>
+</div>
+
+<!-- Метьюрин, Чарлз -->
+<div class="work fict authorm titlem istorf gotrom"><br>
+Мельмот Скиталец / Чарлз Метьюрин<br>
+Melmoth the Wanderer / Charles Maturin, 1820<br><br>
+</div>
+
+<!-- Миллер, Уолтер -->
+<div class="work fict authorm titles nfant postapok"><br>
+Страсти по Лейбовицу / Уолтер Миллер<br>
+A Canticle for Leibowitz / Walter Miller, Jr., 1960<br><br>
+</div>
+
+<!-- Миура, Кэнтаро -->
+<div class="work fict authorm titleb manga fant unfinishedf"><br>
+Берсерк / Кэнтаро Миура<br>
+Berserk / 三浦 建太郎, 1990-... (37巻)<br>
+</div>
+
+<!-- Миядзаки, Хаяо -->
+<div class="work fict authorm titlen manga fant postapok unfinishedf lovef"><br>
+Навсикая из Долины ветров/ Хаяо Миядзаки<br>
+風の谷のナウシカ / 宮崎 駿, 1982-1994 (7巻)<br>
+</div>
+
+<!-- Носов, Николай Николаевич -->
+<div class="work fict authorn titlep skazka"><br>
+Приключения Незнайки и его друзей / Н.Н. Носов, 1954<br><br>
+</div>
+<div class="work fict authorn titlen skazka utop"><br>
+Незнайка в Солнечном городе / Н.Н. Носов, 1958<br><br>
+</div>
+<div class="work fict authorn titlen skazka antiutop"><br>
+Незнайка на Луне / Н.Н. Носов, 1965<br><br>
+</div>
+
+<!-- Оба, Цугуми; Обата, Такеши -->
+<div class="work fict authoro titleg manga detekt fant wonderfulf lovef"><br>
+Тетрадь смерти / Цугуми Оба, Такеши Обата<br>
+Death Note / 奥 浩哉, 2003-2006 (12巻)<br>
+</div>
+
+<!-- Оку, Хироя -->
+<div class="work fict authoro titleg manga fant unfinishedf"><br>
+Гантз / Хироя Оку<br>
+Gantz / 奥 浩哉, 2000-2013 (37巻)<br>
+</div>
+
+<!-- Оруэлл, Джордж -->
+<div class="work fict oruell authoro titled sotsrom"><br>
+Дочь священника / Джордж Оруэлл<br>
+A Clergyman’s Daughter / George Orwell, 1934<br><br>
+</div>
+<div class="work fict oruell authoro titled sotsrom"><br>
+Да здравствует фикус! / Джордж Оруэлл<br>
+Keep the Aspidistra Flying / George Orwell, 1936<br><br>
+</div>
+<div class="work fict oruell authoro titled sotsrom"><br>
+Глотнуть воздуха / Джордж Оруэлл<br>
+Coming Up for Air / George Orwell, 1939<br><br>
+</div>
+<div class="work fict oruell authoro titles pritcha antiutop donef wonderfulf lovef"><br>
+Скотный двор / Джордж Оруэлл<br>
+Animal Farm / George Orwell, 1945<br>
+</div>
+<div class="work fict oruell authoro titlet antiutop donef wonderfulf lovef"><br>
+1984 / Джордж Оруэлл<br>
+1984 / George Orwell, 1949<br>
+</div>
+
+<!-- Отомо, Кацухиро -->
+<div class="work fict authoro titlea manga nfant postapok verygoodf"><br>
+Акира / Кацухиро Отомо<br>
+Akira / 大友 克洋, 1982-1990 (6巻)<br>
+</div>
+
+
+
+
+
+
+<!-- Паланик, Чак -->
+<div class="work fict authorp titleb kontrkul unfinishedf"><br>
+Бойцовский клуб / Чак Паланик<br>
+Fight Club / Chuck Palahniuk, 1996<br>
+</div>
+
+<!-- Пастернак, Борис Леонидович -->
+<div class="work fict authorp titled istorf vojna revol"><br>
+Доктор Живаго / Б.Л. Пастернак, 1957<br><br>
+</div>
+
+<!-- Пикуль, Валентин -->
+<div class="work fict authorp titlef istorf unfinishedf"><br>
+Фаворит / Валентин Пикуль, 1979, 1982<br>
+</div>
+
+<!-- Ремарк, Эрих Мария -->
+<div class="work fict authorr titlen drama vojna unfinishedf"><br>
+На Западном фронте без перемен / Эрих Мария Ремарк<br>
+Im Westen nichts Neues / Erich Maria Remarque, 1929<br>
+</div>
+<div class="work fict authorr titlev drama vojna"><br>
+Возвращение / Эрих Мария Ремарк<br>
+Der Weg zurück / Erich Maria Remarque, 1931<br><br>
+</div>
+<div class="work fict authorr titlet drama vojna"><br>
+Три товарища / Эрих Мария Ремарк<br>
+Drei Kameraden / Erich Maria Remarque, 1936<br><br>
+</div>
+<div class="work fict authorr titlev drama vojna"><br>
+Возлюби ближнего своего / Эрих Мария Ремарк<br>
+Liebe Deinen Nächsten / Erich Maria Remarque, 1941<br><br>
+</div>
+<div class="work fict authorr titlet drama vojna"><br>
+Триумфальная арка / Эрих Мария Ремарк<br>
+Arc de Triomphe / Erich Maria Remarque, 1945<br><br>
+</div>
+<div class="work fict authorr titlei drama vojna"><br>
+Искра жизни / Эрих Мария Ремарк<br>
+Der Funke Leben / Erich Maria Remarque, 1952<br><br>
+</div>
+<div class="work fict authorr titlev drama vojna"><br>
+Время жить и время умирать / Эрих Мария Ремарк<br>
+Zeit zu leben und Zeit zu sterben / Erich Maria Remarque, 1954<br><br>
+</div>
+<div class="work fict authorr titlech drama vojna"><br>
+Чёрный обелиск / Эрих Мария Ремарк<br>
+Der schwarze Obelisk / Erich Maria Remarque, 1956<br><br>
+</div>
+<div class="work fict authorr titlezh drama vojna"><br>
+Жизнь взаймы / Эрих Мария Ремарк<br>
+Ночь в Лиссабоне / Erich Maria Remarque, 1959<br><br>
+</div>
+<div class="work fict authorr titlen drama vojna"><br>
+Ночь в Лиссабоне / Эрих Мария Ремарк<br>
+Die Nacht von Lissabon / Erich Maria Remarque, 1961<br><br>
+</div>
+
+<!-- Робертсон, Морган -->
+<div class="work fict authorr titlet fant"><br>
+Тщетность / Морган Робетсон<br>
+Futility / Morgan Robertson, 1898<br><br>
+</div>
+
+<!-- Робида, Альбер -->
+<div class="work fict authorr titled nfant"><br>
+XX век / Альбер Робида<br>
+Le Vingtième siècle / Albert Robida, 1883<br><br>
+</div>
+<div class="work fict authorr titlev nfant"><br>
+Война в XX веке / Альбер Робида<br>
+La Guerre au vingtième siècle / Albert Robida, 1887<br><br>
+</div>
+<div class="work fict authorr titled nfant"><br>
+XX век. Электрическая жизнь / Альбер Робида<br>
+Le Vingtième siècle. La vie électrique / Albert Robida, 1890<br><br>
+</div>
+
+<!-- Роулинг, Джоан -->
+<div class="work fict authorr titleg fant donef goodf"><br>
+Гарри Поттер и Философский камень / Джоан Роулинг<br>
+Harry Potter and the Philosopher's Stone / Joanne Rowling, 1997<br>
+</div>
+<div class="work fict authorr titleg fant donef goodf"><br>
+Гарри Поттер и Тайная комната / Джоан Роулинг<br>
+Harry Potter and the Chamber of Secrets / Joanne Rowling, 1998<br>
+</div>
+<div class="work fict authorr titleg fant"><br>
+Гарри Поттер и узник Азкабана / Джоан Роулинг<br>
+Harry Potter and the Prisoner of Azkaban / Joanne Rowling, 1999<br><br>
+</div>
+<div class="work fict authorr titleg fant"><br>
+Гарри Поттер и Кубок огня / Джоан Роулинг<br>
+Harry Potter and the Goblet of Fire / Joanne Rowling, 2000<br><br>
+</div>
+<div class="work fict authorr titleg fant"><br>
+Гарри Поттер и Орден Феникса / Джоан Роулинг<br>
+Harry Potter and the Order of the Phoenix / Joanne Rowling, 2003<br><br>
+</div>
+<div class="work fict authorr titleg fant"><br>
+Гарри Поттер и Принц-полукровка / Джоан Роулинг<br>
+Harry Potter and the Half-Blood Prince / Joanne Rowling, 2005<br><br>
+</div>
+<div class="work fict authorr titleg fant"><br>
+Гарри Поттер и Дары Смерти / Джоан Роулинг<br>
+Harry Potter and the Deathly Hallows / Joanne Rowling, 2007<br><br>
+</div>
+
+<!-- Рыбаков, Анатолий Наумович -->
+<div class="work fict authorr titlek prikl detekt"><br>
+Кортик / А.Н. Рыбаков, 1948<br><br>
+</div>
+<div class="work fict authorr titleb prikl detekt"><br>
+Бронзовая птица / А.Н. Рыбаков, 1956<br><br>
+</div>
+<div class="work fict authorr titlev prikl detekt"><br>
+Выстрел / А.Н. Рыбаков, 1975<br><br>
+</div>
+<div class="work fict authorr titled drama vojna"><br>
+Дети Арбата / А.Н. Рыбаков, 1987<br><br>
+</div>
+<div class="work fict authorr titled drama vojna"><br>
+Тридцать пятый и другие годы / А.Н. Рыбаков, 1988<br><br>
+</div>
+<div class="work fict authorr titled drama vojna"><br>
+Страх / А.Н. Рыбаков, 1990<br><br>
+</div>
+<div class="work fict authorr titled drama vojna"><br>
+Прах и пепел / А.Н. Рыбаков, 1994<br><br>
+</div>
+
+<!-- Сабатини, Рафаэль -->
+<div class="work fict authors titleo prikl"><br>
+Одиссея капитана Блада / Рафаэль Сабатини<br>
+Captain Blood: His Odyssey / Rafael Sabatini, 1922<br><br>
+</div>
+<div class="work fict authors titleh prikl"><br>
+Хроника капитана Блада / Рафаэль Сабатини<br>
+Captain Blood Returns / Rafael Sabatini, 1931<br><br>
+</div>
+<div class="work fict authors titleu prikl"><br>
+Удачи капитана Блада / Рафаэль Сабатини<br>
+The Fortunes of Captain Blood / Rafael Sabatini, 1936<br><br>
+</div>
+
+<!-- Самура, Хироаки -->
+<div class="work fict authors titlek manga fant unfinishedf lovef"><br>
+Клинок бессмертного / Хироаки Самура<br>
+無限の住人 / 沙村 広明, 1993-2012 (30巻)<br>
+</div>
+
+
+
+
+
+
+<!-- Селби, Хьюберт -->
+<div class="work fict authors titler kontrkul"><br>
+Реквием по мечте / Хьюберт Селби<br>
+Requiem for a Dream / Hubert Selby Jr., 1978<br><br>
+</div>
+
+<!-- Сенкевич, Генрик -->
+<div class="work fict senkevich authors titleo istorf"><br>
+Огнём и мечом / Генрик Сенкевич<br>
+Ogniem i mieczem / Henryk Sienkiewicz, 1884<br><br>
+</div>
+<div class="work fict senkevich authors titlep istorf"><br>
+Потоп / Генрик Сенкевич<br>
+Potop / Henryk Sienkiewicz, 1886<br><br>
+</div>
+<div class="work fict senkevich authors titlep istorf"><br>
+Пан Володыёвский / Генрик Сенкевич<br>
+Pan Wołodyjowski / Henryk Sienkiewicz, 1888<br><br>
+</div>
+<div class="work fict senkevich authors titleb istorf"><br>
+Без догмата / Генрик Сенкевич<br>
+Bez dogmatu / Henryk Sienkiewicz, 1890<br><br>
+</div>
+<div class="work fict senkevich authors titles istorf"><br>
+Семья Поланецких / Генрик Сенкевич<br>
+Rodzina Połanieckich / Henryk Sienkiewicz, 1894<br><br>
+</div>
+<div class="work fict senkevich authors titlek istorf"><br>
+Камо грядеши / Генрик Сенкевич<br>
+Quo vadis / Henryk Sienkiewicz, 1896<br><br>
+</div>
+<div class="work fict senkevich authors titlek istorf unfinishedf"><br>
+Крестоносцы / Генрик Сенкевич<br>
+Krzyżacy / Henryk Sienkiewicz, 1900<br>
+</div>
+<div class="work fict senkevich authors titleo istorf"><br>
+Омуты / Генрик Сенкевич<br>
+Wiry / Henryk Sienkiewicz, 1910<br><br>
+</div>
+<div class="work fict senkevich authors titlek istorf"><br>
+Легионы / Генрик Сенкевич<br>
+Legiony / Henryk Sienkiewicz, 1914<br><br>
+</div>
+
+<!-- Сент-Экзюпери, Антуан де -->
+<div class="work fict authors titler skazka unfinishedf"><br>
+Маленький принц / Антуан де Сент-Экзюпери<br>
+Le Petit Prince / Antoine de Saint-Exupéry, 1943<br>
+</div>
+
+<!-- Сервантес, Мигель де -->
+<div class="work fict authors titleh istorf prikl satira"><br>
+Хитроумный идальго Дон Кихот Ламанчский / Мигель де Сервантес<br>
+El ingenioso hidalgo Don Quijote de la Mancha / Miguel de Cervantes, 1605, 1615<br><br>
+</div>
+
+<!-- Смоллетт, Тобайас -->
+<div class="work fict authors titlep prikl"><br>
+Приключения Родерика Рэндома / Тобайас Смоллетт<br>
+The Adventures of Roderick Random / Tobias Smollett, 1748<br><br>
+</div>
+<div class="work fict authors titlep prikl"><br>
+Приключения Перигрина Пикля / Тобайас Смоллетт<br>
+The Adventures of Peregrine Pickle / Tobias Smollett, 1751<br><br>
+</div>
+<div class="work fict authors titlep prikl"><br>
+Приключения графа Фердинанда Фэтома / Тобайас Смоллетт<br>
+The Adventures of Ferdinand Count Fathom / Tobias Smollett, 1753<br><br>
+</div>
+<div class="work fict authors titlezh prikl"><br>
+Жизнь и приключения сэра Ланселота Гривза / Тобайас Смоллетт<br>
+The Life and Adventures of Sir Launcelot Greaves / Tobias Smollett, 1762<br><br>
+</div>
+<div class="work fict authors titlep prikl"><br>
+Путешествие Хамфри Клинкера / Тобайас Смоллетт<br>
+The Expedition of Humphry Clinker / Tobias Smollett, 1771<br><br>
+</div>
+
+<!-- Стейнбек, Джон -->
+<div class="work fict authors titleg drama"><br>
+Гроздья гнева / Джон Стейнбек<br>
+The Grapes of Wrath / John Steinbeck, 1939<br><br>
+</div>
+
+<!-- Стерлинг, Брюс -->
+<div class="work fict authors titles nfant kiberp"><br>
+Схизматрица / Брюс Стерлинг<br>
+Schismatrix / Bruce Sterling, 1985<br><br>
+</div>
+
+<!-- Стивенсон, Роберт Льюис -->
+<div class="work fict stivenson authors titleo prikl donef wonderfulf lovef"><br>
+Остров сокровищ / Роберт Льюис Стивенсон<br>
+Treasure Island / Robert Lewis Stevenson, 1883<br>
+</div>
+<div class="work fict stivenson authors titlep prikl"><br>
+Принц Отто / Роберт Льюис Стивенсон<br>
+Prince Otto / Robert Lewis Stevenson, 1885<br><br>
+</div>
+<div class="work fict stivenson authors titles fant donef goodf"><br>
+Странная история доктора Джекила и мистера Хайда / Роберт Льюис Стивенсон<br>
+Strange Case of Dr. Jekyll and Mr. Hyde / Robert Lewis Stevenson, 1886<br>
+</div>
+<div class="work fict stivenson authors titles prikl donef goodf"><br>
+Похищенный / Роберт Льюис Стивенсон<br>
+Kidnapped / Robert Lewis Stevenson, 1886<br>
+</div>
+<div class="work fict stivenson authors titlech prikl"><br>
+Чёрная стрела / Роберт Льюис Стивенсон<br>
+The Black Arrow: A Tale of the Two Roses / Robert Lewis Stevenson, 1888<br><br>
+</div>
+<div class="work fict stivenson authors titlev prikl"><br>
+Владетель Балантрэ / Роберт Льюис Стивенсон<br>
+The Master of Ballantrae / Robert Lewis Stevenson, 1889<br><br>
+</div>
+<div class="work fict stivenson authors titlen prikl"><br>
+Несусветный багаж / Роберт Льюис Стивенсон<br>
+The Wrong Box / Robert Lewis Stevenson, 1889<br><br>
+</div>
+<div class="work fict stivenson authors titlep prikl donef verygoodf"><br>
+Потерпевшие кораблекрушение / Роберт Льюис Стивенсон<br>
+The Wrecker / Robert Lewis Stevenson, 1892<br>
+</div>
+<div class="work fict stivenson authors titlek prikl"><br>
+Катриона/ Роберт Льюис Стивенсон<br>
+Catriona / Robert Lewis Stevenson, 1893<br><br>
+</div>
+<div class="work fict stivenson authors titleo prikl"><br>
+Отлив / Роберт Льюис Стивенсон<br>
+The Ebb-Tide / Robert Lewis Stevenson, 1894<br><br>
+</div>
+<div class="work fict stivenson authors titles prikl unfinishedf"><br>
+Сент-Ив. Приключения французского узника в Англии / Роберт Льюис Стивенсон<br>
+St. Ives: Being The Adventures of a French Prisoner in England / Robert Lewis Stevenson, 1897<br>
+</div>
+
+<!-- Стругацкие Аркадий Натанович и Борис Натанович -->
+<div class="work fict authors titles nfant"><br>
+Страна багровых туч / А.Н. Стругацкий, Б.Н. Стругацкий, 1959<br><br>
+</div>
+<div class="work fict authors titlei nfant"><br>
+Извне / А.Н. Стругацкий, Б.Н. Стругацкий, 1960<br><br>
+</div>
+<div class="work fict authors titlep nfant"><br>
+Путь на Амальтею / А.Н. Стругацкий, Б.Н. Стругацкий, 1960<br><br>
+</div>
+<div class="work fict authors titlep nfant utopia"><br>
+Полдень, XXII век / А.Н. Стругацкий, Б.Н. Стругацкий, 1961<br><br>
+</div>
+<div class="work fict authors titles nfant"><br>
+Стажёры / А.Н. Стругацкий, Б.Н. Стругацкий, 1962<br><br>
+</div>
+<div class="work fict authors titlep nfant"><br>
+Попытка к бегству / А.Н. Стругацкий, Б.Н. Стругацкий, 1962<br><br>
+</div>
+<div class="work fict authors titled nfant"><br>
+Далёкая Радуга / А.Н. Стругацкий, Б.Н. Стругацкий, 1964<br><br>
+</div>
+<div class="work fict authors titlet nfant donef verygoodf"><br>
+Трудно быть богом / А.Н. Стругацкий, Б.Н. Стругацкий, 1964<br>
+</div>
+<div class="work fict authors titlep fant satira"><br>
+Понедельник начинается в субботу / А.Н. Стругацкий, Б.Н. Стругацкий, 1965<br><br>
+</div>
+<div class="work fict authors titleh nfant"><br>
+Хищные вещи века / А.Н. Стругацкий, Б.Н. Стругацкий, 1965<br><br>
+</div>
+<div class="work fict authors titleu nfant"><br>
+Улитка на склоне / А.Н. Стругацкий, Б.Н. Стругацкий, 1966 (публ. 1988)<br><br>
+</div>
+<div class="work fict authors titleg nfant"><br>
+Гадкие лебеди / А.Н. Стругацкий, Б.Н. Стругацкий, 1967 (публ. 1987)<br><br>
+</div>
+<div class="work fict authors titlev nfant satira"><br>
+Второе нашествие марсиан / А.Н. Стругацкий, Б.Н. Стругацкий, 1967<br><br>
+</div>
+<div class="work fict authors titles nfant satira"><br>
+Сказка о Тройке / А.Н. Стругацкий, Б.Н. Стругацкий, 1968<br><br>
+</div>
+<div class="work fict authors titleo nfant antiutop donef wonderfulf lovef"><br>
+Обитаемый остров / А.Н. Стругацкий, Б.Н. Стругацкий, 1969<br>
+</div>
+<div class="work fict authors titleo fant detekt donef verygoodf"><br>
+Отель "У Погибшего Альпиниста" / А.Н. Стругацкий, Б.Н. Стругацкий, 1970<br>
+</div>
+<div class="work fict authors titleg nfant"><br>
+Малыш / А.Н. Стругацкий, Б.Н. Стругацкий, 1971<br><br>
+</div>
+<div class="work fict authors titlep nfant donef wonderfulf lovef"><br>
+Пикник на обочине / А.Н. Стругацкий, Б.Н. Стругацкий, 1972<br>
+</div>
+<div class="work fict authors titleg nfant"><br>
+Град обреченный / А.Н. Стругацкий, Б.Н. Стругацкий, 1972 (публ. 1989)<br><br>
+</div>
+<div class="work fict authors titlep nfant"><br>
+Парень из преисподней / А.Н. Стругацкий, Б.Н. Стругацкий, 1973<br><br>
+</div>
+<div class="work fict authors titlez nfant"><br>
+За миллиард лет до конца света / А.Н. Стругацкий, Б.Н. Стругацкий, 1976<br><br>
+</div>
+<div class="work fict authors titleg nfant detekt"><br>
+Жук в муравейнике / А.Н. Стругацкий, Б.Н. Стругацкий, 1979<br><br>
+</div>
+<div class="work fict authors titleg nfant"><br>
+Хромая судьба / А.Н. Стругацкий, Б.Н. Стругацкий, 1982 (публ. 1989)<br><br>
+</div>
+<div class="work fict authors titleg nfant"><br>
+Волны гасят ветер / А.Н. Стругацкий, Б.Н. Стругацкий, 1986<br><br>
+</div>
+<div class="work fict authors titleg fant"><br>
+Отягощённые злом, или Сорок лет спустя / А.Н. Стругацкий, Б.Н. Стругацкий, 1988<br><br>
+</div>
+
+<!-- Сэлинджер, Джером Дэвид -->
+<div class="work fict authoru titlen kontrkul"><br>
+Над пропастью во ржи / Джером Дэвид Сэлинджер<br>
+The Catcher in the Rye / Jerome David Salinger, 1951<br><br>
+</div>
+
+<!-- Твен, Марк -->
+<div class="work fict tven authort titlep prikl donef goodf"><br>
+Приключения Тома Сойера / Марк Твен<br>
+The Adventures of Tom Sawyer / Mark Twain, 1876<br>
+</div>
+<div class="work fict tven authort titlep prikl donef verygoodf"><br>
+Принц и нищий / Марк Твен<br>
+The Prince and the Pauper / Mark Twain, 1881<br>
+</div>
+<div class="work fict tven authort titlep prikl donef verygoodf"><br>
+Приключения Гекльберри Финна / Марк Твен<br>
+The Adventures of Huckleberry Finn / Mark Twain, 1884<br>
+</div>
+<div class="work fict tven authort titleja satira sotsrom donef wonderfulf lovef"><br>
+Янки из Коннектикута при дворе короля Артура / Марк Твен<br>
+A Connecticut Yankee in King Arthur’s Court / Mark Twain, 1889<br>
+</div>
+
+<!-- Толкин, Джон Рональд Руэл -->
+<div class="work fict authort titleh fant skazka unfinishedf"><br>
+Хоббит, или Туда и обратно / Джон Рональд Руэл Толкин<br>
+The Hobbit, or There and Back Again / John Ronald Reuel Tolkien, 1937<br>
+</div>
+<div class="work fict authort titleh fant neverf"><br>
+Братство кольца / Джон Рональд Руэл Толкин<br>
+The Fellowship of the Ring / John Ronald Reuel Tolkien, 1954<br>
+</div>
+<div class="work fict authort titleh fant"><br>
+Две крепости / Джон Рональд Руэл Толкин<br>
+The Two Towers / John Ronald Reuel Tolkien, 1954<br><br>
+</div>
+<div class="work fict authort titleh fant"><br>
+Возвращение короля / Джон Рональд Руэл Толкин<br>
+The Return of the King / John Ronald Reuel Tolkien, 1955<br><br>
+</div>
+
+<!-- Толстой, Лев Николаевич -->
+<div class="work fict authort titled biogr drama unfinishedf"><br>
+Детство / Л.Н. Толстой, 1852<br>
+</div>
+<div class="work fict authort titleo biogr drama unfinishedf"><br>
+Отрочество / Л.Н. Толстой, 1854<br>
+</div>
+<div class="work fict authort titleju biogr drama unfinishedf"><br>
+Юность / Л.Н. Толстой, 1857<br>
+</div>
+<div class="work fict authort titles vojna istorf unfinishedf"><br>
+Севастопольские рассказы / Л.Н. Толстой, 1855<br>
+</div>
+<div class="work fict authort titlek istorf"><br>
+Казаки / Л.Н. Толстой, 1863<br><br>
+</div>
+<div class="work fict authort titlev vojna istorf"><br>
+Война и мир / Л.Н. Толстой, 1869<br><br>
+</div>
+<div class="work fict authort titlea drama"><br>
+Анна Каренина / Л.Н. Толстой, 1877<br><br>
+</div>
+<div class="work fict authort titlev istorf"><br>
+Воскресение / Л.Н. Толстой, 1899<br><br>
+</div>
+
+<!-- Торо, Генри Дэвид -->
+<div class="work fict authort titleu prikl sotsrom"><br>
+Уолден, или Жизнь в лесу / Генри Дэвид Торо<br>
+Walden, or Life in the Woods / Henry David Thoreau, 1854<br><br>
+</div>
+
+<!-- Уайлд, Оскар -->
+<div class="work fict authoru titlep fant drama sotsrom"><br>
+Портрет Дориана Грея / Оскар Уайлд<br>
+The Picture of Dorian Gray / Oscar Wilde, 1890<br><br>
+</div>
+
+<!-- Уиндэм, Джон -->
+<div class="work fict authoru titled fant postapok"><br>
+День триффидов / Джон Уиндэм<br>
+The Day of the Triffids / John Wyndham, 1951<br><br>
+</div>
+
+<!-- Уэлш, Ирвин -->
+<div class="work fict authoru titlen kontrkul unfinishedf"><br>
+На игле / Ирвин Уэлш<br>
+Trainspotting / Irvine Welsh, 1993<br>
+</div>
+
+<!-- Фицджеральд, Фрэнсис Скотт -->
+<div class="work fict authorf titlev drama"><br>
+По эту сторону рая / Фрэнсис Скотт Фицджеральд<br>
+This Side of Paradise / Francis Scott Fitzgerald, 1920<br><br>
+</div>
+<div class="work fict authorf titlev drama"><br>
+Прекрасные и проклятые / Фрэнсис Скотт Фицджеральд<br>
+The Beautiful and Damned / Francis Scott Fitzgerald, 1922<br><br>
+</div>
+<div class="work fict authorf titlev drama fant unfinishedf"><br>
+Загадочная история Бенджамина Баттона / Фрэнсис Скотт Фицджеральд<br>
+The Curious Case of Benjamin Button / Francis Scott Fitzgerald, 1922<br>
+</div>
+<div class="work fict authorf titlev drama"><br>
+Великий Гэтсби / Фрэнсис Скотт Фицджеральд<br>
+The Great Gatsby / Francis Scott Fitzgerald, 1925<br><br>
+</div>
+<div class="work fict authorf titlev drama"><br>
+Ночь нежна / Фрэнсис Скотт Фицджеральд<br>
+Tender Is the Night / Francis Scott Fitzgerald, 1934<br><br>
+</div>
+<div class="work fict authorf titlev drama"><br>
+Последний магнат / Фрэнсис Скотт Фицджеральд<br>
+The Last Tycoon / Francis Scott Fitzgerald, 1940 (не закончен)<br><br>
+</div>
+
+<!-- Флобер, Гюстав -->
+<div class="work fict authorf titleg sotsrom"><br>
+Госпожа Бовари / Гюстав Флобер<br>
+Madame Bovary / Gustave Flaubert, 1856<br><br>
+</div>
+<div class="work fict authorf titles istorf"><br>
+Саламбо / Гюстав Флобер<br>
+Salammbô / Gustave Flaubert, 1862<br><br>
+</div>
+<div class="work fict authorf titleg sotsrom"><br>
+Воспитание чувств / Гюстав Флобер<br>
+L'Éducation sentimentale / Gustave Flaubert, 1869<br><br>
+</div>
+<div class="work fict authorf titleb sotsrom"><br>
+Бувар и Пекюше / Гюстав Флобер<br>
+Bouvard et Pécuchet / Gustave Flaubert, 1881 (не закончен)<br><br>
+</div>
+
+<!-- Фудзисава, Тоору -->
+<div class="work fict authors titlek manga drama prikl wonderfulf lovef"><br>
+Великий Учитель Онидзука / Тоору Фудзисава<br>
+Great Teacher Onizuka / 藤沢 とおる, 1997-2002 (25巻)<br>
+</div>
+
+<!-- Хаггард, Генри -->
+<div class="work fict authorh titlek prikl"><br>
+Копи царя Соломона / Генри Хаггард<br>
+King Solomon's Mines / Henry Haggard, 1885<br><br>
+</div>
+<div class="work fict authorh titlek prikl"><br>
+Она / Генри Хаггард<br>
+She: A History of Adventure / Henry Haggard, 1887<br><br>
+</div>
+<div class="work fict authorh titlek prikl istorf"><br>
+Клеопатра / Генри Хаггард<br>
+Cleopatra / Henry Haggard, 1889<br><br>
+</div>
+<div class="work fict authorh titlek prikl istorf"><br>
+Дочь Монтесумы / Генри Хаггард<br>
+Montezuma's Daughter / Henry Haggard, 18??<br><br>
+</div>
+
+<!-- Хайнлайн, Роберт -->
+<div class="work fict authorh titlez nfant"><br>
+Звёздный десант / Роберт Хайнлайн<br>
+Starship Troopers / Robert Heinlein, 1959<br><br>
+</div>
+<div class="work fict authorh titlech nfant"><br>
+Чужак в чужой стране / Роберт Хайнлайн<br>
+Stranger in a Strange Land / Robert Heinlein, 1961<br><br>
+</div>
+<div class="work fict authorh titlel nfant"><br>
+Луна – суровая хозяйка / Роберт Хайнлайн<br>
+The Moon Is a Harsh Mistress / Robert Heinlein, 1966<br><br>
+</div>
+
+<!-- Хаксли, Олдос -->
+<div class="work fict haksli authorh titlek sotsrom"><br>
+Контрапункт / Олдос Хаксли<br>
+Point Counter Point / Aldous Huxley, 1928<br><br>
+</div>
+<div class="work fict haksli authorh titled antiutop donef wonderfulf lovef"><br>
+Дивный новый мир / Олдос Хаксли<br>
+Brave New World / Aldous Huxley, 1932<br>
+</div>
+<div class="work fict haksli authorh titleo sotsrom utop"><br>
+Остров / Олдос Хаксли<br>
+Island / Aldous Huxley, 1962<br><br>
+</div>
+
+<!-- Хирому, Аракава -->
+<div class="work fict authors titlek manga drama fant"><br>
+Цельнометаллический алхимик / Аракава Хирому<br>
+鋼の錬金術師 / 荒川 弘, 2001-2010 (27巻)<br><br>
+</div>
+
+<!-- Ходжсон, Уильям -->
+<div class="work fict authorh titled fant"><br>
+Дом в пограничье / Уильям Ходжсон<br>
+The House on the Borderland / William Hodgson, 1908<br><br>
+</div>
+<div class="work fict authorh titlen fant"><br>
+Ночная Земля / Уильям Ходжсон<br>
+The Night Land / William Hodgson, 1912<br><br>
+</div>
+
+<!-- Цтому, Нихэй] -->
+<div class="work fict authorn titleb manga kiberp"><br>
+Виновен! / Цутому Нихэй<br>
+Blame! / 弐瓶 勉, 1998-2003 (10巻)<br><br>
+</div>
+
+
+
+
+<!-- Чапек, Карел -->
+<div class="work fict authorch titler piesa fant"><br>
+Россумские Универсальные Роботы / Карел Чапек<br>
+Rossumovi univerzální roboti / Karel Čapek, 1920<br><br>
+</div>
+<div class="work fict authorch titlef satira antiutop donef boringf"><br>
+Фабрика абсолюта / Карел Чапек<br>
+Továrna na Absolutno / Karel Čapek, 1922<br>
+</div>
+<div class="work fict authorch titlek fant"><br>
+Кракатит / Карел Чапек<br>
+Krakatit / Karel Čapek, 1924<br><br>
+</div>
+<div class="work fict authorch titlev satira antiutop donef goodf"><br>
+Война с саламандрами / Карел Чапек<br>
+Válka s mloky / Karel Čapek, 1936<br>
+</div>
+
+<!-- Шелли, Мэри -->
+<div class="work fict authorsh titlef fant gotrom"><br>
+Франкенштейн, или Современный Прометей / Мэри Шелли<br>
+Frankenstein, or The Modern Prometheus / Mary Shelley, 1818<br><br>
+</div>
+<div class="work fict authorsh titlep fant gotrom"><br>
+Последний человек / Мэри Шелли<br>
+The Last Man / Mary Shelley, 1826<br><br>
+</div>
+
+<!-- Шолохов, Михаил Александрович -->
+<div class="work fict authorsh titlet istorf vojna revol unfinishedf"><br>
+Тихий Дон / М.А. Шолохов, 1932, 1940<br>
+</div>
+<div class="work fict authorsh titlep istorf unfinishedf"><br>
+Поднятая целина / М.А. Шолохов, 1932, 1959<br>
+</div>
+<div class="work fict authorsh titles vojna donef verygoodf"><br>
+Судьба человека / М.А. Шолохов, 1957<br>
+</div>
+
+<!-- Штильмарк, Роберт Александрович -->
+<div class="work fict authorsh titlen istorf prikl"><br>
+Наследник из Калькутты / Р.А. Штильмарк. - Москва: Детская литература, 1958. - 840 с.<br><br>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 </div>
