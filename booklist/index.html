@@ -1,765 +1,79 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-		<title>Список книг</title>
-		<link rel="shortcut icon" href="../favicon.ico">
-		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
-		<link rel="stylesheet" type="text/css" href="css/demo.css" />
-		<link rel="stylesheet" type="text/css" href="css/icons.css" />
-		<link rel="stylesheet" type="text/css" href="css/component.css" />
-		<script src="js/modernizr.custom.js"></script>
-		
-	<style>
 
-body {
-background: #f5f5f5; /* Цвет фона */
-color: #000000; /* Цвет текста */
-font-family: Arial, Consolas, Sans; /* Общий тип шрифт документа */
-font-size: 0.6em; /* Размер шрифта в пикселях */
-margin: 0px; /* Убираем отступы */
-overflow: scroll; /* Постоянно отображать полосу прокрутки */
-}
+<head>
 
-div.main {
-width: 50%;
-height: 200%;
-text-align1: center;
-float1: left;
-background: #f5f5f5; /* Цвет фона */
-box-shadow1: 0 2px 0 0 #000000, 0 0 2px 0 #000000;
-}
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-div.title {
-width: 50%;
-background: #ff0000; /* Цвет фона */
-color: #ffffff; /* Цвет текста */
-border-top: 0px solid #ff0000;
-border-bottom: 0px solid #ff0000;
-border-left: 0px solid #ff0000;
-border-right: 0px solid #ff0000;
-margin-bottom: 2px;
-text-transform: uppercase;
-font-weight: 700;
-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-}
+<title>Список книг</title>
 
-div.keylist {
-width: 100%;
-background: #ffffff; /* Цвет фона */
-border-top: 0px solid #ff0000;
-border-bottom: 0px solid #ff0000;
-border-left: 0px solid #ff0000;
-border-right: 0px solid #ff0000;
-}
-
-div.readnow {
-border: 1px dashed #999999;
-}
-
-div.unfinished, div.unfinishedf {
-color: #999999; /* Цвет недочитанной книги */
-background1: #cccccc;
-border1: 1px dashed #999999;
-border-top: 1px solid #999999;
-border-bottom: 1px solid #999999;
-border-left: 20px solid #999999;
-border-right: 20px solid #999999;
-position: absolute;
-margin-left1: 0px;
-}
-
-div.never, div.neverf {
-text-decoration1: line-through;  /* Зачёркивает надпись */
-color: #cc00cc; /* Цвет непонравившейся книги */
-background1: #cc99cc;
-border-top: 1px solid #cc00cc;
-border-bottom: 1px solid #cc00cc;
-border-left: 20px solid #cc00cc;
-border-right: 20px solid #cc00cc;
-position: absolute;
-margin-left: 0px;
-}
-
-div.boring, div.boringf {
-text-decoration: line-through1;  /* Зачёркивает надпись */
-color: #3399ff; /* Цвет неинтересной книги */
-background1: #ccccff; /* #99ff66 Цвет интересной книги */
-border-top: 1px solid #3399ff;
-border-bottom: 1px solid #3399ff;
-border-left: 20px solid #3399ff;
-border-right: 20px solid #3399ff;
-position: absolute;
-margin-left: 0px;
-}
-
-div.good, div.goodf {
-text-decoration: line-through1;  /* Зачёркивает надпись */
-color: #00cc00; /*  #00cc00 Цвет интересной книги */
-background1: #99ff66; /* #99ff66 Цвет интересной книги */
-border-top: 1px solid #00cc00;
-border-bottom: 1px solid #00cc00;
-border-left: 20px solid #00cc00;
-border-right: 20px solid #00cc00;
-position: absolute;
-margin-left: 0px;
-}
-
-div.verygood, div.verygoodf {
-text-decoration: line-through1;  /* Зачёркивает надпись */
-color: #ffcc00; /* #ffcc00 Цвет очень интересной книги */
-background1: #ffff99;
-border-top: 1px solid #ffcc00;
-border-bottom: 1px solid #ffcc00;
-border-left: 20px solid #ffcc00;
-border-right: 20px solid #ffcc00;
-position: absolute;
-margin-left: 0px;
-}
-
-div.wonderful, div.wonderfulf {
-text-decoration-line: line-through1;  /* Зачёркивает надпись */
-color: #ff0000; /* Цвет захватывающей книги */
-background1: #ff9999;
-border-top: 1px solid #ff0000;
-border-bottom: 1px solid #ff0000;
-border-left: 20px solid #ff0000;
-border-right: 20px solid #ff0000;
-position: absolute;
-margin-left: 0px;
-}
-
-div.love1:before {
-content: "\2764 "; /* Добавляем перед элементом списка символ в юникоде */
-color: #ff0000; /* Цвет символа */
-font-size: 90%; /* Размер шрифта */
-}
-
-div.notinbibl1:before {
-content: "\2718"; /* Добавляем перед элементом списка символ в юникоде */
-color: #000000; /* Цвет символа */
-font-size: 90%; /* Размер шрифта */
-}
-
-div.inbibl1:before {
-content: "\2714"; /* Добавляем перед элементом списка символ в юникоде */
-color: #000000; /* Цвет символа */
-font-size: 90%; /* Размер шрифта */
-}
-
-div.unfinished:after, div.unfinishedf:after {
-content: "?"; /* Добавляем перед элементом списка символ в юникоде */
-color: #999999; /* Цвет символа */
-font-size: 100%; /* Размер шрифта */
-float: right;
-margin-right: 4px;
-}
-
-div.never:after, div.neverf:after {
-content: "1"; /* Добавляем перед элементом списка символ в юникоде */
-color: #cc00cc; /* Цвет символа */
-font-size: 100%; /* Размер шрифта */
-float: right;
-margin-right: 4px;
-}
-
-div.boring:after, div.boringf:after {
-content: "2"; /* Добавляем перед элементом списка символ в юникоде */
-color: #3399ff; /* Цвет символа */
-font-size: 100%; /* Размер шрифта */
-float: right;
-margin-right: 4px;
-}
-
-div.good:after, div.goodf:after {
-content: "3"; /* Добавляем перед элементом списка символ в юникоде */
-color: #00cc00; /* Цвет символа */
-font-size: 100%; /* Размер шрифта */
-float: right;
-margin-right: 4px;
-}
-
-div.verygood:after, div.verygoodf:after {
-content: "4"; /* Добавляем перед элементом списка символ в юникоде */
-color: #ffcc00; /* Цвет символа */
-font-size: 100%; /* Размер шрифта */
-float: right;
-margin-right: 4px;
-}
-
-div.wonderful:after, div.wonderfulf:after {
-content: "5"; /* Добавляем перед элементом списка символ в юникоде */
-color: #ff0000; /* Цвет символа */
-font-size: 100%; /* Размер шрифта */
-float: right;
-margin-right: 4px;
-}
-
-div.love:after, div.lovef:after {
-content: "\2764"; /* Добавляем перед элементом списка символ в юникоде */
-color: #ff0000; /* Цвет символа */
-font-size: 90%; /* Размер шрифта */
-float: right;
-margin-right: 4px;
-}
-
-div.notinbibl:before {
-content: "\2718"; /* Добавляем перед элементом списка символ в юникоде */
-color: #999999; /* Цвет символа */
-font-size: 90%; /* Размер шрифта */
-float: left;
-margin-left: 4px;
-}
-
-div.inbibl:before {
-content: "\2714"; /* Добавляем перед элементом списка символ в юникоде */
-color: #999999; /* Цвет символа */
-font-size: 90%; /* Размер шрифта */
-float: left;
-margin-left: 4px;
-}
-
-hr {
-border: 0;
-border-bottom: 2px solid #999999;
-margin: 0px;
-}
-
-a:link { 
-text-decoration: none; /* Убирает подчеркивание для ссылок */
-color: #000000; /* Цвет ссылки */
-}
-a:visited {
-text-decoration: none;
-color: #000000; /* Цвет ссылки */
-}
-a:hover {
-text-decoration: none; /* Делает ссылку подчеркнутой при наведении на нее курсора */
-color: #ff0000; /* Цвет ссылки */
-}
-a:active {
-text-decoration: none;
-color: #000000; /* Цвет ссылки */
-}
-
-.sortlist {
-display: block;
-float: center;
-list-style: none;
-margin: 4px;
-}
-
-.sortlist1 {
-display: block;
-float: right;
-list-style: none;
-margin: 4px;
-width: 4%;
-}
-
-.sortlist2 {
-display: block;
-float: right;
-list-style: none;
-margin: 4px;
-width: 4%;
-}
-
-
-
-.sortlist3 {
-display1: block;
-float1: left;
-list-style1: none;
-margin1: 4px;
-width1: 130px;
-}
-
-
-
-.sortlist4 {
-display: block;
-float: right;
-list-style: none;
-margin: 4px;
-width: 130px;
-}
-
-#works,
-.works {
-width1: 50%;
-margin1: 30px auto;
-}
-
-#filter div.sortbutton {
-display1: block;
-float1: left;
-list-style: none;
-margin: 1px;
-padding: 1px;
-}
-
-#filter .sortbutton a {
-background: #ffffff;
-box-shadow1: 0 0 2px rgba(0, 0, 0, 0.2);
-border-radius1: 6px;
-border-top: 1px solid #999999;
-border-bottom: 1px solid #999999;
-border-left: 1px solid #999999;
-border-right: 1px solid #999999;
-display: block;
-color: #666666;
-transition: all 0.4s ease;
-}
-
-#filter .sortbutton a:hover,
-#filter .sortbutton a.current {
-background: #999999;
-color: #ffffff;
-}
-
-.namelist {
-background: #999999;
-color: #ffffff;
-width: 100%;
-text-align: center;
-text-transform: uppercase;
-
-}
-
-.work {
-background: #ffffff;
-width: 100%;
-float1: left;
-margin-top: 2px;
-margin-bottom: 2px;
-padding-left1: 10px;
-padding-right1: 10px;
-text-align: center;
-border-top: 1px solid #999999;
-border-bottom: 1px solid #999999;
-border-left: 1px solid #999999;
-border-right: 1px solid #999999;
-position: relative;
-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-}
-
-.work div {
-position: relative;
-}
-
-.genretitle {
-background: #999999;
-color: #ffffff;
-width: 100%;
-text-align: center;
-text-transform: uppercase;
-display: none;
-}
-
-
-#message {
-            display: none;
-            width: 300px;
-            background: #EEEEEE;
-            border-radius: 6px;
-            box-shadow: 3px 3px 5px #B1B1B1;
-            padding: .1em 1.5em;
-            margin: .5em 0;
-        }
-
-#toggle-link {
-            text-decoration: none;
-            border-bottom: 1px dashed;
-        }
-
-
-		
-
-		
-		
-.demo {
-    max-width: 50%;
-    padding: 1px;
-    margin: 4px auto;
-    background-color: #F5F5F5;
-    border: 1px solid #E3E3E3;
-    border-radius: 4px;
-    text-align: center;
-}
-/* аЁбаИаЛаИ аМаОаДаАаЛбаНаОаГаО аОаКаНаА */
-.modal-header h2 {
-    color: #555;  
-    font-size: 2em;
-    font-weight: normal;
-    line-height: 1;    
-    margin: 0;
-}
-/* аКаНаОаПаКаА аЗаАаКбббаИб аОаКаНаА */
-.modal .btno-close {
-    color: #aaa;
-    cursor: pointer;
-    font-size: 30px;
-    text-decoration: none;
-    position: absolute;
-    right: 5px;
-    top: 0;
-}
-.modal .btno-close:hover {
-    color: red;
-}
-/* баЛаОаЙ аЗаАбаЕаМаНаЕаНаИб */
-.modal-wrap:before {
-    content: "";
-    display: none;
-    background: rgba(0, 0, 0, .3);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 101;
-}
-.modal-overlay {
-    bottom: 0;
-    display: none;
-    left: 0;
-    position: fixed;
-    right: 0;
-    top: 0;
-    z-index: 102;
-}
-/* аАаКбаИаВаАбаИб баЛаОб аЗаАбаЕаМаНаЕаНаИб аИ аМаОаДаАаЛбаНаОаГаО аБаЛаОаКаА */
-.modal-open:checked ~ .modal-wrap:before,
-.modal-open:checked ~ .modal-wrap .modal-overlay {
-    display: block;
-}
-.modal-open:checked ~ .modal-wrap .modal-dialog {
-    -webkit-transform: translate(-50%, 0);
-    -ms-transform: translate(-50%, 0);
-    -o-transform: translate(-50%, 0);
-    transform: translate(-50%, 0);
-    top: 20%;
-}
-/* баЛаЕаМаЕаНбб аМаОаДаАаЛбаНаОаГаО аОаКаНаА */
-.modal-dialog {
-    background: #fefefe;
-    border: none;
-    border-radius: 0px;
-    position: fixed;
-    width: 50%;
-    max-width1: 500px;
-    left: 50%;
-    top: -100%;
-    -webkit-box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);
-    -moz-box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);
-    box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);
-    -webkit-transform: translate(-50%, -500%);
-    -ms-transform: translate(-50%, -500%);
-    -o-transform: translate(-50%, -500%);
-    transform: translate(-50%, -500%);
-    -webkit-transition: -webkit-transform 0.5s ease-out;
-    -moz-transition: -moz-transform 0.5s ease-out;
-    -o-transition: -o-transform 0.5s ease-out;
-    transition: transform 0.5s ease-out;
-    z-index: 103;
-}
-.modal-body {
-  padding: 20px;
-}
-.modal-body p {
-    margin: 0;
-}
-.modal-header,
-.modal-footer {
-    padding: 20px 20px;
-}
-.modal-header {
-    border-bottom: #eaeaea solid 1px;
-}
-.modal-header h2 {
-    font-size: 1.5em;
-    margin: 0;
-}
-.modal-footer {
-    border-top: #eaeaea solid 1px;
-    text-align: right;
-}
-/* аАаДаАаПбаИаВаНбаЕ аКаАббаИаНаКаИ аВ аМаОаДаАаЛбаНаОаМ аБаЛаОаКаЕ */
-.modal-body img { 
-    max-width: 100%;
-    height: auto;
-}
-/* аКаНаОаПаКаИ */
-.btno {
-    background: #ffffff;
-    border: #999999 solid 1px;
-    border-radius1: 3px;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 1.5em;
-    padding: 1px 2px;
-    text-decoration: none;
-    text-align: center;
-    min-width1: 60px;
-    position: relative;
-}
-.btno:hover, .btno:focus {
-    background: #f2f2f2;
-}
-.btno-primary {
-    background: #428bca;
-    border-color: #357ebd;
-    color: #fff;
-}
-.btno-primary:hover{
-    background: #66A1D3;
-}
-
-/* а­аЛаЕаМаЕаНбб баОбаМб аКаОаНбаАаКбаОаВ */
-.textbox{
-    height:45px;
-    width:100%;
-    border-radius:3px;
-    border:rgba(0,0,0,.3) 1px solid;
-    box-sizing:border-box;
-    font-size:14px; 
-    padding:8px;
-    margin-bottom:20px;  
-}
-.message:focus,
-.textbox:focus{
-    outline:none;
-    border:rgba(24,149,215,1) 1px solid;
-    color:rgba(24,149,215,1);
-}
-.message{
-	background: rgba(255, 255, 255, 0.4); 
-    width:100%;
-    height: 120px;
-    border:rgba(0,0,0,.3) 1px solid;
-    box-sizing:border-box;
-    -moz-border-radius: 3px;
-    font-size:14px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px; 
-    display:block;
-    padding:10px;
-    margin-bottom:20px;
-    overflow:hidden;
-}
-/* аКаНаОаПаКаА "аОбаПбаАаВаИбб" баОбаМб */
-.btno-form{
-    width:100%;
-    height:45px;  
-    border:rgba(0,0,0,.2) 1px solid;
-    box-sizing:border-box;
-    background: #dedede;
-    color:#555;
-    transition:background .4s;
-}
-/* ааЗаМаЕаНаЕаНаИаЕ баОаНаА аКаНаОаПаКаИ аПбаИ аНаАаВаЕаДаЕаНаИаИ */
-.btno-form:hover{
-    background: #f2f2f2;
-}
-		
-		
-	
-	
-
-
-</style>
+<link rel="shortcut icon" href="../favicon.ico">
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="css/demo.css" />
+<link rel="stylesheet" type="text/css" href="css/icons.css" />
+<link rel="stylesheet" type="text/css" href="css/component.css" />
 
 <script src="js/jquery-2.1.3.min.js"></script>
-
 <script src="js/isotope.pkgd.min.js"></script>
-
-<script>
-$(document).ready(function() {
- 
-        $('.works').isotope({
-            itemSelector: '.work'
-        });
- 
-        $('#filter a').click(function(){
- 
-            $('#filter a').removeClass('current');
-            $(this).addClass('current');
-            var selector = $(this).attr('data-filter');
- 
-            $('.works').isotope({
-                filter: selector,
-                animationOptions: {
-                    duration: 1000,
-                    easing: 'easeOutQuart',
-                    queue: false
-                }
-            });
-            return false;
- 
-        });
- 
-});
-</script>
-
-<script>
-
-        $(function() {
-            $('#toggle-link').click(function(e) {
-                var $message = $('#message');
-                
-                if ($message.css('display') != 'block') {
-                    $message.show();
-                    
-                    var firstClick = true;
-                    $(document).bind('click.myEvent', function(e) {
-                        if (!firstClick && $(e.target).closest('#message').length == 0) {
-                            $message.hide();
-                            $(document).unbind('click.myEvent');
-                        }
-                        firstClick = false;
-                    });
-                }
-                
-                e.preventDefault();
-            });
-        });
-    
-</script>
+<script src="js/workblocks.js"></script>
+<script src="js/modernizr1.custom.js"></script>
+<script src="js/totopmove.js"></script>
 
 </head>
 
 <body>
 
-<center>
+<div id="st-container" class="st-container">
 
-<div class="title"><br>
-Список книг<br><br>
+<!-- 	
+example menus 
+these menus will be on top of the push wrapper
+-->
+
+
+<!-- content push wrapper -->
+<div class="st-pusher">
+<!-- 	
+example menus 
+these menus will be under the push wrapper
+-->
+
+<div class="st-content"><!-- this is the wrapper for the content -->
+<div class="st-content-inner"><!-- extra div for emulating position:fixed of the menu -->
+
+<!-- Главный div main -->
+<div class="main clearfix">
+
+<!-- Заголовок "Список книг" -->
+<header>
+<div class="title" id="totop">
+<br>
+Список книг и дневник чтения<br>
+<br>
 </div>
-</div>
-		<div id="st-container" class="st-container">
-			<!-- 	
-				example menus 
-				these menus will be on top of the push wrapper
-			-->
-			<nav class="st-menu st-effect-1" id="menu-1">
-				<h2>Жанры non-fiction</h2>
-				<ul>
-				
-<li id="filter" class="clearfix"><a href="" class="current btn" data-filter="*">Весь список</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".nonfict">Все книги (118)</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".bisn">бизнес</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".biogr">биография</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".biol">биология</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".dizajn">дизайн</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".zhurn">журналистика</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".igra">игры</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".istor">история</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".liter">литература</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".menedzh">менеджмент</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".polit">политика</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".psih">психология</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".publ">публицистика</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".samor">саморазвитие</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".semant">семантика</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".sots">социология</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".statist">статистика</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".triz">ТРИЗ</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".fizik">физика</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".filos">философия</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".ekonom">экономика</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".bezper">Без перевода</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".done">Прочитанные (18)</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".unfinished">Недочитанные (7)</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".never"><font color="#cc00cc">Оценка 1</font></a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".boring"><font color="#3399ff">Оценка 2</font></a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".good"><font color="#00cc00">Оценка 3</font></a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".verygood"><font color="#ffcc00">Оценка 4</font></a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".wonderful"><font color="#ff0000">Оценка 5</font></a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".love">Любимые книги</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".keylist">Обозначения</a></li><br>
-			
-				</ul>
-			</nav>
-			
-			
-						<nav class="st-menu st-effect-2" id="menu-2">
-				<h2>Жанры fiction</h2>
-				<ul>
-				
-<li id="filter" class="clearfix"><a href="" class="current btn" data-filter="*">Весь список</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".fict">Все книги (279)</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".antiutop">антиутопия</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".vojna">война</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".gotrom">готический роман</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".detekt">детектив</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".drama">драма</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".istorf">история</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".kiberp">киберпанк</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".kontrkul">контркультура</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".nfant">науч.фантастика</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".prikl">приключения</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".pritcha">притча</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".postapok">постапокалипсис</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".manga">манга</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".piesa">пьеса</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".revol">революция</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".satira">сатира</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".skazka">сказка</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".sotsrom">социальный роман</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".utop">утопия</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".fant">фантастика</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".horror">хоррор</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".bezperf">Без перевода</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".donef">Прочитанные (45)</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".unfinishedf">Недочитанные (35)</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".neverf"><font color="#cc00cc">Оценка 1</font></a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".boringf"><font color="#3399ff">Оценка 2</font></a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".goodf"><font color="#00cc00">Оценка 3</font></a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".verygoodf"><font color="#ffcc00">Оценка 4</font></a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".wonderfulf"><font color="#ff0000">Оценка 5</font></a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".lovef">Любимые книги</a></li>
-<li id="filter" class="clearfix"><a href="" class="btn" data-filter=".keylist">Обозначения</a></li><br>
-			
-				</ul>
-			</nav>
-			
-			
-			
-			
-			
-			
-			
+</header>
 
-			<!-- content push wrapper -->
-			<div class="st-pusher">
-				<!-- 	
-					example menus 
-					these menus will be under the push wrapper
-				-->
-
-
-				<div class="st-content"><!-- this is the wrapper for the content -->
-					<div class="st-content-inner"><!-- extra div for emulating position:fixed of the menu -->
-
-						<div class="main clearfix">
-							<div id="st-trigger-effects">
-								<button data-effect="st-effect-1">Жанры нехудожественных книг</button>
-							</div>
-							<div id="st-trigger-effects">
-								<button data-effect="st-effect-2">Жанры художественных книг</button>
-							</div>
-
-<!--
-<a href="#" id="toggle-link">Show message</a>
-<div id="message">
-    <p>Some text.</p>
-</div> -->
-							
-							
+<!-- Главный div works -->
 <div class="works clearfix">
+
+<!-- Кнопка "Выбор жанров" -->
+<div class="work linkmain genretitle nonfict bisn biogr biol dizajn zhurn igra istor lingv liter menedzh polit psih publ samor sots triz fizik filos ekonom bezper      genretitlef fict antiutop">
+<div id="filter" class="linkmainone clearfix"><a href="" class="btn" data-filter=".linkmain"><br>= Выбор жанров =<br><br></a></div>
+</div>
+
+<!-- Кнопка "Нехудожественные книги" -->
+<div class="work linkmain genretitle nonfict bisn biogr biol dizajn zhurn igra istor lingv liter menedzh polit psih publ samor sots triz fizik filos ekonom bezper done">
+<div id="filter" class="linkmaintwo clearfix"><a href="" class="btn" data-filter=".genretitle"><br>= Нехудожественные жанры =<br><br></a></div>
+</div>
+
+<!-- Кнопка "Художественные книги" -->
+<div class="work linkmain genretitlef fict antiutop">
+<div id="filter" class="linkmainthree clearfix"><a href="" class="btn" data-filter=".genretitlef"><br>= Художественные жанры =<br><br></a></div>
+</div>
+
 
 <!-- Условные обозначения и статистика -->
 <div class="work keylist">
@@ -773,78 +87,177 @@ $(document).ready(function() {
 <div class="wonderful">книга, от которой в восторге и которая должна быть прочитана каждым</div>
 <div class="love1"> - книга, которая является любимой и которую надо обязательно прочесть ещё раз</div>
 <div class="notinbibl1"> - книга, которой нет в моей электронной библиотеке</div>
-<div class="inbibl1"> - книга, которая есть в моей электронной библиотеке</div><br>
+<div class="inbibl1"> - книга, которая есть в моей электронной библиотеке</div>
+<div>1234 - дата полного издания книги</div>
+<div>[5678] - дата написания книги</div>
+<div>Прочитано нехудожественных книг: 18</div>
+<div>Прочитано художественных книг: 43</div>
+<br>
 </div>
 
-<div class="work nonfict">
+<!-- = Нехудожественные книги = -->
+<div>
 
-<div class="namelist"><br>
-= Нехудожественные книги =<br><br>
+<!--<div class="work nonfict">
+<div class="namelist">
+<br>
+= Нехудожественные книги =<br>
+<br>
 </div>
+</div> -->
+
+<!-- = Меню нехудожественные книги = -->
+<div>
+
+<div class="work genretitle nonfict">
+<div id="filter" class="linkgen clearfix"><a href="#totop" class="btn" data-filter=".nonfict"><br>- Все нехудожественные книги (143) -<br><br></a></div>
 </div>
 
 <div class="work genretitle bisn">
-<br>- Бизнес -<br><br>
+<div id="filter" class="linkgen clearfix"><a href="#totop" class="btn" data-filter=".bisn"><br>- Бизнес -<br><br></a></div>
 </div>
 
 <div class="work genretitle biogr">
-<br>- Биография -<br><br>
+<div id="filter" class="linkgen clearfix"><a href="#totop" class="btn" data-filter=".biogr"><br>- Биография -<br><br></a></div>
 </div>
 
 <div class="work genretitle biol">
-<br>- Биология -<br><br>
+<div id="filter" class="linkgen clearfix"><a href="#totop" class="btn" data-filter=".biol"><br>- Биология -<br><br></a></div>
 </div>
 
 <div class="work genretitle dizajn">
-<br>- Дизайн -<br><br>
+<div id="filter" class="linkgen clearfix"><a href="#totop" class="btn" data-filter=".dizajn"><br>- Дизайн -<br><br></a></div>
+</div>
+
+<div class="work genretitle zhurn">
+<div id="filter" class="linkgen clearfix"><a href="#totop" class="btn" data-filter=".zhurn"><br>- Журналистика -<br><br></a></div>
+</div>
+
+<div class="work genretitle igra">
+<div id="filter" class="linkgen clearfix"><a href="#totop" class="btn" data-filter=".igra"><br>- Игры -<br><br></a></div>
+</div>
+
+<div class="work genretitle istor">
+<div id="filter" class="linkgen clearfix"><a href="#totop" class="btn" data-filter=".istor"><br>- История -<br><br></a></div>
+</div>
+
+<div class="work genretitle lingv">
+<div id="filter" class="linkgen clearfix"><a href="#totop" class="btn" data-filter=".lingv"><br>- Лингвистика -<br><br></a></div>
+</div>
+
+<div class="work genretitle liter">
+<div id="filter" class="linkgen clearfix"><a href="#totop" class="btn" data-filter=".liter"><br>- Литература -<br><br></a></div>
+</div>
+
+<div class="work genretitle menedzh">
+<div id="filter" class="linkgen clearfix"><a href="#totop" class="btn" data-filter=".menedzh"><br>- Менеджмент -<br><br></a></div>
+</div>
+
+<div class="work genretitle polit">
+<div id="filter" class="linkgen clearfix"><a href="#totop" class="btn" data-filter=".polit"><br>- Политика -<br><br></a></div>
 </div>
 
 <div class="work genretitle psih">
-<br>- Психология -<br><br>
+<div id="filter" class="linkgen clearfix"><a href="#totop" class="btn" data-filter=".psih"><br>- Психология -<br><br></a></div>
 </div>
+
+<div class="work genretitle publ">
+<div id="filter" class="linkgen clearfix"><a href="#totop" class="btn" data-filter=".publ"><br>- Публицистика -<br><br></a></div>
+</div>
+
+<div class="work genretitle samor">
+<div id="filter" class="linkgen clearfix"><a href="#totop" class="btn" data-filter=".samor"><br>- Саморазвитие -<br><br></a></div>
+</div>
+
+<div class="work genretitle sots">
+<div id="filter" class="linkgen clearfix"><a href="#totop" class="btn" data-filter=".sots"><br>- Социология -<br><br></a></div>
+</div>
+
+<div class="work genretitle triz">
+<div id="filter" class="linkgen clearfix"><a href="#totop" class="btn" data-filter=".triz"><br>- Теория решения изобретательских задач -<br><br></a></div>
+</div>
+
+<div class="work genretitle fizik">
+<div id="filter" class="linkgen clearfix"><a href="#totop" class="btn" data-filter=".fizik"><br>- Физика -<br><br></a></div>
+</div>
+
+<div class="work genretitle filos">
+<div id="filter" class="linkgen clearfix"><a href="#totop" class="btn" data-filter=".filos"><br>- Философия -<br><br></a></div>
+</div>
+
+<div class="work genretitle ekonom">
+<div id="filter" class="linkgen clearfix"><a href="#totop" class="btn" data-filter=".ekonom"><br>- Экономика -<br><br></a></div>
+</div>
+
+<div class="work genretitle bezper">
+<div id="filter" class="linkgen clearfix"><a href="#totop" class="btn" data-filter=".bezper"><br>- Без перевода на русский язык -<br><br></a></div>
+</div>
+
+<div class="work genretitle done">
+<div id="filter" class="linkgen clearfix"><a href="#totop" class="btn" data-filter=".done"><br>- Прочитанные книги (18) -<br><br></a></div>
+</div>
+
+<div class="work genretitle unfinished">
+<div id="filter" class="linkgen clearfix"><a href="#totop" class="btn" data-filter=".unfinished"><br>- Недочитанные книги (7) -<br><br></a></div>
+</div>
+
+<div class="work genretitle never">
+<div id="filter" class="linkgen linkgennever clearfix"><a href="#totop" class="btn" data-filter=".never"><br>- Оценка 1 -<br><br></a></div>
+</div>
+
+<div class="work genretitle boring">
+<div id="filter" class="linkgen clearfix"><a href="#totop" class="btn" data-filter=".boring"><br>- Оценка 2 -<br><br></a></div>
+</div>
+
+<div class="work genretitle good">
+<div id="filter" class="linkgen clearfix"><a href="#totop" class="btn" data-filter=".good"><br>- Оценка 3 -<br><br></a></div>
+</div>
+
+<div class="work genretitle verygood">
+<div id="filter" class="linkgen clearfix"><a href="#totop" class="btn" data-filter=".verygood"><br>- Оценка 4 -<br><br></a></div>
+</div>
+
+<div class="work wonderful genretitle">
+<div id="filter" class="linkgen clearfix"><a href="#totop" class="btn" data-filter=".wonderful"><br>- Оценка 5 -<br><br></a></div>
+</div>
+
+<div class="work genretitle love">
+<div id="filter" class="linkgen clearfix"><a href="#totop" class="btn" data-filter=".love"><br>- Любимые книги -<br><br></a></div>
+</div>
+
+<div class="work genretitle keylist">
+<div id="filter" class="linkgen clearfix"><a href="#totop" class="btn" data-filter=".keylist"><br>- Обозначения -<br><br></a></div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+<div class="work genretitlef fict">
+<div id="filter" class="linkgen clearfix"><a href="#totop" class="btn" data-filter=".fict"><br>- Все художественные книги -<br><br></a></div>
+</div>
+
+<div class="work genretitlef antiutop">
+<div id="filter" class="linkgen clearfix"><a href="" class="btn" data-filter=".antiutop"><br>- Антиутопия -<br><br></a></div>
+</div>
+
+
+
+
+
+
+
 
 <!-- Адлер, Альфред -->
 <div class="work nonfict authora titlen psih unfinished">
 <br>
 Наука жить / Альфред Адлер<br>
-The Science of Living / Alfred Adler, 1929 
-<a class="demo"><label class="btno1" for="modal-1" title="Стандартное модальное окно">[отзыв]</label></a><br>
+The Science of Living / Alfred Adler, 1929<br><br>
 </div>
-
-
-
-<div class="modal">
-  <input class="modal-open" id="modal-1" type="checkbox" hidden>
-  <div class="modal-wrap" aria-hidden="true" role="dialog">
-    <label class="modal-overlay" for="modal-1"></label>
-    <div class="modal-dialog">
-      <div class="modal-header">
-        <h2>Отзыв на книгу Ололоева Ололоя "Не сидеть мне на этом месте больше"</h2>
-        <label class="btno-close" for="modal-1" aria-hidden="true">×</label>
-      </div>
-      <div class="modal-body">
-        <p>Это всего лишь один небольшой пример :D</p>
-		<p>Это всего лишь один небольшой пример :D</p>
-		<p>Это всего лишь один небольшой пример :D</p>
-		<p>Это всего лишь один небольшой пример :D</p>
-		<p>Это всего лишь один небольшой пример :D</p>
-		<p>Это всего лишь один небольшой пример :D</p>
-		<p>Это всего лишь один небольшой пример :D</p>
-		<p>Это всего лишь один небольшой пример :D</p>
-		<p>Это всего лишь один небольшой пример :D</p>
-		<p>Это всего лишь один небольшой пример :D</p>
-		<p>Это всего лишь один небольшой пример :D</p>
-		<p>Это всего лишь один небольшой пример :D</p>
-      </div>
-      <div class="modal-footer">
-        <label class="btno btno-primary" for="modal-1">Закрыть</label>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
 <div class="work nonfict authora titlev psih">
 <br>
 Воспитание детей / Альфред Адлер<br>
@@ -875,13 +288,15 @@ Getting Things Done: The Art of Stress-Free Productivity / David Allen, 2001<br>
 </div>
 
 <!-- Альтшуллер, Генрих Саулович -->
-<div class="work nonfict authora titlen triz unfinished love forreadsum2015">
+<div class="work nonfict authora titlen triz unfinished">
 <br>
-Найти идею. Введение в теорию решения изобретательских задач / Г.С. Альтшуллер. - 2-е издание, 1991<br>
+Найти идею. Введение в теорию решения изобретательских задач<br>
+Генрих Саулович Альтшуллер. - 2-е издание, 1991<br><br>
 </div>
-<div class="work nonfict authora titlek triz samor done wonderful love">
+<div class="work nonfict authora titlek triz samor done wonderful">
 <br>
-Как стать гением. Жизненная стратегия творческой личности / Г.С. Альтшуллер, И.М. Верткин, 1994<br>
+Как стать гением. Жизненная стратегия творческой личности<br>
+Генрих Саулович Альтшуллер, Игорь Михайлович Верткин, 1994<br><br>
 </div>
 
 <!-- Аронсон, Эллиот-->
@@ -940,20 +355,26 @@ The Death of the West: How Dying Populations and Immigrant Invasions Imperil Our
 The Theory of the Leisure Class: An Economic Study of Institutions / Thorstein Veblen, 1899<br><br>
 </div>
 
+<!-- Вейсс, Франциск Родольф де -->
+<div class="work nonfict authorv titlen filos samor"><br>
+Нравственные основы жизни / Франциск Родольф де Вейсс<br>
+Principes philosophiques, politiques et moraux / François Rodolphe de Weiss, 1785<br><br>
+</div>
+
 <!-- Выготский, Лев Семёнович -->
 <div class="work nonfict authorv titlel psih"><br>
-Лекции по психологии / Л.С. Выготский, 1932<br><br>
+Лекции по психологии / Лев Семёнович Выготский, 1932<br><br>
 </div>
 <div class="work nonfict authorv titlem psih"><br>
-Мышление и речь / Л.С. Выготский, 1934<br><br>
+Мышление и речь / Лев Семёнович Выготский, 1934<br><br>
 </div>
 
 <!-- Гастев, Алексей Капитонович  -->
 <div class="work nonfict authorg titlek menedzh ekonom"><br>
-Как надо работать / А.К. Гастев, 1921<br><br>
+Как надо работать / Алексей Капитонович Гастев, 1921<br><br>
 </div>
 <div class="work nonfict authorg titlet menedzh ekonom"><br>
-Трудовые установки / А.К. Гастев, 1924<br><br>
+Трудовые установки / Алексей Капитонович Гастев, 1924<br><br>
 </div>
 
 <!-- Гейтс, Билл -->
@@ -964,12 +385,12 @@ Business @ the Speed of Thought / Bill Gates, 1999<br><br>
 
 <!-- Гранин, Даниил Александрович -->
 <div class="work nonfict authorg titleae biogr done good"><br>
-Эта странная жизнь / Д.А. Гранин. - Москва: Советская Россия, 1974. - 122 с.<br>
-(О биологе Александре Александровиче Любищеве)<br>
+Эта странная жизнь / Даниил Александрович Гранин. - Москва: Советская Россия, 1974. - 122 с.<br>
+(О биологе Александре Александровиче Любищеве)<br><br>
 </div>
 
 <!-- Грин, Роберт -->
-<div class="work nonfict authorg titles psih readnow forreadsum2015"><br>
+<div class="work nonfict authorg titles psih"><br>
 48 законов власти / Роберт Грин<br>
 The 48 Laws of Power / Robert Greene, 1998<br><br>
 </div>
@@ -977,15 +398,15 @@ The 48 Laws of Power / Robert Greene, 1998<br><br>
 <!-- Гитлер, Адольф -->
 <div class="work nonfict authorg titlem biogr publ unfinished"><br>
 Моя борьба / Адольф Гитлер<br>
-Mein Kampf / Adolf Hitler, 1925<br>
+Mein Kampf / Adolf Hitler, 1925<br><br>
 </div>
 
 <!-- Горький, Максим -->
 <div class="work nonfict authorg titlem publ unfinished"><br>
-Несвоевременные мысли / Максим Горький, 1918<br>
+Несвоевременные мысли / Максим Горький, 1918<br><br>
 </div>
 <div class="work nonfict authorg titlem publ done verygood"><br>
-О русском крестьянстве / Максим Горький, 1922<br>
+О русском крестьянстве / Максим Горький, 1922<br><br>
 </div>
 
 <!-- Дарвин, Чарльз -->
@@ -1049,7 +470,7 @@ The Blind Watchmaker: Why the Evidence of Evolution Reveals a Universe without D
 <!-- Зимбардо, Филип -->
 <div class="work nonfict authorz titlez psih done verygood"><br>
 Застенчивость / Филип Зимбардо<br>
-Shyness: What It Is, What to Do About It / Philip Zimbardo, 1990<br>
+Shyness: What It Is, What to Do About It / Philip Zimbardo, 1990<br><br>
 </div>
 <div class="work nonfict authorz titleo psih"><br>
 Объяснение контроля сознания. Экзотические и повседневные манипуляции сознанием / Филип Зимбардо<br>
@@ -1107,41 +528,41 @@ Thinking, Fast and Slow / Daniel Kahneman, 2011<br><br>
 </div>
 
 <!-- Карнеги, Дейл -->
-<div class="work nonfict authork titlek samor done wonderful love"><br>
+<div class="work nonfict authork titlek samor done wonderful"><br>
 Как вырабатывать уверенность в себе и влиять на людей, выступая публично / Дейл Карнеги<br>
-Public Speaking: A Practical Course for Business Men / Dale Carnegie, 1926<br>
+Public Speaking: A Practical Course for Business Men / Dale Carnegie, 1926<br><br>
 </div>
-<div class="work nonfict authork titlek samor done wonderful love"><br>
+<div class="work nonfict authork titlek samor done wonderful"><br>
 Как завоёвывать друзей и оказывать влияние на людей / Дейл Карнеги<br>
-How to Win Friends and Influence People / Dale Carnegie, 1936<br>
+How to Win Friends and Influence People / Dale Carnegie, 1936<br><br>
 </div>
-<div class="work nonfict authork titlek samor done wonderful love"><br>
+<div class="work nonfict authork titlek samor done wonderful"><br>
 Как перестать беспокоиться и начать жить / Дейл Карнеги<br>
-How to Stop Worrying and Start Living / Dale Carnegie, 1948<br>
+How to Stop Worrying and Start Living / Dale Carnegie, 1948<br><br>
 </div>
 
 <!-- Кийосаки, Роберт -->
 <div class="work nonfict authork titleb biogr bisn done verygood"><br>
 Богатый папа, Бедный папа / Роберт Кийосаки<br>
-Rich Dad, Poor Dad / Robert Kiyosaki, 1997<br>
+Rich Dad, Poor Dad / Robert Kiyosaki, 1997<br><br>
 </div>
 <div class="work nonfict authork titlek bisn done verygood"><br>
 Квадрант денежного потока / Роберт Кийосаки<br>
-Cashflow Quadrant / Robert Kiyosaki, 2000<br>
+Cashflow Quadrant / Robert Kiyosaki, 2000<br><br>
 </div>
-<div class="work nonfict authork titler bisn forreadsum2015"><br>
+<div class="work nonfict authork titler bisn"><br>
 Руководство по инвестированию / Роберт Кийосаки<br>
 Guide to Investing / Robert Kiyosaki, 2000<br><br>
 </div>
 
 <!-- Клейсон, Джордж -->
-<div class="work nonfict authork titles istor bisn done good"><br>
+<div class="work nonfict authork titles bisn istor done good"><br>
 Самый богатый человек в Вавилоне / Джордж Клейсон [советуют: Роберт Кийосаки]<br>
-The Richest Man in Babylon / George Clason, 1926<br>
+The Richest Man in Babylon / George Clason, 1926<br><br>
 </div>
 
 <!-- Кови, Стивен -->
-<div class="work nonfict authork titles samor forreadsum2015"><br>
+<div class="work nonfict authork titles samor"><br>
 7 навыков высокоэффективных людей / Стивен Кови<br>
 The 7 Habits of Highly Effective People / Stephen Covey, 1989<br><br>
 </div>
@@ -1149,7 +570,7 @@ The 7 Habits of Highly Effective People / Stephen Covey, 1989<br><br>
 <!-- Комацу, Наруми -->
 <div class="work nonfict authork titlei biogr done good"><br>
 Йошики / Наруми Комацу<br>
-YOSHIKI/佳樹 / 小松成美, 2009<br>
+YOSHIKI/佳樹 / 小松成美, 2009<br><br>
 </div>
 
 <!-- Кюстин, Астольф де -->
@@ -1239,41 +660,55 @@ Motivation and Personality / Abraham Maslow, 1954<br><br>
 <!-- Маяковский, Владимир Владимирович -->
 <div class="work nonfict authorm titleja biogr done verygood">
 <br>
-Я сам / В.В. Маяковский, 1922, 1928<br>
+Я сам<br>
+Владимир Владимирович Маяковский, 1922, 1928<br><br>
 </div>
 <div class="work nonfict authorm titleja liter">
 <br>
-Как писать стихи / В.В. Маяковский, 1926<br><br>
+Как писать стихи<br>
+Владимир Владимирович Маяковский, 1926<br><br>
 </div>
 
 <!-- Матюшин, Михаил Васильевич -->
 <div class="work nonfict authorm titles dizajn"><br>
-Справочник по цвету. Закономерность изменяемости цветовых сочетаний / М.В. Матюшин, 1932<br><br>
+Справочник по цвету. Закономерность изменяемости цветовых сочетаний<br>
+Михаил Васильевич Матюшин, 1932<br><br>
+</div>
+
+<!-- Мелье, Жан -->
+<div class="work nonfict authorv titlen filos samor"><br>
+Завещание / Жан Мелье<br>
+Le testament / Jean Meslier, 1864 [1729]<br><br>
 </div>
 
 <!-- Миура, Ясуюки -->
 <div class="work nonfict authorm titleg bisn igra unfinished"><br>
 Го и восточная бизнес-стратегия / Ясуюки Миура<br>
-Go: An Asian Paradigm for Business Strategy / Yasuyuki Miura, 1995<br>
+Go: An Asian Paradigm for Business Strategy / Yasuyuki Miura, 1995<br><br>
 </div>
 
 <!-- Монтень, Мишель де -->
-<div class="work nonfict authorm titleo filos"><br>
+<div class="work nonfict filos"><br>
 Опыты / Мишель де Монтень<br>
 Essais / Michel de Montaigne, 1580, 1588<br><br>
+</div>
+
+<!-- Мор, Томас -->
+<div class="work nonfict filos"><br>
+Утопия / Томас Мор<br>
+Utopia / Thomas More, 1516<br><br>
 </div>
 
 <!-- Моррис, Десмонд -->
 <div class="work nonfict authorm titleg biol done good"><br>
 Голая обезьяна / Десмонд Моррис<br>
-The Naked Ape: A Zoologist's Study of the Human Animal / Desmond Morris, 1967<br>
+The Naked Ape: A Zoologist's Study of the Human Animal / Desmond Morris, 1967<br><br>
 </div>
 <div class="work nonfict authorm titlel biol"><br>
 Людской зверинец / Десмонд Моррис<br>
 The Human Zoo / Desmond Morris, 1969<br><br>
 </div>
 
-<!-- Мор, Томас -->
 
 <!-- Папанек, Виктор -->
 <div class="work nonfict authorp titled dizajn"><br>
@@ -1330,8 +765,9 @@ Basic Public Speaking / Paul Soper, 1950<br><br>
 </div>
 
 <!-- Сороченко, Виктор -->
-<div class="work nonfict authors titleae polit psih zhurn done wonderful"><br>
-Энциклопедия методов пропаганды. Как нас обрабатывают СМИ, политики и реклама / Виктор Сороченко, 2002<br>
+<div class="work nonfict authors titleae polit zhurn done verygood"><br>
+Энциклопедия методов пропаганды. Как нас обрабатывают СМИ, политики и реклама<br>
+Виктор Сороченко, 2002<br><br>
 </div>
 
 <!-- Странк, Уильям -->
@@ -1366,16 +802,20 @@ De la démocratie en Amérique / Alexis de Tocqueville, 1835, 1840<br><br>
 
 <!-- Толстой, Лев Николаевич -->
 <div class="work nonfict authort titled filos samor"><br>
-Мысли мудрых людей на каждый день / Л.Н. Толстой, 1908<br><br>
+Мысли мудрых людей на каждый день<br>
+Лев Николаевич Толстой, 1908<br><br>
 </div>
 <div class="work nonfict authort titled filos samor"><br>
-Круг чтения / Л.Н. Толстой, 1908<br><br>
+Круг чтения<br>
+Лев Николаевич Толстой, 1908<br><br>
 </div>
 <div class="work nonfict authort titled filos samor"><br>
-На каждый день. Учение о жизни, изложенное в изречениях / Л.Н. Толстой, 1908<br><br>
+На каждый день. Учение о жизни, изложенное в изречениях<br>
+Лев Николаевич Толстой, 1908<br><br>
 </div>
 <div class="work nonfict authort titled filos samor"><br>
-Путь жизни / Л.Н. Толстой, 1910<br><br>
+Путь жизни<br>
+Лев Николаевич Толстой, 1910<br><br>
 </div>
 
 <!-- Торо, Генри Дэвид -->
@@ -1399,17 +839,17 @@ Life Without Principle / Henry David Thoreau, 1854<br><br>
 <!-- Уайатт, Джеймс -->
 <div class="work nonfict authorm titleg igra done wonderful"><br>
 Подземелья и драконы. Книга игрока (4-е издание) / Роб Хейнсо, Энди Коллинс, Джеймс Уайатт<br>
-Dungeons & Dragons: Player's Handbook (4th edition) / Rob Heinsoo, Andy Collins, James Wyatt, 2008<br>
+Dungeons & Dragons: Player's Handbook (4th edition) / Rob Heinsoo, Andy Collins, James Wyatt, 2008<br><br>
 </div>
 <!-- Уайатт, Джеймс -->
-<div class="work nonfict authorm titleg igra done wonderful"><br>
+<div class="work nonfict authorm titleg igra done verygood"><br>
 Подземелья и драконы. Руководство Мастера (4-е издание) / Джеймс Уайатт<br>
-Dungeons & Dragons: Dungeon Master's Guide (4th edition) / James Wyatt, 2008<br>
+Dungeons & Dragons: Dungeon Master's Guide (4th edition) / James Wyatt, 2008<br><br>
 </div>
 <!-- Уайатт, Джеймс -->
-<div class="work nonfict authorm titleg igra done wonderful"><br>
+<div class="work nonfict authorm titleg igra done verygood"><br>
 Подземелья и драконы. Бестиарий (4-е издание) / Майк Мёрлс, Стивен Шуберт, Джеймс Уайатт<br>
-Dungeons & Dragons: Monster Manual (4th edition) / Mike Mearls, Stephen Schubert, James Wyatt, 2008<br>
+Dungeons & Dragons: Monster Manual (4th edition) / Mike Mearls, Stephen Schubert, James Wyatt, 2008<br><br>
 </div>
 
 <!-- Файоль, Анри -->
@@ -1431,17 +871,17 @@ The International Jew / Henry Ford, 1920<br><br>
 </div>
 <div class="work nonfict authorf titlem biogr bisn menedzh done verygood"><br>
 Моя жизнь, мои достижения / Генри Форд, Сэмюэл Кроутер. - Ленинград: Время, 1924. - 326 с.<br>
-My Life and Work / Henry Ford, Samuel Crowther. - New York: Doubleday, 1922. - 311 p.<br>
+My Life and Work / Henry Ford, Samuel Crowther. - New York: Doubleday, 1922. - 311 p.<br><br>
 </div>
 <div class="work nonfict authorf titles bisn menedzh unfinished"><br>
 Сегодня и завтра / Генри Форд, Сэмюэл Кроутер. - Ленинград: Время, 1927. - 285 с.<br>
-Today and Tomorrow / Henry Ford, Samuel Crowther, 1926<br>
+Today and Tomorrow / Henry Ford, Samuel Crowther, 1926<br><br>
 </div>
 
 <!-- Франклин, Бенджамин -->
 <div class="work nonfict authorf titlea biogr done wonderful love"><br>
 Автобиография / Бенджамин Франклин [советуют: Дейл Карнеги]<br>
-Autobiography / Benjamin Franklin, 1791, 1793<br>
+Autobiography / Benjamin Franklin, 1791, 1793<br><br>
 </div>
 
 <!-- Фрейд, Зигмунд -->
@@ -1503,7 +943,7 @@ How to Lie with Statistics / Darrell Huff, 1954<br><br>
 <!-- Хилл, Наполеон -->
 <div class="work nonfict authorh titled samor bisn never"><br>
 Думай и богатей / Наполеон Хилл [советуют: Роберт Кийосаки]<br>
-Think and Grow Rich / Napoleon Hill. - Meriden, Conn.: The Ralston Society, 1937<br>
+Think and Grow Rich / Napoleon Hill. - Meriden, Conn.: The Ralston Society, 1937<br><br>
 </div>
 
 <!-- Хокинг, Стивен -->
@@ -1525,7 +965,7 @@ Influence: The Psychology of Persuasion / Robert Cialdini, 1984<br><br>
 <!-- Чан, Джеки -->
 <div class="work nonfict authorch titled biogr unfinished"><br>
 Джеки Чан: состарился, не успев повзрослеть / Джеки Чан, Чжу Мо<br>
-成龙 : 还没长大就老了平装 / 成龙, 朱墨, 2015<br>
+成龙 : 还没长大就老了平装 / 成龙, 朱墨, 2015<br><br>
 </div>
 
 <!-- Чейз, Стюарт -->
@@ -1583,18 +1023,13 @@ Geometry of Design: Studies in Proportion and Composition / Kimberly Elam, 2001<
 Herrn Eugen Duhrings Umwalzung der Wissenschaft / Friedrich Engels, 1878<br><br>
 </div>
 
-
+</div>
 
 
 
 
 <!-- = Художественные книги = -->
 <div>
-<div class="work fict">
-<div class="namelist"><br>
-= Художественные книги =<br><br>
-</div>
-</div>
 
 <!-- Азимов, Айзек -->
 <div class="work fict azimov authora titleja nfant"><br>
@@ -1823,7 +1258,7 @@ Le Pays des fourrures / Jules Verne, 1873<br>
 L'Île mystérieuse / Jules Verne, 1874<br><br>
 </div>
 <div class="work fict vern authorv titlech prikl"><br>
-Ченслер / Жюль Верн<br>
+"Ченслер" / Жюль Верн<br>
 Le Chancellor / Jules Verne, 1875<br><br>
 </div>
 <div class="work fict vern authorv titlem prikl"><br>
@@ -1970,9 +1405,9 @@ Seconde Patrie / Jules Verne, 1900<br><br>
 Деревня в воздухе / Жюль Верн<br>
 Le Village aérien / Jules Verne, 1901<br><br>
 </div>
-<div class="work fict vern authorv titles prikl"><br>
-Истории Жана-Мари Кабидулена / Жюль Верн<br>
-Les Histoires de Jean-Marie Cabidoulin / Jules Verne, 1901<br><br>
+<div class="work fict vern authorv titles prikl donef goodf"><br>
+История Жана-Мари Кабидулена / Жюль Верн<br>
+Les Histoires de Jean-Marie Cabidoulin / Jules Verne, 1901<br>
 </div>
 <div class="work fict vern authorv titles prikl"><br>
 Братья Кип / Жюль Верн<br>
@@ -2176,7 +1611,7 @@ The Posthumous Papers of the Pickwick Club / Charles Dickens, 1837<br><br>
 
 <!-- Достоевский, Фёдор Михайлович -->
 <div class="work fict authorg titled drama unfinishedf"><br>
-Преступление и наказание / Ф.М. Достоевский, 1866<br><br>
+Преступление и наказание / Фёдор Михайлович Достоевский, 1866<br>
 </div>
 
 <!-- Ефремов, Иван Антонович -->
@@ -2432,7 +1867,7 @@ Auf zwei Planeten / Kurd Laßwitz, 1897<br><br>
 
 <!-- Лермонтов, Михаил Юрьевич -->
 <div class="work fict authorg titled drama unfinishedf"><br>
-Герой нашего времени / М.Ю. Лермонтов, 1840<br><br>
+Герой нашего времени / М.Ю. Лермонтов, 1840<br>
 </div>
 
 <!-- Лондон, Джек -->
@@ -2517,7 +1952,7 @@ Malevil / Robert Merle, 1972<br><br>
 
 <!-- Метьюрин, Чарлз -->
 <div class="work fict authorm titlem istorf gotrom"><br>
-Мельмот Скиталец / Чарлз Метьюрин<br>
+Мельмот Скиталец / Чарльз Метьюрин<br>
 Melmoth the Wanderer / Charles Maturin, 1820<br><br>
 </div>
 
@@ -3207,76 +2642,32 @@ The Last Man / Mary Shelley, 1826<br><br>
 
 <!-- Шолохов, Михаил Александрович -->
 <div class="work fict authorsh titlet istorf vojna revol unfinishedf"><br>
-Тихий Дон / М.А. Шолохов, 1932, 1940<br>
+Тихий Дон / Михаил Александрович Шолохов, 1932, 1940<br>
 </div>
 <div class="work fict authorsh titlep istorf unfinishedf"><br>
-Поднятая целина / М.А. Шолохов, 1932, 1959<br>
+Поднятая целина / Михаил Александрович Шолохов, 1932, 1959<br>
 </div>
 <div class="work fict authorsh titles vojna donef verygoodf"><br>
-Судьба человека / М.А. Шолохов, 1957<br>
+Судьба человека / Михаил Александрович Шолохов, 1957<br>
 </div>
 
 <!-- Штильмарк, Роберт Александрович -->
 <div class="work fict authorsh titlen istorf prikl"><br>
-Наследник из Калькутты / Р.А. Штильмарк. - Москва: Детская литература, 1958. - 840 с.<br><br>
+Наследник из Калькутты / Роберт Александрович Штильмарк. - Москва: Детская литература, 1958. - 840 с.<br><br>
 </div>
 
-</div>
+</div><!-- /художественные книги -->
+
+</div><!-- /works -->
+
+</div><!-- /main -->
+
+</div><!-- /st-content-inner -->
+</div><!-- /st-content -->
+</div><!-- /st-pusher -->
+</div><!-- /st-container -->
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-
-							
-							
-							
-
-						</div><!-- /main -->
-						
-						
-						
-						
-
-
-</div>					
-</div>							
-						
-						
-						
-					</div><!-- /st-content-inner -->
-				</div><!-- /st-content -->
-			</div><!-- /st-pusher -->
-		</div><!-- /st-container -->
-
-</center>
-		
 <script src="js/classie.js"></script>
 <script src="js/sidebarEffects.js"></script>
 

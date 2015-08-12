@@ -62,7 +62,8 @@
 	-webkit-transition: all 0.5s;
 	transition: all 0.5s;
 	box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-	font-size: 0.8em;
+	font-size: 0.75em;
+	text-align: center;
 }
 
 .st-menu::after {
@@ -100,7 +101,7 @@
 	color: #999999;
 	text-shadow1: 0 0 1px rgba(0,0,0,0.1);
 	font-weight: 700;
-	font-size: 1.5em;
+	font-size: 1.2em;
 	text-transform: uppercase;
 }
 
