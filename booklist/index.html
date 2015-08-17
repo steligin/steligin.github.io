@@ -9,17 +9,12 @@
 
 <title>Список книг</title>
 
-<link rel="shortcut icon" href="../favicon.ico">
+<link rel="shortcut icon" href="img/favicon.ico">
 <link rel="stylesheet" type="text/css" href="css/main.css" />
-<link rel="stylesheet" type="text/css" href="css/normalize1.css" />
-<link rel="stylesheet" type="text/css" href="css/demo1.css" />
-<link rel="stylesheet" type="text/css" href="css/icons1.css" />
-<link rel="stylesheet" type="text/css" href="css/component.css" />
 
 <script src="js/jquery-2.1.3.min.js"></script>
 <script src="js/isotope.pkgd.min.js"></script>
 <script src="js/workblocks.js"></script>
-<script src="js/modernizr.custom.js"></script>
 <script src="js/totopmove.js"></script>
 
 </head>
@@ -42,18 +37,28 @@
 <div class="works clearfix">
 
 <!-- Кнопка "Выбор жанров" -->
-<div id="filter" class="work linkmain linkmainone genretitle nonfict bisn biogr biol dizajn zhurn igra istor lingv liter menedzh polit psih publ samor sots triz fizik filos ekonom raznoe bezper done unfinished never boring good verygood wonderful keylist       genretitlef fict antiutop vojna gotrom detekt drama istorf kiberp kontrkul nfant prikl pritcha postapok manga piesa satira skazka utop fant horror bezperf donef unfinishedf neverf boringf goodf verygoodf wonderfulf clearfix">
+<div id="filter" class="work linkmain linkmainone genretitle nonfict bisn biogr biol dizajn zhurn igra istor lingv liter menedzh polit psih publ samor sots triz fizik filos futurol ekonom raznoe bezper done unfinished never boring good verygood wonderful keylist       genretitlef fict antiutop vojna gotrom detekt drama istorf kiberp kontrkul nfant prikl pritcha postapok manga piesa satira skazka utop fant horror bezperf donef unfinishedf neverf boringf goodf verygoodf wonderfulf autors dnevnik 2012 2013 2014 2015 clearfix">
 <a href="" class="btn" data-filter=".linkmain"><br>МЕНЮ<br><br></a>
 </div>
 
 <!-- Кнопка "Нехудожественные книги" -->
-<div id="filter" class="work linkmain linkmaintwo genretitle nonfict bisn biogr biol dizajn zhurn igra istor lingv liter menedzh polit psih publ samor sots triz fizik filos ekonom raznoe bezper done unfinished never boring good verygood wonderful keylist clearfix">
+<div id="filter" class="work linkmain linkmaintwo genretitle nonfict bisn biogr biol dizajn zhurn igra istor lingv liter menedzh polit psih publ samor sots triz fizik filos futurol ekonom raznoe bezper done unfinished never boring good verygood wonderful keylist clearfix">
 <a href="" class="btn" data-filter=".genretitle"><br>НЕХУДОЖЕСТВЕННЫЕ ЖАНРЫ<br><br></a>
 </div>
 
 <!-- Кнопка "Художественные книги" -->
 <div id="filter" class="work linkmain linkmainthree genretitlef fict antiutop vojna gotrom detekt drama istorf kiberp kontrkul nfant prikl pritcha postapok manga piesa satira skazka utop fant horror bezperf donef unfinishedf neverf boringf goodf verygoodf wonderfulf keylist clearfix">
 <a href="" class="btn" data-filter=".genretitlef"><br>ХУДОЖЕСТВЕННЫЕ ЖАНРЫ<br><br></a>
+</div>
+
+<!-- Кнопка "Авторы" -->
+<div id="filter" class="work linkmain linkmaintwo autors adler adler2 altshuller bern bekon bekon2         clearfix">
+<a href="" class="btn" data-filter=".autors"><br>АВТОРЫ<br><br></a>
+</div>
+
+<!-- Кнопка "Дневник чтения" -->
+<div id="filter" class="work linkmain linkmainthree dnevnik 2012 2013 2014 2015 clearfix">
+<a href="" class="btn" data-filter=".dnevnik"><br>ДНЕВНИК ЧТЕНИЯ<br><br></a>
 </div>
 
 <!-- Условные обозначения и статистика -->
@@ -79,8 +84,8 @@
 <!-- = Меню нехудожественные книги = -->
 <div>
 
-<div class="work genretitle nonfict">
-<div id="filter" class="linkgen clearfix"><a href="#totop" class="btn" data-filter=".nonfict"><br>Все нехудожественные книги (143)<br><br></a></div>
+<div id="filter" class="work genretitle linkgen nonfict clearfix">
+<a href="#totop" class="btn" data-filter=".nonfict"><br>Все нехудожественные книги (143)<br><br></a>
 </div>
 
 <div class="work genretitle bisn">
@@ -116,7 +121,7 @@
 </div>
 
 <div class="work genretitle liter">
-<div id="filter" class="linkgen clearfix"><a href="#totop" class="btn" data-filter=".liter"><br>Литература<br><br></a></div>
+<div id="filter" class="linkgen clearfix"><a href="#totop" class="btn" data-filter=".liter"><br>Литературоведение<br><br></a></div>
 </div>
 
 <div class="work genretitle menedzh">
@@ -124,7 +129,7 @@
 </div>
 
 <div class="work genretitle polit">
-<div id="filter" class="linkgen clearfix"><a href="#totop" class="btn" data-filter=".polit"><br>Политика<br><br></a></div>
+<div id="filter" class="linkgen clearfix"><a href="#totop" class="btn" data-filter=".polit"><br>Политология<br><br></a></div>
 </div>
 
 <div class="work genretitle psih">
@@ -155,6 +160,10 @@
 <div id="filter" class="linkgen clearfix"><a href="#totop" class="btn" data-filter=".filos"><br>Философия<br><br></a></div>
 </div>
 
+<div class="work genretitle futurol">
+<div id="filter" class="linkgen clearfix"><a href="#totop" class="btn" data-filter=".futurol"><br>Футурология<br><br></a></div>
+</div>
+
 <div class="work genretitle ekonom">
 <div id="filter" class="linkgen clearfix"><a href="#totop" class="btn" data-filter=".ekonom"><br>Экономика<br><br></a></div>
 </div>
@@ -171,7 +180,7 @@
 <div id="filter" class="linkgen clearfix"><a href="#totop" class="btn" data-filter=".done"><br>Прочитанные книги (18)<br><br></a></div>
 </div>
 
-<div id="filter" class="work genretitle linkgen unfinished linkgenunfinished clearfix">
+<div id="filter" class="work genretitle linkgenunfinished linkgen unfinished clearfix">
 <a href="#totop" class="btn" data-filter=".unfinished"><br>Недочитанные книги (7)<br><br></a>
 </div>
 
@@ -246,6 +255,10 @@
 <a href="#totop" class="btn" data-filter=".kontrkul"><br>Контркультура<br><br></a>
 </div>
 
+<div id="filter" class="work genretitlef linkgenf manga clearfix">
+<a href="#totop" class="btn" data-filter=".manga"><br>Манга<br><br></a>
+</div>
+
 <div id="filter" class="work genretitlef linkgenf nfant clearfix">
 <a href="#totop" class="btn" data-filter=".nfant"><br>Научная фантастика<br><br></a>
 </div>
@@ -260,10 +273,6 @@
 
 <div id="filter" class="work genretitlef linkgenf postapok clearfix">
 <a href="#totop" class="btn" data-filter=".postapok"><br>Постапокалипсис<br><br></a>
-</div>
-
-<div id="filter" class="work genretitlef linkgenf manga clearfix">
-<a href="#totop" class="btn" data-filter=".manga"><br>Манга<br><br></a>
 </div>
 
 <div id="filter" class="work genretitlef linkgenf piesa clearfix">
@@ -302,7 +311,7 @@
 <a href="#totop" class="btn" data-filter=".donef"><br>Прочитанные (45)<br><br></a>
 </div>
 
-<div id="filter" class="work genretitlef linkgenf unfinishedf clearfix">
+<div id="filter" class="work genretitlef linkgenunfinishedf linkgenf unfinishedf clearfix">
 <a href="#totop" class="btn" data-filter=".unfinishedf"><br>Недочитанные (35)<br><br></a>
 </div>
 
@@ -332,62 +341,128 @@
 
 </div>
 
+<!-- = Меню авторы = -->
+<div>
+
+<div id="filter" class="work autors linkgen adler clearfix">
+<a href="#totop" class="btn" data-filter=".adler"><br>Альфред Адлер (1870-1937) - психолог<br><br></a>
+</div>
+
+<div id="filter" class="work autors linkgen adler2 clearfix">
+<a href="#totop" class="btn" data-filter=".adler2"><br>Мортимер Адлер (1902-2001) - педагог<br><br></a>
+</div>
+
+<div id="filter" class="work autors linkgen altshuller clearfix">
+<a href="#totop" class="btn" data-filter=".altshuller"><br>Генрих Саулович Альтшуллер (1926-1998) - изобретатель<br><br></a>
+</div>
+
+<div id="filter" class="work autors linkgen bern clearfix">
+<a href="#totop" class="btn" data-filter=".bern"><br>Эрик Берн (1910-1970) - психолог<br><br></a>
+</div>
+
+<div id="filter" class="work autors linkgen bekon clearfix">
+<a href="#totop" class="btn" data-filter=".bekon"><br>Роджер Бэкон (1214-1292) - философ<br><br></a>
+</div>
+
+<div id="filter" class="work autors linkgen bekon2 clearfix">
+<a href="#totop" class="btn" data-filter=".bekon2"><br>Фрэнсис Бэкон (1561-1626) - философ<br><br></a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!-- = Меню дневник чтения = -->
+<div>
+
+<div id="filter" class="work dnevnik linkgenf 2012 clearfix">
+<a href="#totop" class="btn" data-filter=".2012"><br>За 2012 год (19)<br><br></a>
+</div>
+
+<div id="filter" class="work dnevnik linkgenf 2013 clearfix">
+<a href="#totop" class="btn" data-filter=".2013"><br>За 2013 год (5)<br><br></a>
+</div>
+
+<div id="filter" class="work dnevnik linkgenf 2014 clearfix">
+<a href="#totop" class="btn" data-filter=".2014"><br>За 2014 год (9)<br><br></a>
+</div>
+
+<div id="filter" class="work dnevnik linkgenf 2015 clearfix">
+<a href="#totop" class="btn" data-filter=".2015"><br>За 2015 год<br><br></a>
+</div>
+
+</div>
+
 <!-- = Нехудожественные книги = -->
 <div>
 
 <!-- Адлер, Альфред -->
-<div class="work nonfict authora titlen psih unfinished linkbook">
+<div>
+<div class="work nonfict adler psih unfinished linkbook">
 <a href="booklinks/adler-nauka-zhit.lnk" class="btn" data-filter=""><br>
 Наука жить / Альфред Адлер<br>
 The Science of Living / Alfred Adler, 1929<br><br></a>
 </div>
-<div class="work nonfict authora titlev psih linkbook">
+<div class="work nonfict adler psih linkbook">
 <a href="https://google.ru" class="btn" data-filter=""><br>
 Воспитание детей / Альфред Адлер<br>
 The Education of Children / Alfred Adler, 1930<br><br></a>
 </div>
-<div class="work nonfict authora titlev psih">
+<div class="work nonfict adler psih">
 <br>
 Взаимодействие полов / Альфред Адлер<br>
 Cooperation Between the Sexes / Alfred Adler, 1930<br><br>
 </div>
+</div>
+
 
 <!-- Адлер, Мортимер -->
-<div class="work nonfict authora titlek samor">
+<div>
+<div class="work nonfict adler2 samor">
 <br>
 Как читать книги. Руководство по чтению великих произведений / Мортимер Адлер<br>
-A Guide to Reading the Great Books / Mortimer Adler, 1966<br><br>
+A Guide to Reading the Great Books / Mortimer Adler, 1940 (1st ed.), 1966 (2nd ed.)<br><br>
 </div>
-<div class="work nonfict authora titlei samor"><br>
+<div class="work nonfict adler2 samor"><br>
 Искусство говорить и слушать / Мортимер Адлер<br>
 How to Speak / How to Listen / Mortimer Adler, 1983<br><br>
 </div>
+</div>
 
-<!-- Аллен, Дэвид -->
+<!-- Аллен, Дэвид (нет в меню) -->
+<div>
 <div class="work nonfict authora titlek samor">
 <br>
 Как привести дела в порядок: искусство продуктивности без стресса / Дэвид Аллен<br>
 Getting Things Done: The Art of Stress-Free Productivity / David Allen, 2001<br><br>
 </div>
+</div>
 
 <!-- Альтшуллер, Генрих Саулович -->
-<div class="work nonfict authora titlen triz unfinished linkbook">
-<a href="https://google.ru" class="btn" data-filter=""><br>
+<div>
+<div class="work nonfict altshuller triz unfinished linkbook">
+<a href="#" class="btn" data-filter=""><br>
 Найти идею. Введение в теорию решения изобретательских задач<br>
 Генрих Саулович Альтшуллер. - 2-е издание, 1991<br><br></a>
 </div>
-<div class="work nonfict authora titlek triz samor done wonderful linkbook">
-<a href="https://google.ru" class="btn" data-filter=""><br>
+<div class="work nonfict altshuller triz samor done wonderful linkbook 2013">
+<a href="#" class="btn" data-filter=""><br>
 Как стать гением. Жизненная стратегия творческой личности<br>
 Генрих Саулович Альтшуллер, Игорь Михайлович Верткин, 1994<br><br></a>
 </div>
-
-<!-- Аронсон, Эллиот-->
-<div class="work nonfict authora titleo psih sots">
-<br>
-Общественное животное. Введение в социальную психологию / Эллиот Аронсон<br>
-The Social Animal (11th edition) / Elliot Aronson, 2011<br><br>
 </div>
+
+<!-- Аронсон, Эллиот (нет в меню) -->
+<div>
 <div class="work nonfict authora titleae psih sots">
 <br>
 Эпоха пропаганды: Механизмы убеждения, повседневное использование и злоупотребление / Эллиот Аронсон, Энтони Пратканис<br>
@@ -398,57 +473,84 @@ Age of propaganda: The everyday use and abuse of persuasion / Elliot Aronson, An
 Ошибки, которые были допущены (но не мной): почему мы оправдываем глупые убеждения, плохие решения и пагубные действия / Эллиот Аронсон, Кэрол Теврис<br>
 Mistakes were made (but not by Me): Why we justify foolish beliefs, bad decisions, and hurtful acts / Elliot Aronson, Carol Tavris, 2007<br><br>
 </div>
+<div class="work nonfict authora titleo psih sots">
+<br>
+Общественное животное. Введение в социальную психологию / Эллиот Аронсон<br>
+The Social Animal (11th edition) / Elliot Aronson, 2011<br><br>
+</div>
+</div>
 
-<!-- Арриги, Джованни -->
+<!-- Арриги, Джованни (нет в меню) -->
+<div>
 <div class="work nonfict authora titled istor ekonom sots">
 <br>
 Долгий двадцатый век. Деньги, власть и истоки нашего времени / Джованни Арриги<br>
 The Long Twentieth Century: Money, Power, and the Origins of Our Times / Giovanni Arrighi, 1994<br><br>
 </div>
+</div>
+
+<!--  Бержье, Жак; Повель,Луи (нет в меню) -->
+<div>
+<div class="work nonfict raznoe">
+<br>
+Утро магов. Введение в фантастический реализм /  Жак Бержье, Луи Повель<br>
+Le Matin des Magiciens / Jacques Bergier, Louis Pauwels, 1960<br><br>
+</div>
+</div>
 
 <!-- Берн, Эрик -->
-<div class="work nonfict authorb titlev psih"><br>
+<div>
+<div class="work nonfict bern psih"><br>
 Введение в психиатрию и психоанализ для непосвящённых / Эрик Берн<br>
 Layman’s Guide to Psychiatry and Psychoanalysis / Eric Berne, 1957<br><br>
 </div>
-<div class="work nonfict authorb titlei psih"><br>
+<div class="work nonfict bern psih"><br>
 Игры, в которые играют люди / Эрик Берн<br>
 Games People Play: The Psychology of Human Relationships / Eric Berne, 1964<br><br>
 </div>
-<div class="work nonfict authorb titlel psih"><br>
+<div class="work nonfict bern psih"><br>
 Люди, которые играют в игры / Эрик Берн<br>
 What Do You Say After You Say Hello? / Eric Berne, 1972<br><br>
 </div>
+</div>
 
-<!-- Брингхёрст, Роберт -->
+<!-- Брингхёрст, Роберт  (нет в меню) -->
+<div>
 <div class="work nonfict authorb titleo dizajn"><br>
 Основы стиля в типографике / Роберт Брингхёрст<br>
 The Elements of Typographic Style / Robert Bringhurst, 2012 (v4.0)<br><br>
 </div>
+</div>
 
-<!-- Бьюкенен, Патрик -->
+<!-- Бьюкенен, Патрик (нет в меню) -->
+<div>
 <div class="work nonfict authorb titleo polit publ"><br>
 Смерть Запада / Патрик Бьюкенен<br>
 The Death of the West: How Dying Populations and Immigrant Invasions Imperil Our Country and Civilization / Patrick Buchanan, 2002<br><br>
 </div>
+</div>
 
 <!-- Бэкон, Роджер -->
-<div class="work nonfict filos"><br>
+<div>
+<div class="work nonfict bekon filos"><br>
 Послание монаха Роджера Бэкона о тайных действиях искусства и природы и ничтожестве магии / Роджер Бэкон<br>
 Epistola fratris Rogeris Baconis de secretis operibus artis et naturae, et de nullitate magiae / Roger Bacon, 1542 [1267]<br><br>
 </div>
+</div>
 
 <!-- Бэкон, Фрэнсис -->
-<div class="work nonfict filos">
+<div>
+<div class="work nonfict bekon2 filos">
 <br>
 Опыты и наставления нравственные и политические (3-е издание) / Фрэнсис Бэкон<br>
 Essayes or counsels, civill and morall / Francis Bacon, 1597 (1st ed.), 1612 (2nd ed.), 1625 (3th ed.)
-<a href="https://en.wikipedia.org/wiki/Essays_%28Francis_Bacon%29"> => wiki</a>
+<a href="https://en.wikipedia.org/wiki/Essays_%28Francis_Bacon%29">wiki</a>
 <br><br>
 </div>
-<div class="work nonfict filos utop"><br>
+<div class="work nonfict bekon2 filos"><br>
 Новая Атлантида / Фрэнсис Бэкон<br>
 New Atlantis / Francis Bacon, 1626 (unfin)<br><br>
+</div>
 </div>
 
 <!-- Веблен, Торстейн -->
@@ -479,6 +581,18 @@ Principes philosophiques, politiques et moraux / François Rodolphe de Weiss, 17
 Трудовые установки / Алексей Капитонович Гастев, 1924<br><br>
 </div>
 
+<!-- Games Workshop -->
+<div>
+<div class="work nonfict igra done good 2014"><br>
+Warhammer 40000. Книга правил (5-я редакция) / Games Workshop<br>
+Warhammer 40000. Rulebook (5th edition) / Games Workshop, 2008<br><br>
+</div>
+<div class="work nonfict igra done good 2014"><br>
+Warhammer 40000. Кодекс Космического десанта (5-я редакция) / Мэтью Вард<br>
+Warhammer 40000 Codex. Space Marines (5th edition) / Matthew Ward, 2008<br><br>
+</div>
+</div>
+
 <!-- Гейтс, Билл -->
 <div class="work nonfict authorg titleb bisn"><br>
 Бизнес со скоростью мысли / Билл Гейтс<br>
@@ -498,7 +612,7 @@ The 48 Laws of Power / Robert Greene, 1998<br><br>
 </div>
 
 <!-- Гитлер, Адольф -->
-<div class="work nonfict authorg titlem biogr publ unfinished"><br>
+<div class="work nonfict authorg titlem biogr publ never"><br>
 Моя борьба / Адольф Гитлер<br>
 Mein Kampf / Adolf Hitler, 1925<br><br>
 </div>
@@ -570,7 +684,7 @@ The Blind Watchmaker: Why the Evidence of Evolution Reveals a Universe without D
 </div>
 
 <!-- Зимбардо, Филип -->
-<div class="work nonfict authorz titlez psih done verygood"><br>
+<div class="work nonfict authorz titlez psih done verygood 2013"><br>
 Застенчивость / Филип Зимбардо<br>
 Shyness: What It Is, What to Do About It / Philip Zimbardo, 1990<br><br>
 </div>
@@ -642,21 +756,21 @@ Thinking, Fast and Slow / Daniel Kahneman, 2011<br><br>
 </div>
 
 <!-- Карнеги, Дейл -->
-<div class="work nonfict authork titlek samor done wonderful"><br>
+<div class="work nonfict authork titlek samor done wonderful 2015"><br>
 Как вырабатывать уверенность в себе и влиять на людей, выступая публично / Дейл Карнеги<br>
 Public Speaking: A Practical Course for Business Men / Dale Carnegie, 1926<br><br>
 </div>
-<div class="work nonfict authork titlek samor done wonderful"><br>
+<div class="work nonfict authork titlek samor done wonderful 2015"><br>
 Как завоёвывать друзей и оказывать влияние на людей / Дейл Карнеги<br>
 How to Win Friends and Influence People / Dale Carnegie, 1936<br><br>
 </div>
-<div class="work nonfict authork titlek samor done wonderful"><br>
+<div class="work nonfict authork titlek samor done wonderful 2015"><br>
 Как перестать беспокоиться и начать жить / Дейл Карнеги<br>
 How to Stop Worrying and Start Living / Dale Carnegie, 1948<br><br>
 </div>
 
 <!-- Кийосаки, Роберт -->
-<div class="work nonfict authork titleb biogr bisn done verygood"><br>
+<div class="work nonfict authork titleb biogr bisn done verygood 2014"><br>
 Богатый папа, Бедный папа / Роберт Кийосаки<br>
 Rich Dad, Poor Dad / Robert Kiyosaki, 1997<br><br>
 </div>
@@ -670,7 +784,7 @@ Guide to Investing / Robert Kiyosaki, 2000<br><br>
 </div>
 
 <!-- Клейсон, Джордж -->
-<div class="work nonfict authork titles bisn istor done good"><br>
+<div class="work nonfict authork titles bisn istor done good 2014"><br>
 Самый богатый человек в Вавилоне / Джордж Клейсон [советуют: Роберт Кийосаки]<br>
 The Richest Man in Babylon / George Clason, 1926<br><br>
 </div>
@@ -682,7 +796,7 @@ The 7 Habits of Highly Effective People / Stephen Covey, 1989<br><br>
 </div>
 
 <!-- Комацу, Наруми -->
-<div class="work nonfict authork titlei biogr done good"><br>
+<div class="work nonfict authork titlei biogr done good 2013"><br>
 Йошики / Наруми Комацу<br>
 YOSHIKI/佳樹 / 小松成美, 2009<br><br>
 </div>
@@ -837,6 +951,15 @@ The Naked Ape: A Zoologist's Study of the Human Animal / Desmond Morris, 1967<br
 The Human Zoo / Desmond Morris, 1969<br><br>
 </div>
 
+<!-- Набоков, Владимир Владимирович -->
+<div class="work nonfict liter"><br>
+Лекции по зарубежной литературе: Диккенс, Флобер, Стивенсон, Пруст, Кафка, Джойс<br>
+Владимир Владимирович Набоков, 1980<br><br>
+</div>
+<div class="work nonfict liter"><br>
+Лекции по русской литературе: Гоголь, Тургенев, Достоевский, Толстой, Чехов, Горький<br>
+Владимир Владимирович Набоков, 1981<br><br>
+</div>
 
 <!-- Папанек, Виктор -->
 <div class="work nonfict authorp titled dizajn"><br>
@@ -893,7 +1016,7 @@ Basic Public Speaking / Paul Soper, 1950<br><br>
 </div>
 
 <!-- Сороченко, Виктор -->
-<div class="work nonfict authors titleae polit zhurn done verygood"><br>
+<div class="work nonfict authors titleae polit done verygood"><br>
 Энциклопедия методов пропаганды. Как нас обрабатывают СМИ, политики и реклама<br>
 Виктор Сороченко, 2002<br><br>
 </div>
@@ -965,17 +1088,17 @@ Life Without Principle / Henry David Thoreau, 1854<br><br>
 </div>
 
 <!-- Уайатт, Джеймс -->
-<div class="work nonfict authorm titleg igra done verygood"><br>
+<div class="work nonfict authorm titleg igra done verygood 2014"><br>
 Подземелья и драконы. Книга игрока (4-е издание) / Роб Хейнсо, Энди Коллинс, Джеймс Уайатт<br>
 Dungeons & Dragons: Player's Handbook (4th edition) / Rob Heinsoo, Andy Collins, James Wyatt, 2008<br><br>
 </div>
 <!-- Уайатт, Джеймс -->
-<div class="work nonfict authorm titleg igra done verygood"><br>
+<div class="work nonfict authorm titleg igra done verygood 2014"><br>
 Подземелья и драконы. Руководство Мастера (4-е издание) / Джеймс Уайатт<br>
 Dungeons & Dragons: Dungeon Master's Guide (4th edition) / James Wyatt, 2008<br><br>
 </div>
 <!-- Уайатт, Джеймс -->
-<div class="work nonfict authorm titleg igra done verygood"><br>
+<div class="work nonfict authorm titleg igra done verygood 2014"><br>
 Подземелья и драконы. Бестиарий (4-е издание) / Майк Мёрлс, Стивен Шуберт, Джеймс Уайатт<br>
 Dungeons & Dragons: Monster Manual (4th edition) / Mike Mearls, Stephen Schubert, James Wyatt, 2008<br><br>
 </div>
@@ -1006,8 +1129,16 @@ My Life and Work / Henry Ford, Samuel Crowther. - New York: Doubleday, 1922. - 3
 Today and Tomorrow / Henry Ford, Samuel Crowther, 1926<br><br>
 </div>
 
+<!-- Форт, Чарльз -->
+<div>
+<div class="work nonfict raznoe"><br>
+Книга проклятых / Чарльз Форт<br>
+The Book of the Damned / Charles Fort, 1919<br><br>
+</div>
+</div>
+
 <!-- Франклин, Бенджамин -->
-<div class="work nonfict authorf titlea biogr done wonderful"><br>
+<div class="work nonfict authorf titlea biogr done verygood 2015"><br>
 Автобиография / Бенджамин Франклин [советуют: Дейл Карнеги]<br>
 Autobiography / Benjamin Franklin, 1791, 1793<br><br>
 </div>
@@ -1019,11 +1150,11 @@ Die Traumdeutung / Sigmund Freud, 1900<br><br>
 </div>
 
 <!-- Фреско, Жак -->
-<div class="work nonfict authorf titlev publ"><br>
+<div class="work nonfict publ futurol"><br>
 Взгляд вперед / Жак Фреско<br>
 Looking Forward / Jacque Fresco, Ken Keyes, 1969<br><br>
 </div>
-<div class="work nonfict authorf titlev publ"><br>
+<div class="work nonfict publ futurol"><br>
 Всё лучшее, что не купишь за деньги / Жак Фреско<br>
 The Best that Money Can't Buy: Beyond Politics, Poverty & War / Jacque Fresco, 2002<br><br>
 </div>
@@ -1069,7 +1200,7 @@ How to Lie with Statistics / Darrell Huff, 1954<br><br>
 </div>
 
 <!-- Хилл, Наполеон -->
-<div class="work nonfict authorh titled samor bisn never"><br>
+<div class="work nonfict authorh titled samor bisn never 2014"><br>
 Думай и богатей / Наполеон Хилл [советуют: Роберт Кийосаки]<br>
 Think and Grow Rich / Napoleon Hill. - Meriden, Conn.: The Ralston Society, 1937<br><br>
 </div>
@@ -1202,7 +1333,7 @@ The Mystery of the Talking Skull / Robert Arthur Jr., 1969<br><br>
 
 <!-- Бах, Ричард -->
 <div>
-<div class="work fict authorb titlech pritcha donef goodf"><br>
+<div class="work fict authorb titlech pritcha donef goodf 2012"><br>
 Чайка по имени Джонатан Ливингстон / Ричард Бах<br>
 Jonathan Livingston Seagull / Richard Bach, 1970<br><br>
 </div>
@@ -1288,7 +1419,7 @@ The Demolished Man / Alfred Bester, 1952<br><br>
 Марсианские хроники / Рэй Брэдбери<br>
 The Martian Chronicles / Ray Bradbury, 1950<br><br>
 </div>
-<div class="work fict bredberi authorb titlech antiutop donef verygoodf"><br>
+<div class="work fict bredberi authorb titlech antiutop donef verygoodf 2014"><br>
 451 градус по Фаренгейту / Рэй Брэдбери<br>
 Fahrenheit 451 / Ray Bradbury, 1953<br><br>
 </div>
@@ -1323,7 +1454,7 @@ Death is a Lonely Business / Ray Bradbury, 1985<br><br>
 <div class="work fict authorb titled drama"><br>
 Записки юного врача / М.А. Булгаков, 1926<br><br>
 </div>
-<div class="work fict authorb titlem drama donef verygoodf"><br>
+<div class="work fict authorb titlem drama donef verygoodf 2012"><br>
 Морфий<br>
 Михаил Афанасьевич Булгаков, 1926<br><br>
 </div>
@@ -1333,7 +1464,7 @@ Death is a Lonely Business / Ray Bradbury, 1985<br><br>
 <div class="work fict authorb titleb istorf vojna revol"><br>
 Белая гвардия / М.А. Булгаков, 1927, 1929<br><br>
 </div>
-<div class="work fict authorb titlep piesa satira donef verygoodf"><br>
+<div class="work fict authorb titlep piesa satira donef verygoodf 2012"><br>
 Иван Васильевич<br>
 Михаил Афанасьевич Булгаков, 1936<br><br>
 </div>
@@ -1428,7 +1559,7 @@ Michel Strogoff / Jules Verne, 1876<br><br>
 Гектор Сервадак / Жюль Верн<br>
 Hector Servadac / Jules Verne, 1877<br><br>
 </div>
-<div class="work fict vern authorv titlech prikl donef goodf"><br>
+<div class="work fict vern authorv titlech prikl donef goodf 2012"><br>
 Чёрная Индия / Жюль Верн<br>
 Les Indes noires / Jules Verne, 1877<br><br>
 </div>
@@ -1436,7 +1567,7 @@ Les Indes noires / Jules Verne, 1877<br><br>
 Пятнадцатилетний капитан / Жюль Верн<br>
 Un capitaine de quinze ans / Jules Verne, 1878<br><br>
 </div>
-<div class="work fict vern authorv titlep prikl donef wonderfulf lovef"><br>
+<div class="work fict vern authorv titlep prikl donef wonderfulf 2012"><br>
 Пятьсот миллионов Бегумы / Жюль Верн, Андре Лори<br>
 Les Cinq Cents Millions de la Bégum / Jules Verne, André Laurie, 1879<br><br>
 </div>
@@ -1444,7 +1575,7 @@ Les Cinq Cents Millions de la Bégum / Jules Verne, André Laurie, 1879<br><br>
 Треволнения одного китайца в Китае / Жюль Верн<br>
 Les Tribulations d’un Chinois en Chine / Jules Verne, 1879<br><br>
 </div>
-<div class="work fict vern authorv titlep prikl donef goodf"><br>
+<div class="work fict vern authorv titlep prikl donef goodf 2012"><br>
 Паровой дом / Жюль Верн<br>
 La Maison à vapeur / Jules Verne, 1880<br><br>
 </div>
@@ -1456,7 +1587,7 @@ La Jangada / Jules Verne, 1881<br><br>
 Школа Робинзонов / Жюль Верн<br>
 L'École des Robinsons / Jules Verne, 1882<br><br>
 </div>
-<div class="work fict vern authorv titlez prikl donef boringf"><br>
+<div class="work fict vern authorv titlez prikl donef boringf 2015"><br>
 Зелёный луч / Жюль Верн<br>
 Le Rayon vert / Jules Verne, 1882<br><br>
 </div>
@@ -1476,7 +1607,7 @@ L’Archipel en feu / Jules Verne, 1884<br><br>
 Найдёныш с погибшей "Цинтии" / Жюль Верн, Андре Лори<br>
 L’Épave du Cynthia / Jules Verne, 1885<br><br>
 </div>
-<div class="work fict vern authorv titlem prikl unfinishedf"><br>
+<div class="work fict vern authorv titlem prikl unfinishedf 2013"><br>
 Матиас Шандор / Жюль Верн<br>
 Mathias Sandorf / Jules Verne, 1885<br><br>
 </div>
@@ -1564,7 +1695,7 @@ Seconde Patrie / Jules Verne, 1900<br><br>
 Деревня в воздухе / Жюль Верн<br>
 Le Village aérien / Jules Verne, 1901<br><br>
 </div>
-<div class="work fict vern authorv titles prikl donef boringf"><br>
+<div class="work fict vern authorv titles prikl donef boringf 2015"><br>
 История Жана-Мари Кабидулена / Жюль Верн<br>
 Les Histoires de Jean-Marie Cabidoulin / Jules Verne, 1901<br><br>
 </div>
@@ -1592,7 +1723,7 @@ L'Invasion de la mer / Jules Verne, 1905<br><br>
 Маяк на краю света / Жюль Верн<br>
 Le Phare du bout du monde / Jules Verne, 1905<br><br>
 </div>
-<div class="work fict vern authorv titles prikl donef boringf"><br>
+<div class="work fict vern authorv titles prikl donef boringf 2012"><br>
 Золотой вулкан / Жюль Верн<br>
 Le Volcan d’or / Jules Verne, 1906<br><br>
 </div>
@@ -1791,11 +1922,96 @@ The Posthumous Papers of the Pickwick Club / Charles Dickens, 1837<br><br>
 
 </div>
 
+<!-- Дойль, Артур Конан -->
+<div>
+<div class="work fict detekt prikl unfinishedf"><br>
+Этюд в багровых тонах / Артур Конан Дойль<br>
+A Study in Scarlet / Arthur Conan Doyle, 1887<br><br>
+</div>
+<div class="work fict detekt prikl"><br>
+Знак четырёх / Артур Конан Дойль<br>
+The Sign of the Four / Arthur Conan Doyle, 1890<br><br>
+</div>
+<div class="work fict detekt prikl"><br>
+Приключения Шерлока Холмса / Артур Конан Дойль<br>
+The Adventures of Sherlock Holmes / Arthur Conan Doyle, 1892<br><br>
+</div>
+<div class="work fict detekt prikl"><br>
+Воспоминания Шерлока Холмса / Артур Конан Дойль<br>
+The Memoirs of Sherlock Holmes / Arthur Conan Doyle, 1894<br><br>
+</div>
+<div class="work fict detekt prikl"><br>
+Собака Баскервилей / Артур Конан Дойль<br>
+The Hound of the Baskervilles / Arthur Conan Doyle, 1902<br><br>
+</div>
+<div class="work fict detekt prikl"><br>
+Возвращение Шерлока Холмса / Артур Конан Дойль<br>
+The Return of Sherlock Holmes / Arthur Conan Doyle, 1904<br><br>
+</div>
+<div class="work fict detekt prikl"><br>
+Долина ужаса / Артур Конан Дойль<br>
+The Valley of Fear / Arthur Conan Doyle, 1915<br><br>
+</div>
+<div class="work fict detekt prikl"><br>
+Его прощальный поклон / Артур Конан Дойль<br>
+His Last Bow / Arthur Conan Doyle, 1917<br><br>
+</div>
+<div class="work fict detekt prikl"><br>
+Архив Шерлока Холмса / Артур Конан Дойль<br>
+The Case-Book of Sherlock Holmes / Arthur Conan Doyle, 1927<br><br>
+</div>
+<div class="work fict prikl unfinishedf"><br>
+Затерянный мир / Артур Конан Дойль<br>
+The Lost World / Arthur Conan Doyle, 1912<br><br>
+</div>
+<div class="work fict prikl"><br>
+Отравленный пояс / Артур Конан Дойль<br>
+The Poison Belt / Arthur Conan Doyle, 1913<br><br>
+</div>
+<div class="work fict prikl"><br>
+Страна тумана / Артур Конан Дойль<br>
+The Land of Mist / Arthur Conan Doyle, 1926<br><br>
+</div>
+<div class="work fict prikl"><br>
+Когда мир вскрикнул / Артур Конан Дойль<br>
+When the World Screamed / Arthur Conan Doyle, 1928<br><br>
+</div>
+<div class="work fict prikl"><br>
+Дезинтеграционная машина / Артур Конан Дойль<br>
+The Disintegration Machine / Arthur Conan Doyle, 1929<br><br>
+</div>
+</div>
+
 <!-- Достоевский, Фёдор Михайлович -->
 <div>
 <div class="work fict authorg titled drama unfinishedf"><br>
 Преступление и наказание<br>
 Фёдор Михайлович Достоевский, 1866<br><br>
+</div>
+
+
+
+
+</div>
+
+
+<!-- Дюма, Александр -->
+<div>
+<div class="work fict istorf prikl"><br>
+Граф Монте-Кристо / Александр Дюма<br>
+Le comte de Monte Cristo / Alexandre Dumas, 1844, 1845<br><br>
+</div>
+<div class="work fict istorf prikl donef wonderfulf"><br>
+Три мушкетёра / Александр Дюма<br>
+Les trois mousquetaires / Alexandre Dumas, 1844<br><br>
+</div>
+<div class="work fict istorf prikl"><br>
+Двадцать лет спустя / Александр Дюма<br>
+Vingt ans après / Alexandre Dumas, 1845<br><br>
+</div>
+<div class="work fict istorf prikl"><br>
+Виконт де Бражелон, или Десять лет спустя / Александр Дюма<br>
+Le Vicomte de Bragelonne, ou Dix ans plus tard / Alexandre Dumas, 1847<br><br>
 </div>
 
 
@@ -1827,7 +2043,7 @@ The Posthumous Papers of the Pickwick Club / Charles Dickens, 1837<br><br>
 
 <!-- Желязны, Роджер  -->
 <div>
-<div class="work fict authorzh titled fant neverf"><br>
+<div class="work fict authorzh titled fant neverf 2013 2014"><br>
 Девять принцев Эмбера / Роджер Желязны<br>
 Nine Princes in Amber / Roger Zelazny, 1970<br><br>
 </div>
@@ -1894,11 +2110,11 @@ Prince of Chaos / Roger Zelazny, 1991<br><br>
 
 <!-- Ито, Дзюндзи -->
 <div>
-<div class="work fict authori titles manga horror unfinishedf"><br>
+<div class="work fict manga horror unfinishedf"><br>
 Спираль / Дзюндзи Ито<br>
 うずまき / 伊藤 潤二, 1998-1999 (3巻)<br><br>
 </div>
-<div class="work fict authori titler manga horror unfinishedf"><br>
+<div class="work fict manga horror boringf 2015"><br>
 Рыба / Дзюндзи Ито<br>
 ギョ / 伊藤 潤二, 2001-2002 (2巻)<br><br>
 </div>
@@ -1977,7 +2193,7 @@ The Mist / Stephen King, 1980<br><br>
 Рита Хейуорт и спасение из Шоушенка / Стивен Кинг<br>
 Rita Hayworth and Shawshank Redemption / Stephen King, 1982<br><br>
 </div>
-<div class="work fict authork titlech fant horror donef boringf"><br>
+<div class="work fict authork titlech fant horror donef boringf 2012"><br>
 1408 / Стивен Кинг<br>
 1408 / Stephen King, 1997<br><br>
 </div>
@@ -2041,7 +2257,7 @@ The Lost World / Michael Crichton, 1995<br><br>
 
 <!-- Кэмпбелл, Джон -->
 <div>
-<div class="work fict authork titlek fant donef goodf"><br>
+<div class="work fict authork titlek fant donef goodf 2012"><br>
 Кто здесь? / Джон Кэмпбелл<br>
 Who Goes There? / John Campbell, 1938<br><br>
 </div>
@@ -2053,7 +2269,7 @@ The Moon Is Hell! / John Campbell, 1950<br><br>
 
 <!-- Лавкрафт, Говард Филлипс -->
 <div>
-<div class="work fict lavkrafrt authorl titlez fant horror donef goodf"><br>
+<div class="work fict lavkrafrt authorl titlez fant horror donef goodf 2012"><br>
 Заброшенный дом / Говард Филлипс Лавкрафт<br>
 The Shunned House / Howard Phillips Lovecraft, 1924<br><br>
 </div>
@@ -2065,11 +2281,11 @@ The Colour Out of Space / Howard Phillips Lovecraft, 1927<br><br>
 История Чарльза Декстера Варда / Говард Филлипс Лавкрафт<br>
 The Case of Charles Dexter Ward / Howard Phillips Lovecraft, 1927<br><br>
 </div>
-<div class="work fict lavkrafrt authorl titlez fant horror unfinishedf"><br>
+<div class="work fict lavkrafrt authorl titlez fant horror unfinishedf 2012"><br>
 Зов Ктулху / Говард Филлипс Лавкрафт<br>
 The Call of Cthulhu / Howard Phillips Lovecraft, 1928<br><br>
 </div>
-<div class="work fict lavkrafrt authorl titleh fant horror donef verygoodf"><br>
+<div class="work fict lavkrafrt authorl titleh fant horror donef verygoodf 2015"><br>
 Хребты Безумия / Говард Филлипс Лавкрафт<br>
 At the Mountains of Madness/ Howard Phillips Lovecraft, 1931<br><br>
 </div>
@@ -2096,6 +2312,14 @@ Auf zwei Planeten / Kurd Laßwitz, 1897<br><br>
 <div class="work fict authorg titled drama unfinishedf"><br>
 Герой нашего времени<br>
 Михаил Юрьевич Лермонтов, 1840<br><br>
+</div>
+</div>
+
+<!-- Лесков, Николай Семёнович -->
+<div>
+<div class="work fict drama verygoodf"><br>
+Сказ о тульском косом Левше и о стальной блохе<br>
+Николай Семёнович Лесков, 1881<br><br>
 </div>
 </div>
 
@@ -2187,6 +2411,14 @@ The White People / Arthur Machen, 1899<br><br>
 </div>
 </div>
 
+<!-- Мередит, Джордж -->
+<div>
+<div class="work fict drama sotsrom"><br>
+Эгоист / Джордж Мередит<br>
+The Egoist / George Meredith, 1879<br><br>
+</div>
+</div>
+
 <!-- Мерль, Робер -->
 <div>
 <div class="work fict authorm titles fant postapok"><br>
@@ -2250,7 +2482,7 @@ Death Note / 奥 浩哉, 2003-2006 (12巻)<br><br>
 
 <!-- Оку, Хироя -->
 <div>
-<div class="work fict authoro titleg manga fant unfinishedf"><br>
+<div class="work fict manga fant donef neverf"><br>
 Гантз / Хироя Оку<br>
 Gantz / 奥 浩哉, 2000-2013 (37巻)<br><br>
 </div>
@@ -2270,11 +2502,11 @@ Keep the Aspidistra Flying / George Orwell, 1936<br><br>
 Глотнуть воздуха / Джордж Оруэлл<br>
 Coming Up for Air / George Orwell, 1939<br><br>
 </div>
-<div class="work fict oruell authoro titles pritcha antiutop donef wonderfulf lovef"><br>
+<div class="work fict oruell pritcha antiutop donef wonderfulf 2015"><br>
 Скотный двор / Джордж Оруэлл<br>
 Animal Farm / George Orwell, 1945<br><br>
 </div>
-<div class="work fict oruell authoro titlet antiutop donef wonderfulf lovef"><br>
+<div class="work fict oruell antiutop donef wonderfulf 2012"><br>
 1984 / Джордж Оруэлл<br>
 1984 / George Orwell, 1949<br><br>
 </div>
@@ -2282,7 +2514,7 @@ Animal Farm / George Orwell, 1945<br><br>
 
 <!-- Отомо, Кацухиро -->
 <div>
-<div class="work fict authoro titlea manga nfant postapok verygoodf"><br>
+<div class="work fict authoro titlea manga nfant postapok goodf"><br>
 Акира / Кацухиро Отомо<br>
 Akira / 大友 克洋, 1982-1990 (6巻)<br><br>
 </div>
@@ -2310,8 +2542,77 @@ Fight Club / Chuck Palahniuk, 1996<br><br>
 
 <!-- Пикуль, Валентин -->
 <div>
-<div class="work fict authorp titlef istorf unfinishedf"><br>
-Фаворит / Валентин Пикуль, 1979, 1982<br><br>
+<div class="work fict istorf unfinishedf 2014"><br>
+Фаворит<br>
+Валентин Пикуль, 1979, 1982<br><br>
+</div>
+</div>
+
+<!-- Пушкин, Александр Сергеевич -->
+<div>
+<div class="work fict skazka unfinishedf"><br>
+Руслан и Людмила<br>
+Александр Сергеевич Пушкин, 1820<br><br>
+</div>
+<div class="work fict istorf"><br>
+Кавказский пленник<br>
+Александр Сергеевич Пушкин, 1821<br><br>
+</div>
+<div class="work fict drama istorf"><br>
+Борис Годунов<br>
+Александр Сергеевич Пушкин, 1825<br><br>
+</div>
+<div class="work fict drama istorf unfinishedf"><br>
+Евгений Онегин<br>
+Александр Сергеевич Пушкин, 1825-1833<br><br>
+</div>
+<div class="work fict drama istorf"><br>
+Повести покойного Ивана Петровича Белкина<br>
+Александр Сергеевич Пушкин, 1830<br><br>
+</div>
+<div class="work fict skazka donef goodf"><br>
+Сказка о попе и о работнике его Балде<br>
+Александр Сергеевич Пушкин, 1830<br><br>
+</div>
+<div class="work fict skazka donef goodf"><br>
+Сказка о царе Салтане, о сыне его славном и могучем богатыре князе Гвидоне Салтановиче и о прекрасной царевне Лебеди<br>
+Александр Сергеевич Пушкин, 1831<br><br>
+</div>
+<div class="work fict skazka donef goodf"><br>
+Сказка о рыбаке и рыбке<br>
+Александр Сергеевич Пушкин, 1833<br><br>
+</div>
+<div class="work fict skazka donef goodf"><br>
+Сказка о мёртвой царевне и о семи богатырях<br>
+Александр Сергеевич Пушкин, 1833<br><br>
+</div>
+<div class="work fict skazka donef goodf"><br>
+Сказка о золотом петушке<br>
+Александр Сергеевич Пушкин, 1834<br><br>
+</div>
+<div class="work fict drama istorf"><br>
+Дубровский<br>
+Александр Сергеевич Пушкин, 1833<br><br>
+</div>
+<div class="work fict drama istorf"><br>
+Пиковая дама<br>
+Александр Сергеевич Пушкин, 1834<br><br>
+</div>
+<div class="work fict istorf"><br>
+История Пугачёва<br>
+Александр Сергеевич Пушкин, 1834<br><br>
+</div>
+<div class="work fict istorf"><br>
+Кирджали<br>
+Александр Сергеевич Пушкин, 1834<br><br>
+</div>
+<div class="work fict istorf donef verygoodf"><br>
+Капитанская дочка<br>
+Александр Сергеевич Пушкин, 1836<br><br>
+</div>
+<div class="work fict istorf unfinishedf"><br>
+Арап Петра Великого (не окончен)<br>
+Александр Сергеевич Пушкин, 1837<br><br>
 </div>
 </div>
 
@@ -2582,11 +2883,11 @@ Treasure Island / Robert Lewis Stevenson, 1883<br><br>
 Принц Отто / Роберт Льюис Стивенсон<br>
 Prince Otto / Robert Lewis Stevenson, 1885<br><br>
 </div>
-<div class="work fict stivenson authors titles fant donef goodf"><br>
+<div class="work fict stivenson authors titles fant donef goodf 2015"><br>
 Странная история доктора Джекила и мистера Хайда / Роберт Льюис Стивенсон<br>
 Strange Case of Dr. Jekyll and Mr. Hyde / Robert Lewis Stevenson, 1886<br><br>
 </div>
-<div class="work fict stivenson authors titles prikl donef goodf"><br>
+<div class="work fict stivenson authors titles prikl donef goodf 2012"><br>
 Похищенный / Роберт Льюис Стивенсон<br>
 Kidnapped / Robert Lewis Stevenson, 1886<br><br>
 </div>
@@ -2602,7 +2903,7 @@ The Master of Ballantrae / Robert Lewis Stevenson, 1889<br><br>
 Несусветный багаж / Роберт Льюис Стивенсон<br>
 The Wrong Box / Robert Lewis Stevenson, 1889<br><br>
 </div>
-<div class="work fict stivenson authors titlep prikl donef verygoodf"><br>
+<div class="work fict stivenson authors titlep prikl donef verygoodf 2012"><br>
 Потерпевшие кораблекрушение / Роберт Льюис Стивенсон<br>
 The Wrecker / Robert Lewis Stevenson, 1892<br><br>
 </div>
@@ -2614,7 +2915,7 @@ Catriona / Robert Lewis Stevenson, 1893<br><br>
 Отлив / Роберт Льюис Стивенсон<br>
 The Ebb-Tide / Robert Lewis Stevenson, 1894<br><br>
 </div>
-<div class="work fict stivenson authors titles prikl unfinishedf"><br>
+<div class="work fict stivenson authors titles prikl unfinishedf 2012"><br>
 Сент-Ив. Приключения французского узника в Англии / Роберт Льюис Стивенсон<br>
 St. Ives: Being The Adventures of a French Prisoner in England / Robert Lewis Stevenson, 1897<br><br>
 </div>
@@ -2713,19 +3014,19 @@ The Catcher in the Rye / Jerome David Salinger, 1951<br><br>
 
 <!-- Твен, Марк -->
 <div>
-<div class="work fict tven authort titlep prikl donef goodf"><br>
+<div class="work fict tven authort titlep prikl donef goodf 2012"><br>
 Приключения Тома Сойера / Марк Твен<br>
 The Adventures of Tom Sawyer / Mark Twain, 1876<br><br>
 </div>
-<div class="work fict tven authort titlep prikl donef verygoodf"><br>
+<div class="work fict tven authort titlep prikl donef verygoodf 2012"><br>
 Принц и нищий / Марк Твен<br>
 The Prince and the Pauper / Mark Twain, 1881<br><br>
 </div>
-<div class="work fict tven authort titlep prikl donef verygoodf"><br>
+<div class="work fict tven authort titlep prikl donef verygoodf 2015"><br>
 Приключения Гекльберри Финна / Марк Твен<br>
 The Adventures of Huckleberry Finn / Mark Twain, 1884<br><br>
 </div>
-<div class="work fict tven authort titleja satira sotsrom donef wonderfulf lovef"><br>
+<div class="work fict tven authort titleja satira sotsrom donef wonderfulf 2012"><br>
 Янки из Коннектикута при дворе короля Артура / Марк Твен<br>
 A Connecticut Yankee in King Arthur’s Court / Mark Twain, 1889<br><br>
 </div>
@@ -2909,7 +3210,7 @@ The Moon Is a Harsh Mistress / Robert Heinlein, 1966<br><br>
 Контрапункт / Олдос Хаксли<br>
 Point Counter Point / Aldous Huxley, 1928<br><br>
 </div>
-<div class="work fict haksli authorh titled antiutop donef wonderfulf lovef"><br>
+<div class="work fict haksli authorh titled antiutop donef wonderfulf 2012"><br>
 Дивный новый мир / Олдос Хаксли<br>
 Brave New World / Aldous Huxley, 1932<br><br>
 </div>
@@ -3007,28 +3308,7 @@ The Last Man / Mary Shelley, 1826<br><br>
 
 </div><!-- /works -->
 
-<!-- 
-<footer>
-<div class="titlefooter work">
-<br>
-PS 2015<br>
-<br>
-</div>
-</footer>
--->
-
-
 </div><!-- /main -->
-
-</div><!-- /st-content-inner -->
-</div><!-- /st-content -->
-</div><!-- /st-pusher -->
-</div><!-- /st-container -->
-
-<!-- 
-<script src="js/classie.js"></script>
-<script src="js/sidebarEffects.js"></script>
- -->
 
 </body>
 </html>
