@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<style>
+body {
+	font-family: Consolas;
+	font-size1: 12px;
+}
+
+div.dice {
+	float: left;
+	height: 32px;
+	width: 32px;
+	background: #F5F5F5;
+	border: #cccccc 1px solid;
+	padding-top1: 4px;
+	font-size: 24px;
+	text-align: center;
+	margin-left: 4px;
+}
+
+button {
+	background-color: #f5f5f5;
+	color: #000000;
+	text-align: center;
+	border: #000000 1px solid;
+	margin-left1: 4px;
+	padding1: 8px;
+	padding-bottom1: 12px;
+	width: 100px;
+	height: 50px;
+}
+
+button:active {
+	color: #ffffff; /* Цвет активных ссылок */
+	background: #cc0000;
+}
+
+button:hover1 {
+	color: #ffcc00; /* Цвет активных ссылок */
+	background: #ffffff;
+}
+
+
+
+div.result {
+	background-color: #f5f5f5;
+	font-color: #ffffff;
+	text-align: center;
+	margin-left: 4px;
+	margin-top: 8px;
+	padding-top: 8px;
+	height: 32px;
+	width: 184px;
+}
+</style>
+
+<script>
+/*alert("Hello world! Play the game, found all of pieces of crap and open this fucking door!!");*/
+
+	/*var healthPoints = 100;*/
+
+
+
+function rollDice1(){
+    var die1 = document.getElementById("die1");
+	var die2 = document.getElementById("die2");
+	var d1 = Math.floor(Math.random() * 6) + 1;
+	die1.innerHTML = d1;
+	die2.innerHTML = d2;
+	document.getElementById("die2").style.display='none';
+}
+
+
+function rollDice(){
+    var die1 = document.getElementById("die1");
+    var die2 = document.getElementById("die2");
+    /*var status = document.getElementById("status");
+	var health = document.getElementById("health");*/
+    var d1 = Math.floor(Math.random() * 6) + 1;
+    var d2 = Math.floor(Math.random() * 6) + 1;
+    var diceTotal = d1 + d2;
+    die1.innerHTML = d1;
+    die2.innerHTML = d2;
+	/*
+	
+    status.innerHTML = "Ваш результат: "+diceTotal+"";
+	health.innerHTML = "А также здоровье: "+healthPoints+"";
+	*/
+
+    /*if(d1 == d2){
+        status.innerHTML += " DOUBLES! You get a free turn!!";
+    }*/
+	/*
+	if(d1 + d2 == 2){
+        status.innerHTML += "<br>WOW! You found a piece of crap!!";
+		healthPoints -= d1 + d2;
+    }
+	if(d1 + d2 == 3){
+        status.innerHTML += " WOW! You found a piece of crap!!";
+		healthPoints -= d1 + d2;
+    }
+	if(d1 + d2 == 4){
+        status.innerHTML += " WOW! You found a piece of crap!!";
+		healthPoints -= d1 + d2;
+    }
+	if(d1 + d2 == 5){
+        status.innerHTML += " WOW! You found a coin!!";
+		healthPoints -= d1 + d2;
+    }
+	if(d1 + d2 == 6){
+        status.innerHTML += " WOW! You found a piece of crap!!";
+		healthPoints -= d1 + d2;
+    }
+	if(d1 + d2 == 7){
+        status.innerHTML += "<br>WOW! You found a piece of crap!!";
+		healthPoints -= d1 + d2;
+		alert (healthPoints);
+    }
+	if(d1 + d2 == 8){
+        status.innerHTML += " WOW! You found a piece of crap!!";
+		healthPoints -= d1 + d2;
+    }
+	if(d1 + d2 == 9){
+        status.innerHTML += " WOW! You found a fucking ball!!";
+		healthPoints -= d1 + d2;
+    }
+	if(d1 + d2 == 10){
+        status.innerHTML += " WOW! You found a piece of crap!!";
+		healthPoints -= d1 + d2;
+    }
+	if(d1 + d2 == 11){
+        status.innerHTML += " WOW! You found a piece of crap!!";
+		healthPoints -= d1 + d2;
+    }
+	if(d1 + d2 == 12){
+        status.innerHTML += " FUCK! You are dead!!";
+		healthPoints -= d1 + d2;
+    }
+
+	if(healthPoints <= 0){
+		healthPoints == 0;
+        health.innerHTML += " FUCK! You are dead!!";
+    }*/
+	
+}
+
+
+
+</script>
+
+</head>
+
+<body>
+
+<div id="die1" class="dice"> </div>
+<div id="die2" class="dice"> </div>
+<br><br><br>
+<button id="butt2d" onclick="rollDice()">Бросить 2К6</button>
+<!-- <div class="result" id="status" style="clear:left;"></div>
+<div class="result" id="health" style="clear:left;"></div> -->
+<button id="butt1d" onclick="rollDice1()">Бросить 1К6</button>
+
+</body>
+
+</html>
