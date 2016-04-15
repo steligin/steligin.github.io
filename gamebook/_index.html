@@ -1,0 +1,427 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<style>
+
+html1 {
+    overflow-y: scroll;
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+
+
+body {
+	font-family1: Lucida Console, Monaco, monospace;
+	font-family: Arial, sans-serif;
+	font-size1: 14px;
+	font-size: 100%;
+	background: #f5f5f5;
+}
+
+
+header {
+	text-align: center;
+	background: #ffffff;
+	display: block;
+	height: 10%;
+}
+
+hr {
+    border: none; /* Убираем границу */
+    background-color: #cc0000; /* Цвет линии */
+    color: #cc0000; /* Цвет линии для IE6-7 */
+    height: 2px; /* Толщина линии */
+	width: 70%;
+}
+
+footer {
+	text-align: center;
+	background: #ffffff;
+}
+
+p.footer:first-letter {
+    color: #000000;
+	font-size: 14px;
+}
+
+p {
+	text-align1: justify;
+	text-align1: left;
+	text-indent: 25px; /* =4% */
+
+}
+
+p.intro:first-letter {
+    color: #cc0000; /* Красный цвет первой буквы каждого абзаца */
+	font-weight: bold;
+	font-size: 150%;
+}
+
+p:first-letter {
+    color: #cc0000; /* Красный цвет первой буквы каждого абзаца */
+	font-weight: bold;
+	font-size: 150%;
+}
+
+p.number {
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+p.number:first-letter {
+    color: #000000;
+	font-size: 20px;
+}
+
+p.titles {
+	text-align: center;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+p.titles:first-letter {
+    color: #000000;
+	font-size: 18px;
+}
+
+p.titles1 {
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+p.titles1:first-letter {
+    color: #000000;
+	font-size: 20px;
+	font-weight1: bold;
+}
+
+a {
+	color: #0066ff; /* Цвет ссылок */
+}
+a:visited {
+	color: #0066ff; /* Цвет посещенных ссылок */
+}
+a:active {
+	color: #ffcc00; /* Цвет активных ссылок */
+}
+a:hover {
+	color: #ffcc00; /* Цвет активных ссылок */
+	background1: #6699ff;
+}
+
+div {
+	text-align: left;
+	background: #ffffff;
+	float1: left;
+	margin-left: 25%;
+	width: 50%;
+}
+
+</style>
+
+
+</head>
+
+<body>
+
+<header>
+<br>
+<h2>Дерьмо, шары и грёбаная дверь</h2>
+<h3>Пол Стейн</h3>
+<hr>
+</header>
+
+
+<div>
+<p class="titles1"><br><br>Правила игры<br><br></p>
+</div>
+
+<div>
+
+<p class="titles">Создание персонажа</p>
+
+<p class="intro">
+Прежде чем отправиться навстречу своему приключению, необходимо разобраться со своими сильными и слабыми сторонами. Чтобы это выяснить, необходимо сделать бросок игральных кубиков (далее 1К6 или 2К6 в зависимости от того, сколько кубиков необходимо бросить) и определить свои Мастерство, Самочувствие и Удачу.
+</p>
+
+<p class="intro">
+Бросьте 1К6, прибавьте к результату 6 и запишите сумму в поле «Мастерство» на «Листе персонажа».
+</p>
+
+<p class="intro">
+Бросьте 2К6, прибавьте к результату 12 и запишите сумму в поле «Самочувствие» на «Листе персонажа».
+</p>
+
+<p class="intro">
+Бросьте 1К6, прибавьте к результату 6 и запишите сумму в поле «Удача» на «Листе персонажа».
+</p>
+
+<p class="intro">
+Значения Мастерства, Самочувствия и Удачи будут постоянно меняться по ходу приключения, поэтому необходимо внимательно отслеживать изменения. Нельзя стирать изначальные параметры персонажа! По ходу игры вы будете получать дополнительные баллы Мастерства, Самочувствия и Удачи, но их сумма никогда не должна превышать изначальных значений, кроме тех редких случаев, когда это будет указано в книге.
+</p>
+
+<p class="intro">
+Мастерство отражает то, насколько хорошо персонаж владеет мечом, его боевой опыт и способность обращаться с оружием – чем выше параметр, тем лучше. </p>
+
+<p class="intro">
+Самочувствие отражает здоровье персонажа, физическую подготовку, его общее состояние в целом – чем выше Самочувствие, тем дольше персонаж сможет выжить.
+</p>
+
+<p class="intro">
+Удача определяет насколько персонаж везуч от природы, возможность неведомых сил придавать событиям нужное персонажу направление.
+</p>
+
+</div>
+
+<div>
+
+<p class="titles">Сражение</p>
+
+<p class="intro">
+В течении приключения могут случатся такие ситуации, из которых невозможно выбраться не обнажив меч и не сразившись с тем или иным существом. Если в книге написано, что противник первый нападает на персонажа, то первый бросок атаки делается за него, если же персонаж – первый бросок атаки делается за персонажа.
+</p>
+
+<p class="intro">
+Сначала необходимо записать Мастерство и Самочувствие противника в пустое поле сражений на «Листе персонажа». Каждый раз как персонаж встретит противника, значения его параметров будут указаны в книге.
+</p>
+
+<p class="intro">
+Ход сражения происходит следующим образом (если персонаж нападает первым, то всё происходит точно так же, только первый бросок за персонажем, второй – за противником):
+<br>1) Бросьте 2К6 за противника, добавьте Мастерство противника, полученный результат будет его «Сила атаки».
+<br>2) Бросьте 2К6 за своего персонажа, добавьте своё Мастерство, полученный результат будет его «Сила атаки».
+<br>3) Если Ваша Сила атаки выше чем у противника, Вы его ранили, переходите к пункту 4. Если у противника Сила атаки больше Вашей, Вас ранили, переходите к пункту 5. Если обе Силы атаки равны, вы парировали удары друг друга и начинается следующий раунд атаки с пункта 1.
+<br>4) Вы ранили противника, поэтому вычтите 2 из его Самочувствия.
+<br>5) Вас ранил противник, поэтому вычтите 2 из своего Самочувствия.
+<br>6) Внесите соответствующие поправки в значения Вашего Самочувствия, либо Самочувствия противника и продолжайте следующий раунд атаки с пункта 1.
+<br>7) Продолжайте в такой последовательности, пока выносливость одного из вас не упадут до нуля, это будет означать смерть (если в книге не оговорено другое).
+
+</div>
+
+<div>
+
+<p class="titles">Сражение с несколькими противниками</p>
+
+<p class="intro">
+Если получится так, что Вам придется сражаться с несколькими противниками одновременно, то перед каждым раундом атаки Вы должны выбрать, в чью сторону вы направляете свой удар. Бросьте кубики за каждого участника битвы. При этом с выбранным Вами противником Вы сражаетесь как обычно, но кроме этого Вы должны сравнивать свою Силу атаки с Силой атаки всех остальных противников. При этом каждый, у кого Сила атаки больше Вашей, ранит Вас. Вы же можете ранить только Вашего непосредственного противника, которого Вы выбрали в начале раунда, даже если ваша Сила атаки будет больше, чем у всех остальных.
+</p>
+
+</div>
+
+<div>
+
+<p class="titles">Удача</p>
+
+<p class="intro">
+В ходе приключения можно положиться на свою удачу (что будет отдельно оговорено в параграфах книги), тогда Вам может либо повезти, либо нет. Удача позволяет, хоть и не всегда, добиться более благоприятного результата. Но надо быть острожным! Полагаться на удачу – дело рискованное, и если не повезёт, результат может оказаться очень плачевным.
+</p>
+
+<p class="intro">
+Бросьте 2К6, если результат меньше или равен Вашему значению Удачи в данный момент, Вам повезло, и ситуация оборачивается в Вашу пользу. Если выпало больше Вашего значения Удачи в данный момент, Вам не повезло.
+</p>
+
+<p class="intro">
+Этот раунд называется «Проверка удачи». Каждый раз после такой проверки вычтите 1 из своей нынешней Удачи. Таким образом становится понятно, что чем больше полагаться на везение, тем более рискованным делом это становится.
+</p>
+
+</div>
+
+<div>
+
+<p class="titles">Восстановление Мастерства, Самочувствия и Удачи</p>
+
+<p class="intro">
+В ходе приключения можно положиться на свою удачу (что будет отдельно оговорено в параграфах книги), тогда Вам может либо повезти, либо нет. Удача позволяет, хоть и не всегда, добиться более благоприятного результата. Но надо быть острожным! Полагаться на удачу – дело рискованное, и если не повезёт, результат может оказаться очень плачевным.
+</p>
+
+<p class="intro">
+Бросьте 2К6, если результат меньше или равен Вашему значению Удачи в данный момент, Вам повезло, и ситуация оборачивается в Вашу пользу. Если выпало больше Вашего значения Удачи в данный момент, Вам не повезло.
+</p>
+
+<p class="intro">
+Этот раунд называется «Проверка удачи». Каждый раз после такой проверки вычтите 1 из своей нынешней Удачи. Таким образом становится понятно, что чем больше полагаться на везение, тем более рискованным делом это становится.
+</p>
+
+</div>
+
+
+
+
+
+
+
+
+
+<div>
+<a name="par001"></a>
+<p class="number">1</p>
+<p>
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+</p>
+<p>
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+</p>
+<p>
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Вы зашли в комнату. У вас 3 варианта пути:<br><br>
+пойти прямо - 21,<br>
+пойти налево - <a href="#par024">24</a>,<br>
+пойти направо - 27,
+</p>
+</div>
+
+
+<div>
+<a name="par024"></a>
+<p class="number">24</p>
+<p>
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+</p>
+<p>
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+</p>
+<p>
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Вы зашли в комнату. У вас 3 варианта пути:<br><br>
+пойти прямо - 21,<br>
+пойти налево - <a href="#par001">1</a>,<br>
+пойти направо - 27,
+</p>
+</div>
+
+
+
+<div>
+<a name="par000"></a>
+<p class="number">35</p>
+<p>
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+</p>
+<p>
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Вы зашли в комнату. У вас 3 варианта пути:<br><br>
+пойти прямо - 21,<br>
+пойти налево - <a href="#par024">24</a>,<br>
+пойти направо - 27,
+</p>
+</div>
+
+<div>
+<a name="par000"></a>
+<p class="number">243</p>
+<p>
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Вы зашли в комнату. У вас 3 варианта пути:<br><br>
+пойти прямо - 21,<br>
+пойти налево - <a href="#par024">24</a>,<br>
+пойти направо - 27,
+</p>
+</div>
+
+<div>
+<a name="par000"></a>
+<p class="number">999</p>
+<p>
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+</p>
+<br>
+<p class="number">
+THE END
+<br><br><br>
+</p>
+</div>
+
+<div>
+<a name="par000"></a>
+<p class="number">999</p>
+<p>
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+</p>
+<br>
+<p class="number">
+THE END
+<br><br><br>
+</p>
+</div>
+
+<div>
+<a name="par000"></a>
+<p class="number">999</p>
+<p>
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+</p>
+<br>
+<p class="number">
+THE END
+<br><br><br>
+</p>
+</div>
+
+
+
+
+
+<footer>
+<hr>
+<p class="footer">Text copyright © 2016 Paul Stein<br>
+Illustrations copyright © 2016 Unknown Painter<br><br></p>
+</footer>
+
+</body>
+
+</html>
