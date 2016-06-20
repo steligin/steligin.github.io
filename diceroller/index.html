@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<style>
+body {
+	font-family: Consolas;
+	font-size: 14px;
+}
+
+div.dice {
+	float: right;
+	height: 100px;
+	width: 100px;
+	background: #f5f5f5;
+	border: #000000 1px solid;
+	font-size: 72px;
+	text-align: center;
+	margin-right: 4px;
+	cursor1: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+div.link {
+    width: 100px; /* Ширина слоя */
+    height: 100px; /* Высота слоя */
+    background: #999999; /* Цвет фона */
+	cursor: pointer;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	border: #000000 1px solid;
+	float: right;
+	margin-right: 4px;
+	height1: 7em;
+	line-height: 7em;
+}
+
+div.link a {
+    display: block; /* Ссылка как блочный элемент */
+    text-align: center; /* Выравнивание по центру */
+    height: 100%; /* Высота на весь слой */
+    color: #ffffff; /* Цвет ссылки */
+	
+}
+
+div.link a:hover {
+
+    color: #ffff00; /* Цвет ссылки */
+	background: #cc0000; /* Цвет фона */
+	
+}
+
+</style>
+
+<script>
+
+function RollOneDice(){
+    var die1 = document.getElementById("die1");
+	var die2 = document.getElementById("die2");
+	var d1 = Math.floor(Math.random() * 6) + 1;
+	die1.innerHTML = d1;
+	die2.className += " invisible";
+}
+
+function RollTwoDices(){
+    var die1 = document.getElementById("die1");
+    var die2 = document.getElementById("die2");
+    var d1 = Math.floor(Math.random() * 6) + 1;
+    var d2 = Math.floor(Math.random() * 6) + 1;
+    var diceTotal = d1 + d2;
+    die1.innerHTML = d1;
+    die2.innerHTML = d2;
+    die2.className = "dice";	
+}
+
+</script>
+
+</head>
+
+<body>
+
+<div class="link"><a onclick="RollOneDice()">Бросить 1К6</a></div>
+
+<div class="link"><a onclick="RollTwoDices()">Бросить 2К6</a></div>
+
+<div id="die1" class="dice"></div>
+
+<div id="die2" class="dice"></div>
+
+</body>
+
+</html>
