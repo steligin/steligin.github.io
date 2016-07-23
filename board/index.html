@@ -114,8 +114,8 @@ function main() {
 	ctx.lineTo(canvas.width-100, canvas.height);
 	ctx.stroke();
 
-	for(i=0; i<20; i++) {
-		for(j=0; j<20; j++) {
+	for(i = 0; i < 20; i += 1) {
+		for(j = 0; j < 20; j += 1) {
 			// ctx.moveTo(0, TILE_WIDTH*j);
 			// ctx.lineTo(400, TILE_WIDTH*j);
 			// ctx.stroke();
@@ -125,11 +125,16 @@ function main() {
 			// ctx.stroke();
 			var left = 0;
 
-	for(var a=0; a<20; a++) {
-	    for(var b=0; b<20; b+=2) {
+	for(var a = 0; a < 20; a += 1) {
+	    for(var b = 0; b < 20; b += 2) {
 	    	startX = b * TILE_WIDTH;
-	    	if(a%2==0) startX = (b+1) * TILE_WIDTH;
-	    	ctx.fillRect(startX + left, (a*TILE_WIDTH) , TILE_WIDTH, TILE_WIDTH);
+	    	if(a%2 == 0) startX = (b + 1) * TILE_WIDTH;
+	    	//ctx.fillRect(startX + left, (a*TILE_WIDTH), TILE_WIDTH, TILE_WIDTH);
+
+	    	ctx.clearRect(startX + left, (a*TILE_WIDTH), TILE_WIDTH, TILE_WIDTH);
+			ctx.fillRect(startX+left+1, (a*TILE_WIDTH+1), TILE_WIDTH-2, TILE_WIDTH-2);
+			ctx.clearRect(startX+left+4, (a*TILE_WIDTH+4), TILE_WIDTH-8, TILE_WIDTH-8);
+			ctx.fillRect(startX+left+6, (a*TILE_WIDTH+6), TILE_WIDTH-12, TILE_WIDTH-12);
 		}
 	}
 
