@@ -46,8 +46,8 @@ var CANVAS_BGCOLOR = "#b1c2b1";
 var EMPTY_WCOLOR = "#a9b9a9";
 var EMPTY_BCOLOR = "#000000";
 
-var x = 0;
-var y = 0;
+var pos_x = 50;
+var pos_y = 50;
 
 /**
  * Game objects
@@ -55,14 +55,16 @@ var y = 0;
 var canvas;	  /* HTMLCanvas */
 var ctx;	  /* CanvasRenderingContext2d */
 
-function drrect() {
+function drRect(pos_x, pos_y, color) {
 
-	ctx.fillStyle = EMPTY_BCOLOR;
-	ctx.fillRect(x+50, y+50, 50, 50);
+	var pos_x;
+	var pos_y;
+	var color;
+
+	ctx.fillStyle = color;
+	ctx.fillRect(pos_x, pos_y, 50, 50);
 
 }
-
-
 
 /**
  * Starts the game
@@ -90,7 +92,7 @@ function main() {
 	// ctx.lineTo(canvas.width-100, canvas.height);
 	// ctx.stroke();
 
-	drrect();
+	drRect(100, 100, "#000000");
 
 
 	// for(i = 0; i < 20; i += 1) {
