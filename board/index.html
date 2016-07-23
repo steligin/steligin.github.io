@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Super Brick Game Color: Snake</title>
+<!-- Basic styling, centering of the canvas. -->
+<style>
+	@font-face {
+	    font-family1: PressStart2P;
+	    src1: url(PressStart2P.ttf);
+	}
+	body {
+		background-color1: #000000;
+		color1: #ffffff;
+		font-family: Lucida Console;
+		font-size: 14px;
+	}
+	canvas {
+		display: block;
+		position: absolute;
+		border: 1px solid #000000;
+		margin: auto;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+	}
+</style>
+</head>
+<body>
+
+<center>SUPER BRICK GAME COLOR ADVANCE: Board</center>
+
+<script>
+
+var
+
+/**
+ * Constats
+ */
+COLS = 20,
+ROWS = 20,
+TILE_WIDTH = 20,
+SCOREBOARD_WIDTH = 100,
+
+EMPTY = 0,
+SNAKE = 1,
+FRUIT = 2,
+
+CANVAS_BGCOLOR = "#b1c2b1",
+//EMPTY_COLOR = "#cccccc",
+// classic color
+EMPTY_COLOR = "#a9b9a9",
+//EMPTY_COLOR = "#d6d6d6",
+//SNAKE_COLOR = "#339900",
+// classic color
+SNAKE_COLOR = "#000000",
+//FRUIT_COLOR = "#ee0000",
+FRUIT_COLOR = "#666666",
+//FRUIT_COLOR = "rgba(0, 0, 0, 0.5)",
+//FRUIT_COLOR = "#000000",
+
+LEFT  = 0,
+UP    = 1,
+RIGHT = 2,
+DOWN  = 3,
+SPACE = 4,
+SOUND = 5,
+//PAUSE = 4,
+
+KEY_LEFT  = 37,
+KEY_UP    = 38,
+KEY_RIGHT = 39,
+KEY_DOWN  = 40,
+KEY_P 	  = 80,
+KEY_SPACE = 32,
+KEY_S 	  = 83,
+
+/**
+ * Game objects
+ */
+canvas,	  /* HTMLCanvas */
+ctx,	  /* CanvasRenderingContext2d */
+keystate, /* Object, used for keyboard inputs */
+frames,   /* number, used for animation */
+score,	  /* number, keep track of the player score */
+level,
+hiscore;
+hiscore = 0;
+
+/**
+ * Starts the game
+ */
+function main() {
+
+	// create and initiate the canvas element
+	canvas = document.createElement("canvas");
+	ctx = canvas.getContext("2d");
+	canvas.width = COLS*TILE_WIDTH+SCOREBOARD_WIDTH;
+	canvas.height = ROWS*TILE_WIDTH;
+	canvas.style.backgroundColor = CANVAS_BGCOLOR;
+
+	// add the canvas element to the body of the document
+	document.body.appendChild(canvas);
+
+	// sets an base font for bigger score display
+	ctx.font = "12px Helvetica";
+	//ctx.font = "12px Lucida Console";
+
+	ctx.fillStyle = "#000000";
+	ctx.beginPath();
+	ctx.moveTo(canvas.width-100, 0);
+	ctx.lineTo(canvas.width-100, canvas.height);
+	ctx.stroke();
+
+	for(i=0; i<20; i++) {
+		for(j=0; j<20; j++) {
+			// ctx.moveTo(0, TILE_WIDTH*j);
+			// ctx.lineTo(400, TILE_WIDTH*j);
+			// ctx.stroke();
+	 
+			// ctx.moveTo(TILE_WIDTH*i, 0);
+			// ctx.lineTo(TILE_WIDTH*i, 400);
+			// ctx.stroke();
+			var left = 0;
+
+	for(var a=0; a<20; a++) {
+	    for(var b=0; b<20; b+=2) {
+	    	startX = b * TILE_WIDTH;
+	    	if(a%2==0) startX = (b+1) * TILE_WIDTH;
+	    	ctx.fillRect(startX + left, (a*TILE_WIDTH) , TILE_WIDTH, TILE_WIDTH);
+		}
+	}
+
+		}
+	}
+
+}
+
+// start and run the game
+main();
+console.log('start_game');
+</script>
+
+</body>
+</html>
