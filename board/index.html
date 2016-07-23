@@ -46,11 +46,34 @@ var CANVAS_BGCOLOR = "#b1c2b1";
 var EMPTY_WCOLOR = "#a9b9a9";
 var EMPTY_BCOLOR = "#000000";
 
+var x = 0;
+var y = 0;
+
 /**
  * Game objects
  */
 var canvas;	  /* HTMLCanvas */
 var ctx;	  /* CanvasRenderingContext2d */
+
+
+function drrect() {
+
+	canvas = document.createElement("canvas");
+	ctx = canvas.getContext("2d");
+
+	canvas.width = COLS*TILE_WIDTH+SCOREBOARD_WIDTH;
+	canvas.height = ROWS*TILE_WIDTH;
+	canvas.style.backgroundColor = CANVAS_BGCOLOR;
+
+	// add the canvas element to the body of the document
+	document.body.appendChild(canvas);
+
+	ctx.fillRect(x+50, y+50, 50, 50);
+
+}
+
+
+
 
 /**
  * Starts the game
@@ -89,7 +112,7 @@ function main() {
 			//a +=1; b += 2;
 
 			if((i+j)%2 == 0) { 
-				
+
 						startX = (b + 1) * TILE_WIDTH;
 			
 				    	ctx.fillStyle = EMPTY_BCOLOR;
@@ -136,7 +159,8 @@ function main() {
 }
 
 // start and run the game
-main();
+//main();
+drrect();
 console.log('start_game');
 </script>
 
