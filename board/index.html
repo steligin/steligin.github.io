@@ -11,8 +11,8 @@
 	    src1: url(PressStart2P.ttf);
 	}
 	body {
-		background-color1: #000000;
-		color1: #ffffff;
+		background-color: #000000;
+		color: #ffffff;
 		font-family: Lucida Console;
 		font-size: 14px;
 	}
@@ -34,60 +34,23 @@
 
 <script>
 
-var
-
 /**
  * Constats
  */
-COLS = 20,
-ROWS = 20,
-TILE_WIDTH = 20,
-SCOREBOARD_WIDTH = 100,
+var COLS = 20;
+var ROWS = 20;
+var TILE_WIDTH = 20;
+var SCOREBOARD_WIDTH = 100;
 
-EMPTY = 0,
-SNAKE = 1,
-FRUIT = 2,
-
-CANVAS_BGCOLOR = "#b1c2b1",
-//EMPTY_COLOR = "#cccccc",
-// classic color
-EMPTY_COLOR = "#a9b9a9",
-//EMPTY_COLOR = "#d6d6d6",
-//SNAKE_COLOR = "#339900",
-// classic color
-SNAKE_COLOR = "#000000",
-//FRUIT_COLOR = "#ee0000",
-FRUIT_COLOR = "#666666",
-//FRUIT_COLOR = "rgba(0, 0, 0, 0.5)",
-//FRUIT_COLOR = "#000000",
-
-LEFT  = 0,
-UP    = 1,
-RIGHT = 2,
-DOWN  = 3,
-SPACE = 4,
-SOUND = 5,
-//PAUSE = 4,
-
-KEY_LEFT  = 37,
-KEY_UP    = 38,
-KEY_RIGHT = 39,
-KEY_DOWN  = 40,
-KEY_P 	  = 80,
-KEY_SPACE = 32,
-KEY_S 	  = 83,
+var CANVAS_BGCOLOR = "#b1c2b1";
+var EMPTY_WCOLOR = "#a9b9a9";
+var EMPTY_BCOLOR = "#000000";
 
 /**
  * Game objects
  */
-canvas,	  /* HTMLCanvas */
-ctx,	  /* CanvasRenderingContext2d */
-keystate, /* Object, used for keyboard inputs */
-frames,   /* number, used for animation */
-score,	  /* number, keep track of the player score */
-level,
-hiscore;
-hiscore = 0;
+var canvas;	  /* HTMLCanvas */
+var ctx;	  /* CanvasRenderingContext2d */
 
 /**
  * Starts the game
@@ -97,6 +60,7 @@ function main() {
 	// create and initiate the canvas element
 	canvas = document.createElement("canvas");
 	ctx = canvas.getContext("2d");
+
 	canvas.width = COLS*TILE_WIDTH+SCOREBOARD_WIDTH;
 	canvas.height = ROWS*TILE_WIDTH;
 	canvas.style.backgroundColor = CANVAS_BGCOLOR;
@@ -116,27 +80,33 @@ function main() {
 
 	for(i = 0; i < 20; i += 1) {
 		for(j = 0; j < 20; j += 1) {
-			// ctx.moveTo(0, TILE_WIDTH*j);
-			// ctx.lineTo(400, TILE_WIDTH*j);
-			// ctx.stroke();
-	 
-			// ctx.moveTo(TILE_WIDTH*i, 0);
-			// ctx.lineTo(TILE_WIDTH*i, 400);
-			// ctx.stroke();
+
 			var left = 0;
 
-	for(var a = 0; a < 20; a += 1) {
-	    for(var b = 0; b < 20; b += 2) {
-	    	startX = b * TILE_WIDTH;
-	    	if(a%2 == 0) startX = (b + 1) * TILE_WIDTH;
-	    	//ctx.fillRect(startX + left, (a*TILE_WIDTH), TILE_WIDTH, TILE_WIDTH);
+			for(var a = 0; a < 20; a += 1) {
+				startY = a * TILE_WIDTH;
 
-	    	ctx.clearRect(startX + left, (a*TILE_WIDTH), TILE_WIDTH, TILE_WIDTH);
-			ctx.fillRect(startX+left+1, (a*TILE_WIDTH+1), TILE_WIDTH-2, TILE_WIDTH-2);
-			ctx.clearRect(startX+left+4, (a*TILE_WIDTH+4), TILE_WIDTH-8, TILE_WIDTH-8);
-			ctx.fillRect(startX+left+6, (a*TILE_WIDTH+6), TILE_WIDTH-12, TILE_WIDTH-12);
-		}
-	}
+				if(b%2 == 0) startY = a * TILE_WIDTH;
+
+						ctx.fillStyle = EMPTY_WCOLOR;
+						ctx.clearRect(startY+left, (b*TILE_WIDTH), TILE_WIDTH, TILE_WIDTH);
+						ctx.fillRect(startY+left+1, (b*TILE_WIDTH+1), TILE_WIDTH-2, TILE_WIDTH-2);
+						ctx.clearRect(startY+left+4, (b*TILE_WIDTH+4), TILE_WIDTH-8, TILE_WIDTH-8);
+						ctx.fillRect(startY+left+6, (b*TILE_WIDTH+6), TILE_WIDTH-12, TILE_WIDTH-12);
+
+
+			    for(var b = 0; b < 20; b += 2) {
+			    	startX = b * TILE_WIDTH;
+
+			    	if(a%2 == 0) startX = (b + 1) * TILE_WIDTH;
+
+				    	ctx.fillStyle = EMPTY_BCOLOR;
+				    	ctx.clearRect(startX+left, (a*TILE_WIDTH), TILE_WIDTH, TILE_WIDTH);
+						ctx.fillRect(startX+left+1, (a*TILE_WIDTH+1), TILE_WIDTH-2, TILE_WIDTH-2);
+						ctx.clearRect(startX+left+4, (a*TILE_WIDTH+4), TILE_WIDTH-8, TILE_WIDTH-8);
+						ctx.fillRect(startX+left+6, (a*TILE_WIDTH+6), TILE_WIDTH-12, TILE_WIDTH-12);
+				}
+			}
 
 		}
 	}
