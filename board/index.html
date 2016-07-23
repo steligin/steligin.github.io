@@ -55,6 +55,15 @@ var y = 0;
 var canvas;	  /* HTMLCanvas */
 var ctx;	  /* CanvasRenderingContext2d */
 
+function drrect() {
+
+	ctx.fillStyle = EMPTY_BCOLOR;
+	ctx.fillRect(x+50, y+50, 50, 50);
+
+}
+
+
+
 /**
  * Starts the game
  */
@@ -81,9 +90,7 @@ function main() {
 	// ctx.lineTo(canvas.width-100, canvas.height);
 	// ctx.stroke();
 
-	ctx.fillStyle = EMPTY_BCOLOR;
-	ctx.fillRect(x+50, y+50, 50, 50);
-
+	drrect();
 
 
 	// for(i = 0; i < 20; i += 1) {
