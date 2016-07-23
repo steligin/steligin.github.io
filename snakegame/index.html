@@ -45,10 +45,24 @@ var
  */
 COLS = 20,
 ROWS = 20,
+TILE_WIDTH = 20,
+SCOREBOARD_WIDTH = 100,
 
 EMPTY = 0,
 SNAKE = 1,
 FRUIT = 2,
+
+//EMPTY_COLOR = "#cccccc",
+// classic color
+EMPTY_COLOR = "#a9b9a9",
+//EMPTY_COLOR = "#d6d6d6",
+//SNAKE_COLOR = "#339900",
+// classic color
+SNAKE_COLOR = "#000000",
+//FRUIT_COLOR = "#ee0000",
+FRUIT_COLOR = "#666666",
+//FRUIT_COLOR = "rgba(0, 0, 0, 0.5)",
+//FRUIT_COLOR = "#000000",
 
 LEFT  = 0,
 UP    = 1,
@@ -76,11 +90,10 @@ frames,   /* number, used for animation */
 score,	  /* number, keep track of the player score */
 
 level,
-hiscore,
-attempt;
-score = 0;
+hiscore;
+//attempt;
 hiscore = 0;
-attempt = 3;
+//attempt = 3;
 
 
 // function getRndColor() {
@@ -228,15 +241,15 @@ function main() {
 	// create and initiate the canvas element
 	canvas = document.createElement("canvas");
 	ctx = canvas.getContext("2d");
-	canvas.width = COLS*20+100;
-	canvas.height = ROWS*20;
+	canvas.width = COLS*TILE_WIDTH+SCOREBOARD_WIDTH;
+	canvas.height = ROWS*TILE_WIDTH;
 
 	// add the canvas element to the body of the document
 	document.body.appendChild(canvas);
 
 	// classic color
-	//canvas.style.backgroundColor = '#B1C2B1';
-	canvas.style.backgroundColor = '#dddddd';
+	canvas.style.backgroundColor = '#B1C2B1';
+	//canvas.style.backgroundColor = '#dddddd';
 
 	// sets an base font for bigger score display
 	//ctx.font = "12px Helvetica";
@@ -263,12 +276,12 @@ function main() {
  */
 function init() {
 
-	//score = 0;
-	if (attempt > 0) {score = score;}
-	if (attempt == 0) {score = 0;}
+	score = 0;
+	// if (attempt > 0) {score = score;}
+	// if (attempt == 0) {score = 0;}
 
 	level = 1;
-	if (attempt == 0) {attempt = 3;}
+	//if (attempt == 0) {attempt = 3;}
 
 	grid.init(EMPTY, COLS, ROWS);
 
@@ -304,8 +317,6 @@ function update() {
 	
 	frames += 1;
 
-	//setTimeout(function(){ }, 1000);
-
 	// changing direction of the snake depending on which keys that are pressed
 	if (keystate[KEY_LEFT] && snake.direction !== RIGHT) {
 		snake.direction = LEFT;
@@ -332,7 +343,7 @@ function update() {
 	} else {
 		ctx.clearRect(canvas.width-99, canvas.height-60, 99, 60);
 		ctx.font = "36px Helvetica";
-		ctx.fillStyle = "#cccccc";
+		ctx.fillStyle = EMPTY_COLOR;
 		ctx.fillText("\u2615", canvas.width-60, canvas.height-20);
 	}
 	// mute/sound
@@ -341,7 +352,7 @@ function update() {
 		// нота --------------------------------------------
 		ctx.clearRect(canvas.width-99, canvas.height-120, 99, 60);
 		ctx.font = "36px Helvetica";
-		ctx.fillStyle = "#cccccc";
+		ctx.fillStyle = EMPTY_COLOR;
 		ctx.fillText("\u266B", canvas.width-60, canvas.height-80);
 	} else {
 		ctx.clearRect(canvas.width-99, canvas.height-120, 99, 60);
@@ -384,14 +395,14 @@ function update() {
 			0 > ny || ny > grid.height-1 ||
 			grid.get(nx, ny) === SNAKE) {
 
-			attempt -= 1;
+			//attempt -= 1;
 
-			if (attempt == 0) {
+			//if (attempt == 0) {
 				console.log('game_over');
-				alert("\t    GAME OVER\t\n\n" + "\t    Your score: " + score + 
+				alert("\t    GAME OVER\n\n" + "\t    Your score: " + score + 
 				"\nPress [ENTER] to restart game");
-				console.log('return_game');
-			}
+				//console.log('return_game');
+			//}
 
 			return init();
 		}
@@ -450,28 +461,21 @@ function draw() {
 			// each cell
 			switch (grid.get(x, y)) {
 				case EMPTY:
-					// classic color
-					//ctx.fillStyle = "#999999";
-					ctx.fillStyle = "#cccccc";
-					//ctx.fillStyle = "#d6d6d6";
-					//ctx.clearRect(x*tw, y*th, tw, th);
+					ctx.fillStyle = EMPTY_COLOR;
+					// ctx.clearRect(x*tw, y*th, tw, th);
 					// ctx.fillRect(x*tw+1, y*th+1, tw-2, th-2);
 					// ctx.clearRect(x*tw+4, y*th+4, tw-8, th-8);
 					// ctx.fillRect(x*tw+6, y*th+6, tw-12, th-12);
 					break;
 				case SNAKE:
-					//ctx.fillStyle = "#000000";
-					ctx.fillStyle = "#339900";
-					//ctx.fillStyle = cr1;
+					ctx.fillStyle = SNAKE_COLOR;
 					// ctx.clearRect(x*tw, y*th, tw, th);
 					// ctx.fillRect(x*tw+1, y*th+1, tw-2, th-2);
 					// ctx.clearRect(x*tw+4, y*th+4, tw-8, th-8);
 					// ctx.fillRect(x*tw+6, y*th+6, tw-12, th-12);
 					break;
 				case FRUIT:
-					//ctx.fillStyle = "#666666";
-					ctx.fillStyle = "#ee0000";
-					//ctx.fillStyle = cr;
+					ctx.fillStyle = FRUIT_COLOR;
 					// ctx.clearRect(x*tw, y*th, tw, th);
 					// ctx.fillRect(x*tw+1, y*th+1, tw-2, th-2);
 					// ctx.clearRect(x*tw+4, y*th+4, tw-8, th-8);
@@ -480,8 +484,8 @@ function draw() {
 			}
 
 			//ctx.fillRect(x*tw, y*th, tw, th);
-
 			ctx.clearRect(x*tw, y*th, tw, th);
+
 			ctx.fillRect(x*tw+1, y*th+1, tw-2, th-2);
 			ctx.clearRect(x*tw+4, y*th+4, tw-8, th-8);
 			ctx.fillRect(x*tw+6, y*th+6, tw-12, th-12);
@@ -550,8 +554,8 @@ function draw() {
 	ctx.fillText("\u25B2  " + level + "  \u25BC", canvas.width-70, 120);
 	ctx.fillText("SPEED:", canvas.width-80, 140);
 	ctx.fillText("\u25C4" + "  1  " + "\u25BA", canvas.width-70, 160);
-	ctx.fillText("ATTEMPTS:", canvas.width-80, 180);
-	ctx.fillText(attempt, canvas.width-50, 200);
+	//ctx.fillText("ATTEMPTS:", canvas.width-80, 180);
+	//ctx.fillText(attempt, canvas.width-50, 200);
 
 }
 
