@@ -84,19 +84,19 @@ function main() {
 			var left = 0;
 
 			for(var a = 0; a < 20; a += 1) {
-				startY = a * TILE_WIDTH;
-
-				if(b%2 == 0) startY = a * TILE_WIDTH;
-
-						ctx.fillStyle = EMPTY_WCOLOR;
-						ctx.clearRect(startY+left, (b*TILE_WIDTH), TILE_WIDTH, TILE_WIDTH);
-						ctx.fillRect(startY+left+1, (b*TILE_WIDTH+1), TILE_WIDTH-2, TILE_WIDTH-2);
-						ctx.clearRect(startY+left+4, (b*TILE_WIDTH+4), TILE_WIDTH-8, TILE_WIDTH-8);
-						ctx.fillRect(startY+left+6, (b*TILE_WIDTH+6), TILE_WIDTH-12, TILE_WIDTH-12);
-
 
 			    for(var b = 0; b < 20; b += 2) {
 			    	startX = b * TILE_WIDTH;
+			    	startY = a * TILE_WIDTH;
+
+					if(a%1 == 0) startY = (a + 2)* TILE_WIDTH;
+
+						ctx.fillStyle = EMPTY_WCOLOR;
+						ctx.clearRect(startX+left, (a*TILE_WIDTH), TILE_WIDTH, TILE_WIDTH);
+						ctx.fillRect(startX+left+1, (a*TILE_WIDTH+1), TILE_WIDTH-2, TILE_WIDTH-2);
+						ctx.clearRect(startX+left+4, (a*TILE_WIDTH+4), TILE_WIDTH-8, TILE_WIDTH-8);
+						ctx.fillRect(startX+left+6, (a*TILE_WIDTH+6), TILE_WIDTH-12, TILE_WIDTH-12);
+
 
 			    	if(a%2 == 0) startX = (b + 1) * TILE_WIDTH;
 
@@ -105,6 +105,10 @@ function main() {
 						ctx.fillRect(startX+left+1, (a*TILE_WIDTH+1), TILE_WIDTH-2, TILE_WIDTH-2);
 						ctx.clearRect(startX+left+4, (a*TILE_WIDTH+4), TILE_WIDTH-8, TILE_WIDTH-8);
 						ctx.fillRect(startX+left+6, (a*TILE_WIDTH+6), TILE_WIDTH-12, TILE_WIDTH-12);
+
+					
+
+
 				}
 			}
 
