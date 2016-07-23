@@ -80,37 +80,55 @@ function main() {
 
 	for(i = 0; i < 20; i += 1) {
 		for(j = 0; j < 20; j += 1) {
-
+			
 			var left = 0;
+			var a = 0;
+			var b = 0;
+			startX = b * TILE_WIDTH;
 
-			for(var a = 0; a < 20; a += 1) {
+			//a +=1; b += 2;
 
-			    for(var b = 0; b < 20; b += 2) {
-			    	startX = b * TILE_WIDTH;
-			    	startY = a * TILE_WIDTH;
-
-					if(a%1 == 0) startY = (a + 2)* TILE_WIDTH;
-
-						ctx.fillStyle = EMPTY_WCOLOR;
-						ctx.clearRect(startX+left, (a*TILE_WIDTH), TILE_WIDTH, TILE_WIDTH);
-						ctx.fillRect(startX+left+1, (a*TILE_WIDTH+1), TILE_WIDTH-2, TILE_WIDTH-2);
-						ctx.clearRect(startX+left+4, (a*TILE_WIDTH+4), TILE_WIDTH-8, TILE_WIDTH-8);
-						ctx.fillRect(startX+left+6, (a*TILE_WIDTH+6), TILE_WIDTH-12, TILE_WIDTH-12);
-
-
-			    	if(a%2 == 0) startX = (b + 1) * TILE_WIDTH;
-
+			if((i+j)%2 == 0) { 
+				
+						startX = (b + 1) * TILE_WIDTH;
+			
 				    	ctx.fillStyle = EMPTY_BCOLOR;
 				    	ctx.clearRect(startX+left, (a*TILE_WIDTH), TILE_WIDTH, TILE_WIDTH);
 						ctx.fillRect(startX+left+1, (a*TILE_WIDTH+1), TILE_WIDTH-2, TILE_WIDTH-2);
 						ctx.clearRect(startX+left+4, (a*TILE_WIDTH+4), TILE_WIDTH-8, TILE_WIDTH-8);
 						ctx.fillRect(startX+left+6, (a*TILE_WIDTH+6), TILE_WIDTH-12, TILE_WIDTH-12);
+			}
+
+
+
+			// for(var a = 0; a < 20; a += 1) {
+
+			//     for(var b = 0; b < 20; b += 2) {
+			//     	startX = b * TILE_WIDTH;
+			//     	//
+
+			// 		if(a%2 == 1) startX = startX;
+
+			// 			ctx.fillStyle = EMPTY_WCOLOR;
+			// 			ctx.clearRect(startX+left, (a*TILE_WIDTH), TILE_WIDTH, TILE_WIDTH);
+			// 			ctx.fillRect(startX+left+1, (a*TILE_WIDTH+1), TILE_WIDTH-2, TILE_WIDTH-2);
+			// 			ctx.clearRect(startX+left+4, (a*TILE_WIDTH+4), TILE_WIDTH-8, TILE_WIDTH-8);
+			// 			ctx.fillRect(startX+left+6, (a*TILE_WIDTH+6), TILE_WIDTH-12, TILE_WIDTH-12);
+
+
+			//     	if(a%2 == 0) startX = (b + 1) * TILE_WIDTH;
+
+			// 	    	ctx.fillStyle = EMPTY_BCOLOR;
+			// 	    	ctx.clearRect(startX+left, (a*TILE_WIDTH), TILE_WIDTH, TILE_WIDTH);
+			// 			ctx.fillRect(startX+left+1, (a*TILE_WIDTH+1), TILE_WIDTH-2, TILE_WIDTH-2);
+			// 			ctx.clearRect(startX+left+4, (a*TILE_WIDTH+4), TILE_WIDTH-8, TILE_WIDTH-8);
+			// 			ctx.fillRect(startX+left+6, (a*TILE_WIDTH+6), TILE_WIDTH-12, TILE_WIDTH-12);
 
 					
 
 
-				}
-			}
+			// 	}
+			// }
 
 		}
 	}
