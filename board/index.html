@@ -5,14 +5,14 @@
 <title>Super Brick Game Color Advance: Board</title>
 <style>
     @font-face {
-        font-family1: PressStart2P;
-        src1: url(PressStart2P.ttf);
+        font-family: PressStart2P;
+        src: url(PressStart2P.ttf);
     }
     body {
         background-color: #000000;
         color: #ffffff;
-        font-family: Lucida Console;
-        font-size: 14px;
+        font-family: "PressStart2P";
+        font-size: 12px;
     }
     canvas {
         display: block;
@@ -28,6 +28,7 @@
 </head>
 
 <body>
+<br>
 <center>SUPER BRICK GAME COLOR ADVANCE: Board</center>
 
 <script>
@@ -44,24 +45,37 @@ var EMPTY_BCOLOR = "#000000";
 var canvas;
 var ctx;
 
-function drRect(pos_x, pos_y, xw, yh, color) {
-
-    var pos_x;
-    var pos_y;
-    var xw;
-    var yh;
-    var color;
-    var color2;
+function drawBrick(pos_x, pos_y, xw, yh, color) {
 
     ctx.fillStyle = color;
-
     //ctx.fillRect(pos_x, pos_y, xw, yh);
-
     ctx.clearRect(pos_x, pos_y, xw, yh);
     ctx.fillRect(pos_x+1, pos_y+1, xw-2, yh-2);
     ctx.clearRect(pos_x+4, pos_y+4, xw-8, yh-8);
     ctx.fillRect(pos_x+6, pos_y+6, xw-12, yh-12);
 
+}
+
+function drawBlankField() {
+
+    for (var row = 0; row < ROWS; row += 1) {
+        for (var column = 0; column < COLS; column += 1) {
+            // coordinates of the top-left corner
+            var x = column * TILE_WIDTH;
+            var y = row * TILE_WIDTH;
+
+            drawBrick(x, y, TILE_WIDTH, TILE_WIDTH, EMPTY_WCOLOR);
+        }
+    }
+
+}
+
+var snake = {
+    x : 0,
+    y : 0,
+    printSnake : function() {
+        drawBrick(this.x+TILE_WIDTH*10, this.y+TILE_WIDTH*9, TILE_WIDTH, TILE_WIDTH, EMPTY_BCOLOR);
+    }
 }
 
 function main() {
@@ -81,42 +95,8 @@ function main() {
     ctx.lineTo(canvas.width-SCOREBOARD_WIDTH, canvas.height);
     ctx.stroke();
 
-    for (var row = 0; row < ROWS; row += 1) {
-        for (var column = 0; column < COLS; column += 1) {
-            // coordinates of the top-left corner
-            var x = column * TILE_WIDTH;
-            var y = row * TILE_WIDTH;
-
-            if (row%2 == 0) {
-                if (column%2 == 0) {
-                    //ctx.fillStyle = EMPTY_WCOLOR;
-                    drRect(x, y, TILE_WIDTH, TILE_WIDTH, EMPTY_WCOLOR);
-                } else {
-                    // ctx.fillStyle = EMPTY_BCOLOR;
-                    drRect(x, y, TILE_WIDTH, TILE_WIDTH, EMPTY_BCOLOR);
-                  }
-            } else {
-
-                if (column%2 == 0) {
-                    // ctx.fillStyle = EMPTY_BCOLOR;
-                    drRect(x, y, TILE_WIDTH, TILE_WIDTH, EMPTY_BCOLOR);
-                } else {
-                    // ctx.fillStyle = EMPTY_WCOLOR;
-                    drRect(x, y, TILE_WIDTH, TILE_WIDTH, EMPTY_WCOLOR);
-                  }
-              }
-
-            // ctx.clearRect(x, y, TILE_WIDTH, TILE_WIDTH);
-            // ctx.fillRect(x+1, y+1, TILE_WIDTH-2, TILE_WIDTH-2);
-            // ctx.clearRect(x+4, y+4, TILE_WIDTH-8, TILE_WIDTH-8);
-            // ctx.fillRect(x+6, y+6, TILE_WIDTH-12, TILE_WIDTH-12);
-        }
-    }
-
-    // drRect(0, 0, 50, 50, EMPTY_WCOLOR);
-    // drRect(50, 0, 50, 50, EMPTY_BCOLOR);
-    // drRect(100, 0, 50, 50, EMPTY_WCOLOR);
-    // drRect(150, 0, 50, 50, EMPTY_BCOLOR);
+    drawBlankField();
+    snake.printSnake();
 
 }
 
