@@ -51,9 +51,16 @@ function drRect(pos_x, pos_y, xw, yh, color) {
     var xw;
     var yh;
     var color;
+    var color2;
 
     ctx.fillStyle = color;
-    ctx.fillRect(pos_x, pos_y, xw, yh);
+
+    //ctx.fillRect(pos_x, pos_y, xw, yh);
+
+    ctx.clearRect(pos_x, pos_y, xw, yh);
+    ctx.fillRect(pos_x+1, pos_y+1, xw-2, yh-2);
+    ctx.clearRect(pos_x+4, pos_y+4, xw-8, yh-8);
+    ctx.fillRect(pos_x+6, pos_y+6, xw-12, yh-12);
 
 }
 
@@ -74,31 +81,35 @@ function main() {
     ctx.lineTo(canvas.width-SCOREBOARD_WIDTH, canvas.height);
     ctx.stroke();
 
-    for (var row = 0; row < ROWS; row ++) {
-        for (var column = 0; column < COLS; column ++) {
+    for (var row = 0; row < ROWS; row += 1) {
+        for (var column = 0; column < COLS; column += 1) {
             // coordinates of the top-left corner
             var x = column * TILE_WIDTH;
             var y = row * TILE_WIDTH;
 
             if (row%2 == 0) {
                 if (column%2 == 0) {
-                    ctx.fillStyle = EMPTY_BCOLOR;
+                    //ctx.fillStyle = EMPTY_WCOLOR;
+                    drRect(x, y, TILE_WIDTH, TILE_WIDTH, EMPTY_WCOLOR);
                 } else {
-                    ctx.fillStyle = EMPTY_WCOLOR;
+                    // ctx.fillStyle = EMPTY_BCOLOR;
+                    drRect(x, y, TILE_WIDTH, TILE_WIDTH, EMPTY_BCOLOR);
                   }
             } else {
 
                 if (column%2 == 0) {
-                    ctx.fillStyle = EMPTY_WCOLOR;
+                    // ctx.fillStyle = EMPTY_BCOLOR;
+                    drRect(x, y, TILE_WIDTH, TILE_WIDTH, EMPTY_BCOLOR);
                 } else {
-                    ctx.fillStyle = EMPTY_BCOLOR;
+                    // ctx.fillStyle = EMPTY_WCOLOR;
+                    drRect(x, y, TILE_WIDTH, TILE_WIDTH, EMPTY_WCOLOR);
                   }
               }
 
-            ctx.clearRect(x, y, TILE_WIDTH, TILE_WIDTH);
-            ctx.fillRect(x+1, y+1, TILE_WIDTH-2, TILE_WIDTH-2);
-            ctx.clearRect(x+4, y+4, TILE_WIDTH-8, TILE_WIDTH-8);
-            ctx.fillRect(x+6, y+6, TILE_WIDTH-12, TILE_WIDTH-12);
+            // ctx.clearRect(x, y, TILE_WIDTH, TILE_WIDTH);
+            // ctx.fillRect(x+1, y+1, TILE_WIDTH-2, TILE_WIDTH-2);
+            // ctx.clearRect(x+4, y+4, TILE_WIDTH-8, TILE_WIDTH-8);
+            // ctx.fillRect(x+6, y+6, TILE_WIDTH-12, TILE_WIDTH-12);
         }
     }
 
