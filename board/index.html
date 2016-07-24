@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>Super Brick Game Color: Snake</title>
+<title>Super Brick Game Color Advance: Board</title>
 <style>
     @font-face {
         font-family1: PressStart2P;
@@ -70,14 +70,42 @@ function main() {
 
     ctx.fillStyle = "#000000";
     ctx.beginPath();
-    ctx.moveTo(canvas.width-99, 0);
-    ctx.lineTo(canvas.width-99, canvas.height);
+    ctx.moveTo(canvas.width-SCOREBOARD_WIDTH, 0);
+    ctx.lineTo(canvas.width-SCOREBOARD_WIDTH, canvas.height);
     ctx.stroke();
 
-    drRect(0, 0, 50, 50, EMPTY_WCOLOR);
-    drRect(50, 0, 50, 50, EMPTY_BCOLOR);
-    drRect(100, 0, 50, 50, EMPTY_WCOLOR);
-    drRect(150, 0, 50, 50, EMPTY_BCOLOR);
+    for (var row = 0; row < ROWS; row ++) {
+        for (var column = 0; column < COLS; column ++) {
+            // coordinates of the top-left corner
+            var x = column * TILE_WIDTH;
+            var y = row * TILE_WIDTH;
+
+            if (row%2 == 0) {
+                if (column%2 == 0) {
+                    ctx.fillStyle = EMPTY_BCOLOR;
+                } else {
+                    ctx.fillStyle = EMPTY_WCOLOR;
+                  }
+            } else {
+
+                if (column%2 == 0) {
+                    ctx.fillStyle = EMPTY_WCOLOR;
+                } else {
+                    ctx.fillStyle = EMPTY_BCOLOR;
+                  }
+              }
+
+            ctx.clearRect(x, y, TILE_WIDTH, TILE_WIDTH);
+            ctx.fillRect(x+1, y+1, TILE_WIDTH-2, TILE_WIDTH-2);
+            ctx.clearRect(x+4, y+4, TILE_WIDTH-8, TILE_WIDTH-8);
+            ctx.fillRect(x+6, y+6, TILE_WIDTH-12, TILE_WIDTH-12);
+        }
+    }
+
+    // drRect(0, 0, 50, 50, EMPTY_WCOLOR);
+    // drRect(50, 0, 50, 50, EMPTY_BCOLOR);
+    // drRect(100, 0, 50, 50, EMPTY_WCOLOR);
+    // drRect(150, 0, 50, 50, EMPTY_BCOLOR);
 
 }
 
