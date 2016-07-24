@@ -76,7 +76,7 @@ var snake = {
     printSnake : function() {
         drawBrick(this.x+TILE_WIDTH*10, this.y+TILE_WIDTH*9, TILE_WIDTH, TILE_WIDTH, EMPTY_BCOLOR);
     }
-}
+};
 
 function main() {
 
@@ -100,7 +100,37 @@ function main() {
 
 }
 
-main();
+var nextGameStep = (function () {
+    return requestAnimationFrame ||
+    webkitRequestAnimationFrame ||
+    mozRequestAnimationFrame ||
+    oRequestAnimationFrame ||
+    msRequestAnimationFrame ||
+    function (callback) {
+        setTimeout (callback, 1000 / 60);
+    };
+})();
+
+var gameEngineStart = function (callback) {
+    gameEngine = callback;
+    gameEngineStep();
+};
+
+var gameEngineStep = function (callback) {
+    gameEngine();
+    nextGameStep(gameEngineStep);
+};
+
+var setGameEngine = function (callback) {
+    gameEngine = callback;
+};
+
+var startGame = function () {
+    main();
+    console.log('run_game');
+};
+
+gameEngineStart(startGame);
 console.log('start_game');
 </script>
 
