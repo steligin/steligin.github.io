@@ -41,20 +41,19 @@ var CANVAS_BGCOLOR = "#b1c2b1";
 var EMPTY_WCOLOR = "#a9b9a9";
 var EMPTY_BCOLOR = "#000000";
 
-var pos_x = 50;
-var pos_y = 50;
-
 var canvas;
 var ctx;
 
-function drRect(pos_x, pos_y, color) {
+function drRect(pos_x, pos_y, xw, yh, color) {
 
     var pos_x;
     var pos_y;
+    var xw;
+    var yh;
     var color;
 
     ctx.fillStyle = color;
-    ctx.fillRect(pos_x, pos_y, 50, 50);
+    ctx.fillRect(pos_x, pos_y, xw, yh);
 
 }
 
@@ -71,12 +70,14 @@ function main() {
 
     ctx.fillStyle = "#000000";
     ctx.beginPath();
-    ctx.moveTo(canvas.width-100, 0);
-    ctx.lineTo(canvas.width-100, canvas.height);
+    ctx.moveTo(canvas.width-99, 0);
+    ctx.lineTo(canvas.width-99, canvas.height);
     ctx.stroke();
 
-    drRect(350, 0, "#000000");
-    drRect(0, 0, "#999999");
+    drRect(0, 0, 50, 50, EMPTY_WCOLOR);
+    drRect(50, 0, 50, 50, EMPTY_BCOLOR);
+    drRect(100, 0, 50, 50, EMPTY_WCOLOR);
+    drRect(150, 0, 50, 50, EMPTY_BCOLOR);
 
 }
 
