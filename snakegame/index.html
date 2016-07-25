@@ -3,111 +3,104 @@
 
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>Super Brick Game Color: Snake</title>
-<!-- Basic styling, centering of the canvas. -->
+<title>Super Brick Game Color Advance: Snake</title>
 <style>
-	@font-face {
-	    font-family1: PressStart2P;
-	    src1: url(PressStart2P.ttf);
-	}
-	body {
-		background-color: #000000;
-		color: #ffffff;
-		font-family: Lucida Console;
-		font-size: 14px;
-	}
-	canvas {
-		display: block;
-		position: absolute;
-		border: 1px solid #000000;
-		margin: auto;
-		top: 0;
-		bottom: 0;
-		right: 0;
-		left: 0;
-	}
+@font-face {
+    font-family: PressStart2P;
+    src: url(PressStart2P.ttf);
+}
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: "PressStart2P";
+    font-size: 12px;
+}
+canvas {
+    display: block;
+    position: absolute;
+    border: 1px solid #000000;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
 </style>
+
 </head>
 <body>
 
 <div class="info">
-[UP][DOWN][LEFT][RIGHT] - move<br>[P] - play/pause<br>[S] - sound/mute<br>
-[SPACE] - action</div>
+[UP] - move up<br>
+[LEFT] - move left<br>
+[DOWN] - move down<br>
+[RIGHT] - move right<br>
+[P] - play/pause<br>
+[M] - sound/mute<br>
+[SPACE] - action<br>
+</div>
 
-<center>SUPER BRICK GAME COLOR: Snake</center>
+<center>SUPER BRICK GAME COLOR ADVANCE: Snake</center>
 
 <script>
-// SNAKE GAME ------------------------------------------------------------------
-var
 
 /**
  * Constats
  */
-COLS = 20,
-ROWS = 20,
-TILE_WIDTH = 20,
-SCOREBOARD_WIDTH = 100,
+var COLS = 20;
+var ROWS = 20;
+var TILE_WIDTH = 20;
+var SCOREBOARD_WIDTH = 100;
 
-EMPTY = 0,
-SNAKE = 1,
-FRUIT = 2,
+var EMPTY = 0;
+var SNAKE = 1;
+var FRUIT = 2;
 
-//EMPTY_COLOR = "#cccccc",
-// classic color
-EMPTY_COLOR = "#a9b9a9",
-//EMPTY_COLOR = "#d6d6d6",
-//SNAKE_COLOR = "#339900",
-// classic color
-SNAKE_COLOR = "#000000",
-//FRUIT_COLOR = "#ee0000",
-FRUIT_COLOR = "#666666",
-//FRUIT_COLOR = "rgba(0, 0, 0, 0.5)",
-//FRUIT_COLOR = "#000000",
+// classic
+var CANVAS_BGCOLOR = "#b1c2b1";
+var EMPTY_COLOR = "#a9b9a9";
+var SNAKE_COLOR = "#000000";
+var FRUIT_COLOR = "#666666";
+// color
+// var CANVAS_BGCOLOR = "#dddddd";
+// var EMPTY_COLOR = "#d0d0d0";
+// var SNAKE_COLOR = "#339900";
+// var FRUIT_COLOR = "#ee0000";
 
-LEFT  = 0,
-UP    = 1,
-RIGHT = 2,
-DOWN  = 3,
-SPACE = 4,
-SOUND = 5,
+var LEFT  = 0;
+var UP    = 1;
+var RIGHT = 2;
+var DOWN  = 3;
+var SPACE = 4;
+var SOUND = 5;
 //PAUSE = 4,
 
-KEY_LEFT  = 37,
-KEY_UP    = 38,
-KEY_RIGHT = 39,
-KEY_DOWN  = 40,
-KEY_P 	  = 80,
-KEY_SPACE = 32,
-KEY_S 	  = 83,
+// var KEY_LEFT  = 65;
+// var KEY_UP    = 87;
+// var KEY_RIGHT = 68;
+// var KEY_DOWN  = 83;
+var KEY_LEFT  = 37;
+var KEY_UP    = 38;
+var KEY_RIGHT = 39;
+var KEY_DOWN  = 40;
+var KEY_P 	  = 80;
+var KEY_SPACE = 32;
+var KEY_S 	  = 77; //M
 
 /**
  * Game objects
  */
-canvas,	  /* HTMLCanvas */
-ctx,	  /* CanvasRenderingContext2d */
-keystate, /* Object, used for keyboard inputs */
-frames,   /* number, used for animation */
-score,	  /* number, keep track of the player score */
+var canvas;	  /* HTMLCanvas */
+var ctx;	  /* CanvasRenderingContext2d */
+var keystate; /* Object, used for keyboard inputs */
+var frames;   /* number, used for animation */
+var score;	  /* number, keep track of the player score */
 
-level,
-hiscore;
+//var level;
+var hiscore;
 //attempt;
 hiscore = 0;
 //attempt = 3;
-
-
-// function getRndColor() {
-// var cr = 'rgb('+
-//     Math.floor(Math.random()*256)+','+
-//     Math.floor(Math.random()*256)+','+
-//     Math.floor(Math.random()*256)+')';
-// }
-
-
-// var cr = 'rgb('+
-//     Math.floor(Math.random()*256)+','+
-//     Math.floor(Math.random()*256)+','+
-//     Math.floor(Math.random()*256)+')';
 
 /**
  * Grid datastructor, usefull in games where the game world is
@@ -117,9 +110,9 @@ hiscore = 0;
  */
 grid = {
 
-	width: null,  /* number, the number of columns */
-	height: null, /* number, the number of rows */
-	_grid: null,  /* Array<any>, data representation */
+    width: null,  /* number, the number of columns */
+    height: null, /* number, the number of rows */
+    _grid: null,  /* Array<any>, data representation */
 
 	/**
 	 * Initiate and fill a c x r grid with the value of d
@@ -127,18 +120,18 @@ grid = {
 	 * @param  {number} c number of columns
 	 * @param  {number} r number of rows
 	 */
-	init: function(d, c, r) {
-		this.width = c;
-		this.height = r;
+    init: function(d, c, r) {
+        this.width = c;
+        this.height = r;
 
-		this._grid = [];
-		for (var x=0; x < c; x++) {
-			this._grid.push([]);
-			for (var y=0; y < r; y++) {
-				this._grid[x].push(d);
-			}
-		}
-	},
+        this._grid = [];
+        for (var x=0; x < c; x++) {
+            this._grid.push([]);
+            for (var y=0; y < r; y++) {
+                this._grid[x].push(d);
+            }
+        }
+    },
 
 	/**
 	 * Set the value of the grid cell at (x, y)
@@ -147,9 +140,9 @@ grid = {
 	 * @param {number} x   the x-coordinate
 	 * @param {number} y   the y-coordinate
 	 */
-	set: function(val, x, y) {
-		this._grid[x][y] = val;
-	},
+    set: function(val, x, y) {
+        this._grid[x][y] = val;
+    },
 
 	/**
 	 * Get the value of the cell at (x, y)
@@ -158,9 +151,9 @@ grid = {
 	 * @param  {number} y the y-coordinate
 	 * @return {any}   the value at the cell
 	 */
-	get: function(x, y) {
-		return this._grid[x][y];
-	}
+    get: function(x, y) {
+        return this._grid[x][y];
+    }
 }
 
 /**
@@ -171,10 +164,9 @@ grid = {
  */
 snake = {
 
-	direction: null, /* number, the direction */
-	last: null,		 /* Object, pointer to the last element in
-						the queue */
-	_queue: null,	 /* Array<number>, data representation*/
+    direction: null,/* number, the direction */
+    last: null,     /* Object, pointer to the last element in the queue */
+    _queue: null,   /* Array<number>, data representation*/
 
 	/**
 	 * Clears the queue and sets the start position and direction
@@ -183,12 +175,12 @@ snake = {
 	 * @param  {number} x start x-coordinate
 	 * @param  {number} y start y-coordinate
 	 */
-	init: function(d, x, y) {
-		this.direction = d;
+    init: function(d, x, y) {
+        this.direction = d;
 
-		this._queue = [];
-		this.insert(x, y);
-	},
+        this._queue = [];
+        this.insert(x, y);
+    },
 
 	/**
 	 * Adds an element to the queue
@@ -196,21 +188,21 @@ snake = {
 	 * @param  {number} x x-coordinate
 	 * @param  {number} y y-coordinate
 	 */
-	insert: function(x, y) {
-		// unshift prepends an element to an array
-		this._queue.unshift({x:x, y:y});
-		this.last = this._queue[0];
-	},
+    insert: function(x, y) {
+        // unshift prepends an element to an array
+        this._queue.unshift({x:x, y:y});
+        this.last = this._queue[0];
+    },
 
 	/**
 	 * Removes and returns the first element in the queue.
 	 * 
 	 * @return {Object} the first element
 	 */
-	remove: function() {
-		// pop returns the last element of an array
-		return this._queue.pop();
-	}
+    remove: function() {
+        // pop returns the last element of an array
+        return this._queue.pop();
+    }
 };
 
 /**
@@ -220,8 +212,8 @@ function setFood() {
 
 	var empty = [];
 	// iterate through the grid and find all empty cells
-	for (var x=0; x < grid.width; x++) {
-		for (var y=0; y < grid.height; y++) {
+	for (var x = 0; x < grid.width; x += 1) {
+		for (var y = 0; y < grid.height; y += 1) {
 			if (grid.get(x, y) === EMPTY) {
 				empty.push({x:x, y:y});
 			}
@@ -243,13 +235,10 @@ function main() {
 	ctx = canvas.getContext("2d");
 	canvas.width = COLS*TILE_WIDTH+SCOREBOARD_WIDTH;
 	canvas.height = ROWS*TILE_WIDTH;
+	canvas.style.backgroundColor = CANVAS_BGCOLOR;
 
 	// add the canvas element to the body of the document
 	document.body.appendChild(canvas);
-
-	// classic color
-	canvas.style.backgroundColor = '#B1C2B1';
-	//canvas.style.backgroundColor = '#dddddd';
 
 	// sets an base font for bigger score display
 	//ctx.font = "12px Helvetica";
@@ -280,7 +269,7 @@ function init() {
 	// if (attempt > 0) {score = score;}
 	// if (attempt == 0) {score = 0;}
 
-	level = 1;
+	//level = 1;
 	//if (attempt == 0) {attempt = 3;}
 
 	grid.init(EMPTY, COLS, ROWS);
@@ -333,32 +322,29 @@ function update() {
 	// pause/start
 	if (keystate[KEY_P]) {
 		console.log('pause');
-		// чашка чая -----------------------------------------------------------
-		ctx.clearRect(canvas.width-99, canvas.height-60, 99, 60);
-		ctx.font = "36px Helvetica";
+		ctx.clearRect(canvas.width-SCOREBOARD_WIDTH+1, canvas.height-40, 99, 60);
+		ctx.font = "24px PressStart2P";
 		ctx.fillStyle = "#000000";
 		ctx.fillText("\u2615", canvas.width-60, canvas.height-20);
-		// сообщение о паузе -------------------------------
 		alert( "\t         PAUSE\t\n\n" + "Press [ENTER] to continiue");
 	} else {
-		ctx.clearRect(canvas.width-99, canvas.height-60, 99, 60);
-		ctx.font = "36px Helvetica";
+		ctx.clearRect(canvas.width-SCOREBOARD_WIDTH+1, canvas.height-40, 99, 60);
+		ctx.font = "24px PressStart2P";
 		ctx.fillStyle = EMPTY_COLOR;
 		ctx.fillText("\u2615", canvas.width-60, canvas.height-20);
 	}
 	// mute/sound
 	if (keystate[KEY_S]) {
 		console.log('sound/mute');
-		// нота --------------------------------------------
-		ctx.clearRect(canvas.width-99, canvas.height-120, 99, 60);
-		ctx.font = "36px Helvetica";
+		ctx.clearRect(canvas.width-SCOREBOARD_WIDTH+1, canvas.height-40, 99, 60);
+		ctx.font = "24px PressStart2P";
 		ctx.fillStyle = EMPTY_COLOR;
-		ctx.fillText("\u266B", canvas.width-60, canvas.height-80);
+		ctx.fillText("\u266B", canvas.width-80, canvas.height-20);
 	} else {
-		ctx.clearRect(canvas.width-99, canvas.height-120, 99, 60);
-		ctx.font = "36px Helvetica";
+		ctx.clearRect(canvas.width-SCOREBOARD_WIDTH+1, canvas.height-40, 99, 60);
+		ctx.font = "24px PressStart2P";
 		ctx.fillStyle = "#000000";
-		ctx.fillText("\u266B", canvas.width-60, canvas.height-80);
+		ctx.fillText("\u266B", canvas.width-80, canvas.height-20);
 	}
 	// action button
 	if (keystate[KEY_SPACE]) {
@@ -374,19 +360,19 @@ function update() {
 		switch (snake.direction) {
 			case LEFT:
 				console.log('move_left');
-				nx--;
+				nx -= 1;
 				break;
 			case UP:
 				console.log('move_up');
-				ny--;
+				ny -= 1;
 				break;
 			case RIGHT:
 				console.log('move_right');
-				nx++;
+				nx += 1;
 				break;
 			case DOWN:
 				console.log('move_down');
-				ny++;
+				ny += 1;
 				break;
 		}
 
@@ -401,7 +387,7 @@ function update() {
 				console.log('game_over');
 				alert("\t    GAME OVER\n\n" + "\t    Your score: " + score + 
 				"\nPress [ENTER] to restart game");
-				//console.log('return_game');
+				console.log('restart_game');
 			//}
 
 			return init();
@@ -418,11 +404,11 @@ function update() {
 				hiscore = score;
 			}
 
-			if (score == 10000) {
-				attempt += 1;
-				//level += 1;
-				//score += 1000;
-			}
+			// if (score == 10000) {
+			// 	attempt += 1;
+			// 	//level += 1;
+			// 	//score += 1000;
+			// }
 
 		} else {
 			// take out the first item from the snake queue i.e
@@ -445,20 +431,19 @@ function update() {
 function draw() {
 
 	// calculate tile-width and -height
-	var tw = (canvas.width-100)/grid.width;
+	var tw = (canvas.width-SCOREBOARD_WIDTH)/grid.width;
 	var th = canvas.height/grid.height;
 
 	ctx.fillStyle = "#000000";
 	ctx.beginPath();
-	ctx.moveTo(canvas.width-100, 0);
-	ctx.lineTo(canvas.width-100, canvas.height);
+	ctx.moveTo(canvas.width-SCOREBOARD_WIDTH, 0);
+	ctx.lineTo(canvas.width-SCOREBOARD_WIDTH, canvas.height);
 	ctx.stroke();
 
 	// iterate through the grid and draw all cells
-	for (var x=0; x < grid.width; x++) {
-		for (var y=0; y < grid.height; y++) {
-			// sets the fillstyle depending on the id of
-			// each cell
+	for (var x = 0; x < grid.width; x += 1) {
+		for (var y = 0; y < grid.height; y += 1) {
+			// sets the fillstyle depending on the id of each cell
 			switch (grid.get(x, y)) {
 				case EMPTY:
 					ctx.fillStyle = EMPTY_COLOR;
@@ -483,7 +468,7 @@ function draw() {
 					break;
 			}
 
-			//ctx.fillRect(x*tw, y*th, tw, th);
+			// ctx.fillRect(x*tw, y*th, tw, th);
 			ctx.clearRect(x*tw, y*th, tw, th);
 
 			ctx.fillRect(x*tw+1, y*th+1, tw-2, th-2);
@@ -492,70 +477,26 @@ function draw() {
 		}
 	}
 
-	ctx.clearRect(canvas.width-99, 0, 99, 100);
+	ctx.clearRect(canvas.width-SCOREBOARD_WIDTH+1, 0, 99, 100);
 
-	// changes the fillstyle once more and draws the score
-	// message to the canvas
+	// changes the fillstyle once more and draws the score message to the canvas
 	ctx.fillStyle = "#000000";
 
-	ctx.font = "12px Helvetica";
+	ctx.font = "8px PressStart2P";
 
 	ctx.fillText("HI-SCORE:", canvas.width-80, 20);
-
-	if (hiscore <= 0) {
-		ctx.fillText("0" + "0" + "0" + "0" + "0" + "0", canvas.width-60, 40);
-	}
-	if (hiscore < 10) {
-		ctx.fillText("0" + "0" + "0" + "0" + "0" + hiscore, canvas.width-60, 40);
-	}
-	if (hiscore >= 10 && hiscore < 100) {
-		ctx.fillText("0" + "0" + "0" + "0" + hiscore, canvas.width-60, 40);
-	}
-	if (hiscore >= 100 && hiscore < 1000) {
-		ctx.fillText("0" + "0" + "0" + hiscore, canvas.width-60, 40);
-	}
-	if (hiscore >= 1000 && hiscore < 10000) {
-		ctx.fillText("0" + "0" + hiscore, canvas.width-60, 40);
-	}
-	if (hiscore >= 10000 && hiscore < 100000) {
-		ctx.fillText("0" + hiscore, canvas.width-60, 40);
-	}
-	if (hiscore >= 100000) {
-		ctx.fillText(hiscore, canvas.width-60, 40);
-	}
+    ctx.fillText(("000000" + hiscore).slice(-6), canvas.width-60, 40);
 
 	ctx.fillText("SCORE:", canvas.width-80, 60);
+    ctx.fillText(("000000" + score).slice(-6), canvas.width-60, 80);
 
-	if (score <= 0) {
-		ctx.fillText("0" + "0" + "0" + "0" + "0" + "0", canvas.width-60, 80);
-	}
-	if (score < 10) {
-		ctx.fillText("0" + "0" + "0" + "0" + "0" + score, canvas.width-60, 80);
-	}
-	if (score >= 10 && score < 100) {
-		ctx.fillText("0" + "0" + "0" + "0" + score, canvas.width-60, 80);
-	}
-	if (score >= 100 && score < 1000) {
-		ctx.fillText("0" + "0" + "0" + score, canvas.width-60, 80);
-	}
-	if (score >= 1000 && score < 10000) {
-		ctx.fillText("0" + "0" + score, canvas.width-60, 80);
-	}
-	if (score >= 10000 && score < 100000) {
-		ctx.fillText("0" + score, canvas.width-60, 80);
-	}
-	if (score >= 100000) {
-		ctx.fillText(score, canvas.width-60, 80);
-	}
-
-	ctx.clearRect(canvas.width-99, 90, 99, 120);
-
-	ctx.fillText("LEVEL:", canvas.width-80, 100);
-	ctx.fillText("\u25B2  " + level + "  \u25BC", canvas.width-70, 120);
-	ctx.fillText("SPEED:", canvas.width-80, 140);
-	ctx.fillText("\u25C4" + "  1  " + "\u25BA", canvas.width-70, 160);
-	//ctx.fillText("ATTEMPTS:", canvas.width-80, 180);
-	//ctx.fillText(attempt, canvas.width-50, 200);
+    // ctx.clearRect(canvas.width-99, 90, 99, 120);
+    // ctx.fillText("LEVEL:", canvas.width-80, 100);
+    // ctx.fillText("\u25B2  " + level + "  \u25BC", canvas.width-70, 120);
+    // ctx.fillText("SPEED:", canvas.width-80, 140);
+    // ctx.fillText("\u25C4" + "  1  " + "\u25BA", canvas.width-70, 160);
+    // ctx.fillText("ATTEMPTS:", canvas.width-80, 180);
+    // ctx.fillText(attempt, canvas.width-50, 200);
 
 }
 
