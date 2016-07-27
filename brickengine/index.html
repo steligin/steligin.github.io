@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Super Brick Game Color Advance: Snake</title>
+<style>
+    @font-face {
+        font-family1: PressStart2P;
+        src1: url(PressStart2P.ttf);
+    }
+    body {
+        background-color: #000000;
+        color: #ffffff;
+        font-family: monospace;
+        font-size: 12px;
+    }
+    canvas {
+        display: block;
+        position: absolute;
+        border: 1px solid #000000;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
+</style>
+</head>
+<body>
+
+<div class="info">
+[UP] - move up<br>[LEFT] - move left<br>[DOWN] - move down<br>
+[RIGHT] - move right<br>[P] - play/pause<br>[M] - sound/mute<br>
+[SPACE] - action<br>
+</div><br>
+<center>SUPER BRICK GAME COLOR ADVANCE: test</center>
+
+<script>
+
+// keys-js--------------------------------------------------
+var keys = {
+    "W" : 87,
+    "A" : 65,
+    "S" : 83,
+    "D" : 68
+};
+
+var keyDown = {};
+
+var setKey = function (keyCode) {
+    keyDown[keyCode] = true;
+};
+
+var clearKey = function (keyCode) {
+    keyDown[keyCode] = false;
+};
+
+var isKeyDown = function (keyName) {
+    return keyDown[keys[keyName]] == true;
+};
+
+//window.onload = function () {
+
+    window.onkeydown = function (evt) {
+        setKey(evt.keyCode);
+    };
+
+    window.onkeyup = function (evt) {
+        clearKey(evt.keyCode);
+    };
+
+//}
+// keys-js--------------------------------------------------
+
+// engine-js------------------------------------------------
+var _renderer = (function () {
+    return window.requestAnimationFrame ||
+    window.webkitRequestAnimationFrame ||
+    window.mozRequestAnimationFrame ||
+    window.oRequestAnimationFrame ||
+    window.msRequestAnimationFrame ||
+    function (callback) {
+        setTimeout (callback, 1000 / 60);
+    };
+})();
+
+var _engine = function () {
+    console.log("игровой цикл не инициализирован");
+};
+
+var startGame = function (game) {
+    if (typeof game == "function") {
+        _engine = game;
+    }
+    gameLoop();
+};
+
+var setGame = function (game) {
+    if (typeof game == "function") {
+        _engine = game;
+    }
+};
+
+var gameLoop = function () {
+    _engine();
+    _renderer(gameLoop);
+};
+// engine-js------------------------------------------------
+
+// graphic-js-----------------------------------------------
+
+var init = function () {
+    var COLS = 20;
+    var ROWS = 20;
+    var TILE_WIDTH = 20;
+    var SCOREBOARD_WIDTH = 100;
+
+    var CANVAS_BGCOLOR = "#b1c2b1";
+
+    var EMPTY_WCOLOR = "#a9b9a9";
+    var EMPTY_BCOLOR = "#000000";
+
+    //var canvas;
+    //var ctx;
+
+    canvas = document.createElement("canvas");
+    ctx = canvas.getContext("2d");
+    canvas.width = COLS*TILE_WIDTH+SCOREBOARD_WIDTH;
+    canvas.height = ROWS*TILE_WIDTH;
+    canvas.style.backgroundColor = CANVAS_BGCOLOR;
+    document.body.appendChild(canvas);
+};
+
+// var fillAll = function (color) {
+//     ctx.fllStyle = color;
+//     ctx.fillRect(0, 0, canvas.width, canvas.height);
+// };
+
+var clearAll = function () {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+};
+
+var drawRect = function (x, y, th, tw, color) {
+    ctx.fillStyle = color;
+    ctx.fillRect(x, y, th, tw);
+};
+
+var drawBrick = function (pos_x, pos_y, xw, yh, color) {
+
+    ctx.fillStyle = color;
+    //ctx.fillRect(pos_x, pos_y, xw, yh);
+    ctx.clearRect(pos_x, pos_y, xw, yh);
+    ctx.fillRect(pos_x+1, pos_y+1, xw-2, yh-2);
+    ctx.clearRect(pos_x+4, pos_y+4, xw-8, yh-8);
+    ctx.fillRect(pos_x+6, pos_y+6, xw-12, yh-12);
+
+}
+
+var drawBlankField = function () {
+
+    var COLS = 20;
+    var ROWS = 20;
+    var TILE_WIDTH = 20;
+    var SCOREBOARD_WIDTH = 100;
+
+    var CANVAS_BGCOLOR = "#b1c2b1";
+
+    var EMPTY_WCOLOR = "#a9b9a9";
+    var EMPTY_BCOLOR = "#000000";
+
+    for (var row = 0; row < ROWS; row += 1) {
+        for (var column = 0; column < COLS; column += 1) {
+            // coordinates of the top-left corner
+            var x = column * TILE_WIDTH;
+            var y = row * TILE_WIDTH;
+
+            drawBrick(x, y, TILE_WIDTH, TILE_WIDTH, EMPTY_WCOLOR);
+        }
+    }
+
+}
+
+
+
+// graphic-js-----------------------------------------------
+
+// start-game------------------------------------------------
+
+init();
+
+var x = 20, y = 20;
+
+var game = function () {
+    //fillAll("red");
+    clearAll();
+    drawBlankField();
+    drawRect(x, y, 20, 20, "#000000");
+
+    
+
+    if (isKeyDown("W")) {
+        y -= 1;
+    }
+        if (isKeyDown("A")) {
+        x -= 1;
+    }
+        if (isKeyDown("S")) {
+        y += 1;
+    }
+    if (isKeyDown("D")) {
+        x += 1;
+    }
+
+
+};
+
+startGame(game);
+
+
+//     console.log("моя игровая функция");
+
+//     if (isKeyDown("S")) {
+//         setGame(function() {
+//             console.log("моя игровая функция 2");
+//         });
+//     }
+
+// });
+
+</script>
+
+</body>
+</html>
