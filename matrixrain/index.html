@@ -4,11 +4,26 @@
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>Super Brick Game Color Advance: Matrix Rain</title>
 <style>
-    @font-face {font-family: PressStart2P; src: url(PressStart2P.ttf);}
-    body {background-color: #000000; color: #ffffff; font-family: "PressStart2P"; 
-    font-size1: 12px;}
-    canvas {display: block; position: absolute; border: 1px solid #000000; 
-    margin: auto; top: 0; bottom: 0; right: 0; left: 0;}
+    @font-face {
+        font-family: PressStart2P;
+        src: url(PressStart2P.ttf);
+    }
+    body {
+        background-color: #000000;
+        color: #ffffff;
+        font-family: "PressStart2P";
+        font-size1: 12px;
+    }
+    canvas {
+        display: block;
+        position: absolute;
+        border: 1px solid #000000; 
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
 </style>
 </head>
 <body>
@@ -58,9 +73,7 @@ for (var x = 0; x < columns; x++)
     drops[x] = 1;
 
 //drawing the characters
-function draw()
-{
-
+function draw() {
     //Black BG for the canvas
     //translucent BG to show trail
     ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
@@ -70,10 +83,10 @@ function draw()
     ctx.font = font_size + "px PressStart2P";
 
     //looping over drops
-    for(var i = 0; i < drops.length; i++)
-    {
+    for(var i = 0; i < drops.length; i++) {
         //a random symbols character to print
         var text = symbols[Math.floor(Math.random()*symbols.length)];
+
         //x = i*font_size, y = value of drops[i]*font_size
         ctx.fillText(text, i*font_size, drops[i]*font_size);
         
@@ -85,10 +98,10 @@ function draw()
         //incrementing Y coordinate
         drops[i]++;
     }
-
 }
 
-setInterval(draw, 1000/17);
+//1000/33 = ~30 times a second; 1000/17 = ~59 times a second; 1000/50 = ~20 times a second
+setInterval(draw, 50);
 
 </script>
 
