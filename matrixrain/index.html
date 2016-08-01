@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Super Brick Game Color Advance: Matrix Rain</title>
+<style>
+    @font-face {font-family: PressStart2P; src: url(PressStart2P.ttf);}
+    body {background-color: #000000; color: #ffffff; font-family: "PressStart2P"; 
+    font-size1: 12px;}
+    canvas {display: block; position: absolute; border: 1px solid #000000; 
+    margin: auto; top: 0; bottom: 0; right: 0; left: 0;}
+</style>
+</head>
+<body>
+
+<script>
+
+var COLS = 20;
+var ROWS = 20;
+var TILE_WIDTH = 20;
+var SCOREBOARD_WIDTH = 100;
+
+var CANVAS_BGCOLOR = "#b1c2b1";
+
+canvas = document.createElement("canvas");
+ctx = canvas.getContext("2d");
+canvas.width = COLS*TILE_WIDTH+SCOREBOARD_WIDTH;
+canvas.height = ROWS*TILE_WIDTH;
+canvas.style.backgroundColor = CANVAS_BGCOLOR;
+
+document.body.appendChild(canvas);
+
+ctx.fillStyle = "#000000";
+ctx.lineWidth = 1;
+ctx.beginPath();
+ctx.moveTo(canvas.width-SCOREBOARD_WIDTH+0.5, 0+0.5);
+ctx.lineTo(canvas.width-SCOREBOARD_WIDTH+0.5, canvas.height+0.5);
+ctx.stroke();
+
+//making the canvas full screen
+// canvas.width = window.innerWidth;
+// canvas.height = window.innerHeight;
+
+//chinese characters - taken from the unicode charset
+var symbols = "0123456789ABCDEF";
+//var symbols = ctx.fillRect(0, 0, 20, 20);
+// var symbols = {
+//     x : 0,
+//     y : 0,
+//     tx : 20,
+//     ty : 20
+// };
+
+//converting the string into an array of single characters
+symbols = symbols.split("");
+
+var font_size = 10;
+//number of columns for the rain
+var columns = (canvas.width-SCOREBOARD_WIDTH)/font_size;
+//an array of drops - one per column
+var drops = [];
+//x below is the x coordinate
+//1 = y co-ordinate of the drop(same for every drop initially)
+for (var x = 0; x < columns; x++)
+    drops[x] = 1;
+
+//drawing the characters
+function draw()
+{
+
+    //Black BG for the canvas
+    //translucent BG to show trail
+    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    ctx.fillStyle = "#00ff00"; //green text
+    ctx.font = font_size + "px PressStart2P";
+
+    //looping over drops
+    for(var i = 0; i < drops.length; i++)
+    {
+        //a random symbols character to print
+        var text = symbols[Math.floor(Math.random()*symbols.length)];
+        //x = i*font_size, y = value of drops[i]*font_size
+        ctx.fillText(text, i*font_size, drops[i]*font_size);
+        
+        //sending the drop back to the top randomly after it has crossed the screen
+        //adding a randomness to the reset to make the drops scattered on the Y axis
+        if(drops[i]*font_size > canvas.height && Math.random() > 0.975)
+            drops[i] = 0;
+        
+        //incrementing Y coordinate
+        drops[i]++;
+    }
+
+}
+
+setInterval(draw, 1000/17);
+
+
+// var c = document.getElementById("c");
+// var ctx = c.getContext("2d");
+
+// //making the canvas full screen
+// c.height = window.innerHeight;
+// c.width = window.innerWidth;
+
+// //chinese characters - taken from the unicode charset
+// var chinese = "田由甲申甴电甶男甸甹町画甼甽甾甿畀畁畂畃畄畅畆畇畈畉畊畋界畍畎畏畐畑";
+// //converting the string into an array of single characters
+// chinese = chinese.split("");
+
+// var font_size = 10;
+// var columns = c.width/font_size; //number of columns for the rain
+// //an array of drops - one per column
+// var drops = [];
+// //x below is the x coordinate
+// //1 = y co-ordinate of the drop(same for every drop initially)
+// for(var x = 0; x < columns; x++)
+//     drops[x] = 1; 
+
+// //drawing the characters
+// function draw()
+// {
+//     //Black BG for the canvas
+//     //translucent BG to show trail
+//     ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+//     ctx.fillRect(0, 0, c.width, c.height);
+    
+//     ctx.fillStyle = "#0F0"; //green text
+//     ctx.font = font_size + "px arial";
+//     //looping over drops
+//     for(var i = 0; i < drops.length; i++)
+//     {
+//         //a random chinese character to print
+//         var text = chinese[Math.floor(Math.random()*chinese.length)];
+//         //x = i*font_size, y = value of drops[i]*font_size
+//         ctx.fillText(text, i*font_size, drops[i]*font_size);
+        
+//         //sending the drop back to the top randomly after it has crossed the screen
+//         //adding a randomness to the reset to make the drops scattered on the Y axis
+//         if(drops[i]*font_size > c.height && Math.random() > 0.975)
+//             drops[i] = 0;
+        
+//         //incrementing Y coordinate
+//         drops[i]++;
+//     }
+// }
+
+// setInterval(draw, 33);
+
+</script>
+
+</body>
+</html>
