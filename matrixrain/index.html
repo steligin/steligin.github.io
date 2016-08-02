@@ -28,6 +28,11 @@
 </head>
 <body>
 
+<center>
+<button onclick="RunMatrix()">run</button>
+<button onclick="StopMatrix()">stop</button>
+</center>
+
 <script>
 
 var COLS = 20;
@@ -39,8 +44,8 @@ var CANVAS_BGCOLOR = "#b1c2b1";
 
 canvas = document.createElement("canvas");
 ctx = canvas.getContext("2d");
-canvas.width = COLS*TILE_WIDTH+SCOREBOARD_WIDTH;
-canvas.height = ROWS*TILE_WIDTH;
+// canvas.width = COLS*TILE_WIDTH+SCOREBOARD_WIDTH;
+// canvas.height = ROWS*TILE_WIDTH;
 canvas.style.backgroundColor = CANVAS_BGCOLOR;
 
 document.body.appendChild(canvas);
@@ -53,11 +58,12 @@ ctx.lineTo(canvas.width-SCOREBOARD_WIDTH+0.5, canvas.height+0.5);
 ctx.stroke();
 
 //making the canvas full screen
-// canvas.width = window.innerWidth;
-// canvas.height = window.innerHeight;
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
 //chinese characters - taken from the unicode charset
 var symbols = "0123456789ABCDEF";
+//var symbols = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
 
 //converting the string into an array of single characters
 symbols = symbols.split("");
@@ -69,14 +75,16 @@ var columns = (canvas.width-SCOREBOARD_WIDTH)/font_size;
 var drops = [];
 //x below is the x coordinate
 //1 = y co-ordinate of the drop(same for every drop initially)
-for (var x = 0; x < columns; x++)
+for (var x = 0; x < columns; x++) {
     drops[x] = 1;
+}
 
 //drawing the characters
 function draw() {
     //Black BG for the canvas
     //translucent BG to show trail
     ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+    //ctx.fillStyle = "#000000";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     
     ctx.fillStyle = "#00ff00"; //green text
@@ -92,16 +100,35 @@ function draw() {
         
         //sending the drop back to the top randomly after it has crossed the screen
         //adding a randomness to the reset to make the drops scattered on the Y axis
-        if(drops[i]*font_size > canvas.height && Math.random() > 0.975)
+        if(drops[i]*font_size > canvas.height && Math.random() > 0.975) {
             drops[i] = 0;
+        }
         
         //incrementing Y coordinate
         drops[i]++;
     }
 }
 
-//1000/33 = ~30 times a second; 1000/17 = ~59 times a second; 1000/50 = ~20 times a second
-setInterval(draw, 50);
+// 1000/17 = ~60 times a second
+// 1000/33 = ~30 times a second
+// 1000/50 = ~20 times a second
+// 1000/65 = ~15 times a second
+// setInterval(draw, 50);
+
+function RunMatrix() {
+    if (typeof Game_Interval != "undefined") {
+        clearInterval(Game_Interval);
+    }
+    Game_Interval = setInterval(draw, 65);
+    console.log("run_matrix");
+}
+
+function StopMatrix() {
+    clearInterval(Game_Interval);
+    console.log("stop_matrix");
+}
+
+RunMatrix();
 
 </script>
 
