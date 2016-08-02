@@ -29,8 +29,8 @@
 <body>
 
 <center>
-<button onclick="RunMatrix()">run</button>
-<button onclick="StopMatrix()">stop</button>
+<button onclick="runMatrix()">run</button>
+<button onclick="stopMatrix()">stop</button>
 </center>
 
 <script>
@@ -44,9 +44,10 @@ var CANVAS_BGCOLOR = "#b1c2b1";
 
 canvas = document.createElement("canvas");
 ctx = canvas.getContext("2d");
-// canvas.width = COLS*TILE_WIDTH+SCOREBOARD_WIDTH;
-// canvas.height = ROWS*TILE_WIDTH;
-canvas.style.backgroundColor = CANVAS_BGCOLOR;
+canvas.width = COLS*TILE_WIDTH+SCOREBOARD_WIDTH;
+canvas.height = ROWS*TILE_WIDTH;
+//canvas.style.backgroundColor = CANVAS_BGCOLOR;
+canvas.style.backgroundColor = "#000000";
 
 document.body.appendChild(canvas);
 
@@ -58,19 +59,20 @@ ctx.lineTo(canvas.width-SCOREBOARD_WIDTH+0.5, canvas.height+0.5);
 ctx.stroke();
 
 //making the canvas full screen
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+// canvas.width = window.innerWidth;
+// canvas.height = window.innerHeight;
 
 //chinese characters - taken from the unicode charset
-var symbols = "0123456789ABCDEF";
+//var symbols = "0123456789ABCDEF";
 //var symbols = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
 
 //converting the string into an array of single characters
-symbols = symbols.split("");
+//symbols = symbols.split("");
 
-var font_size = 10;
+var font_size = 20;
 //number of columns for the rain
 var columns = (canvas.width-SCOREBOARD_WIDTH)/font_size;
+//var columns = (canvas.width)/font_size;
 //an array of drops - one per column
 var drops = [];
 //x below is the x coordinate
@@ -85,19 +87,24 @@ function draw() {
     //translucent BG to show trail
     ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
     //ctx.fillStyle = "#000000";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillRect(0, 0, canvas.width-SCOREBOARD_WIDTH, canvas.height);
+
     
     ctx.fillStyle = "#00ff00"; //green text
-    ctx.font = font_size + "px PressStart2P";
+    //ctx.font = font_size + "px PressStart2P";
 
     //looping over drops
     for(var i = 0; i < drops.length; i++) {
         //a random symbols character to print
-        var text = symbols[Math.floor(Math.random()*symbols.length)];
+        //var text = symbols[Math.floor(Math.random()*symbols.length)];
 
         //x = i*font_size, y = value of drops[i]*font_size
-        ctx.fillText(text, i*font_size, drops[i]*font_size);
-        
+        //ctx.fillText(text, i*font_size, drops[i]*font_size);
+        ctx.clearRect(i*font_size, drops[i]*font_size, font_size, font_size);
+        ctx.fillRect(i*font_size+1, drops[i]*font_size+1, font_size-2, font_size-2);
+        ctx.clearRect(i*font_size+4, drops[i]*font_size+4, font_size-8, font_size-8);
+        ctx.fillRect(i*font_size+6, drops[i]*font_size+6, font_size-12, font_size-12);
+
         //sending the drop back to the top randomly after it has crossed the screen
         //adding a randomness to the reset to make the drops scattered on the Y axis
         if(drops[i]*font_size > canvas.height && Math.random() > 0.975) {
@@ -115,20 +122,20 @@ function draw() {
 // 1000/65 = ~15 times a second
 // setInterval(draw, 50);
 
-function RunMatrix() {
+function runMatrix() {
     if (typeof Game_Interval != "undefined") {
         clearInterval(Game_Interval);
     }
-    Game_Interval = setInterval(draw, 65);
+    Game_Interval = setInterval(draw, 64);
     console.log("run_matrix");
 }
 
-function StopMatrix() {
+function stopMatrix() {
     clearInterval(Game_Interval);
     console.log("stop_matrix");
 }
 
-RunMatrix();
+runMatrix();
 
 </script>
 
