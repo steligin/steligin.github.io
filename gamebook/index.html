@@ -1,427 +1,195 @@
 ﻿<!DOCTYPE html>
 <html>
 
+<!--   ЗАГОЛОВОК ДОКУМЕНТА   -->
 <head>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
-<style>
-
-html1 {
-    overflow-y: scroll;
-    font-size: 100%;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-}
-
-
-
-body {
-	font-family1: Lucida Console, Monaco, monospace;
-	font-family: Arial, sans-serif;
-	font-size1: 14px;
-	font-size: 100%;
-	background: #f5f5f5;
-}
-
-
-header {
-	text-align: center;
-	background1: #ffffff;
-	display: block;
-	height: 10%;
-}
-
-hr {
-    border: none; /* Убираем границу */
-    background-color: #cc0000; /* Цвет линии */
-    color: #cc0000; /* Цвет линии для IE6-7 */
-    height: 2px; /* Толщина линии */
-	width: 70%;
-}
-
-footer {
-	text-align: center;
-	background1: #ffffff;
-}
-
-p.footer:first-letter {
-    color: #000000;
-    font-weight: normal;
-	font-size: 14px;
-}
-
-p {
-	text-align1: justify;
-	text-align1: left;
-	text-indent: 25px; /* =4% */
-
-}
-
-p.intro:first-letter {
-    color: #cc0000; /* Красный цвет первой буквы каждого абзаца */
-	font-weight: bold;
-	font-size: 150%;
-}
-
-p:first-letter {
-    color: #cc0000; /* Красный цвет первой буквы каждого абзаца */
-	font-weight: bold;
-	font-size: 150%;
-}
-
-p.number {
-	text-align: center;
-	font-weight: bold;
-	font-size: 20px;
-}
-
-p.number:first-letter {
-    color: #000000;
-	font-size: 20px;
-}
-
-p.titles {
-	text-align: center;
-	font-weight: bold;
-	font-size: 18px;
-}
-
-p.titles:first-letter {
-    color: #000000;
-	font-size: 18px;
-}
-
-p.titles1 {
-	text-align: center;
-	font-weight: bold;
-	font-size: 20px;
-}
-
-p.titles1:first-letter {
-    color: #000000;
-	font-size: 20px;
-	font-weight1: bold;
-}
-
-a {
-	color: #0066ff; /* Цвет ссылок */
-}
-a:visited {
-	color: #0066ff; /* Цвет посещенных ссылок */
-}
-a:active {
-	color: #ffcc00; /* Цвет активных ссылок */
-}
-a:hover {
-	color: #ffcc00; /* Цвет активных ссылок */
-	background1: #6699ff;
-}
-
-div {
-	text-align: left;
-	background1: #ffffff;
-	float1: left;
-	margin-left1: 25%;
-	width1: 50%;
-}
-
-</style>
-
+<link rel="stylesheet" href="style.css">
 
 </head>
 
+<!--   ОСНОВНОЙ СКРИПТ ЧЕРЕЗ .JS   -->
+<script src="script.js"></script>
+
+<!--   ТЕЛО ДОКУМЕНТА  -->
 <body>
 
+<!-- <audio src="theme.ogg" autoplay="autoplay"></audio> -->
+
 <header>
-<br>
-<h2>Дерьмо, шары и грёбаная дверь</h2>
-<h3>Пол Стейн</h3>
-<hr>
+<p class="paragraph_number">
+Королевства<br>
+v0.1.2
+</p>
 </header>
 
+<center>
+<form>
+<input type="search" placeholder="Искать параграф">
+</form>
+</center>
 
-<div>
-<p class="titles1"><br><br>Правила игры<br><br></p>
-</div>
-
-<div>
-
-<p class="titles">Создание персонажа</p>
-
-<p class="intro">
-Прежде чем отправиться навстречу своему приключению, необходимо разобраться со своими сильными и слабыми сторонами. Чтобы это выяснить, необходимо сделать бросок игральных кубиков (далее 1К6 или 2К6 в зависимости от того, сколько кубиков необходимо бросить) и определить свои Мастерство, Самочувствие и Удачу.
-</p>
-
-<p class="intro">
-Бросьте 1К6, прибавьте к результату 6 и запишите сумму в поле «Мастерство» на «Листе персонажа».
-</p>
-
-<p class="intro">
-Бросьте 2К6, прибавьте к результату 12 и запишите сумму в поле «Самочувствие» на «Листе персонажа».
-</p>
-
-<p class="intro">
-Бросьте 1К6, прибавьте к результату 6 и запишите сумму в поле «Удача» на «Листе персонажа».
-</p>
-
-<p class="intro">
-Значения Мастерства, Самочувствия и Удачи будут постоянно меняться по ходу приключения, поэтому необходимо внимательно отслеживать изменения. Нельзя стирать изначальные параметры персонажа! По ходу игры вы будете получать дополнительные баллы Мастерства, Самочувствия и Удачи, но их сумма никогда не должна превышать изначальных значений, кроме тех редких случаев, когда это будет указано в книге.
-</p>
-
-<p class="intro">
-Мастерство отражает то, насколько хорошо персонаж владеет мечом, его боевой опыт и способность обращаться с оружием – чем выше параметр, тем лучше. </p>
-
-<p class="intro">
-Самочувствие отражает здоровье персонажа, физическую подготовку, его общее состояние в целом – чем выше Самочувствие, тем дольше персонаж сможет выжить.
-</p>
-
-<p class="intro">
-Удача определяет насколько персонаж везуч от природы, возможность неведомых сил придавать событиям нужное персонажу направление.
-</p>
-
-</div>
-
-<div>
-
-<p class="titles">Сражение</p>
-
-<p class="intro">
-В течении приключения могут случатся такие ситуации, из которых невозможно выбраться не обнажив меч и не сразившись с тем или иным существом. Если в книге написано, что противник первый нападает на персонажа, то первый бросок атаки делается за него, если же персонаж – первый бросок атаки делается за персонажа.
-</p>
-
-<p class="intro">
-Сначала необходимо записать Мастерство и Самочувствие противника в пустое поле сражений на «Листе персонажа». Каждый раз как персонаж встретит противника, значения его параметров будут указаны в книге.
-</p>
-
-<p class="intro">
-Ход сражения происходит следующим образом (если персонаж нападает первым, то всё происходит точно так же, только первый бросок за персонажем, второй – за противником):
-<br>1) Бросьте 2К6 за противника, добавьте Мастерство противника, полученный результат будет его «Сила атаки».
-<br>2) Бросьте 2К6 за своего персонажа, добавьте своё Мастерство, полученный результат будет его «Сила атаки».
-<br>3) Если Ваша Сила атаки выше чем у противника, Вы его ранили, переходите к пункту 4. Если у противника Сила атаки больше Вашей, Вас ранили, переходите к пункту 5. Если обе Силы атаки равны, вы парировали удары друг друга и начинается следующий раунд атаки с пункта 1.
-<br>4) Вы ранили противника, поэтому вычтите 2 из его Самочувствия.
-<br>5) Вас ранил противник, поэтому вычтите 2 из своего Самочувствия.
-<br>6) Внесите соответствующие поправки в значения Вашего Самочувствия, либо Самочувствия противника и продолжайте следующий раунд атаки с пункта 1.
-<br>7) Продолжайте в такой последовательности, пока выносливость одного из вас не упадут до нуля, это будет означать смерть (если в книге не оговорено другое).
-
-</div>
-
-<div>
-
-<p class="titles">Сражение с несколькими противниками</p>
-
-<p class="intro">
-Если получится так, что Вам придется сражаться с несколькими противниками одновременно, то перед каждым раундом атаки Вы должны выбрать, в чью сторону вы направляете свой удар. Бросьте кубики за каждого участника битвы. При этом с выбранным Вами противником Вы сражаетесь как обычно, но кроме этого Вы должны сравнивать свою Силу атаки с Силой атаки всех остальных противников. При этом каждый, у кого Сила атаки больше Вашей, ранит Вас. Вы же можете ранить только Вашего непосредственного противника, которого Вы выбрали в начале раунда, даже если ваша Сила атаки будет больше, чем у всех остальных.
-</p>
-
-</div>
-
-<div>
-
-<p class="titles">Удача</p>
-
-<p class="intro">
-В ходе приключения можно положиться на свою удачу (что будет отдельно оговорено в параграфах книги), тогда Вам может либо повезти, либо нет. Удача позволяет, хоть и не всегда, добиться более благоприятного результата. Но надо быть острожным! Полагаться на удачу – дело рискованное, и если не повезёт, результат может оказаться очень плачевным.
-</p>
-
-<p class="intro">
-Бросьте 2К6, если результат меньше или равен Вашему значению Удачи в данный момент, Вам повезло, и ситуация оборачивается в Вашу пользу. Если выпало больше Вашего значения Удачи в данный момент, Вам не повезло.
-</p>
-
-<p class="intro">
-Этот раунд называется «Проверка удачи». Каждый раз после такой проверки вычтите 1 из своей нынешней Удачи. Таким образом становится понятно, что чем больше полагаться на везение, тем более рискованным делом это становится.
-</p>
-
-</div>
-
-<div>
-
-<p class="titles">Восстановление Мастерства, Самочувствия и Удачи</p>
-
-<p class="intro">
-В ходе приключения можно положиться на свою удачу (что будет отдельно оговорено в параграфах книги), тогда Вам может либо повезти, либо нет. Удача позволяет, хоть и не всегда, добиться более благоприятного результата. Но надо быть острожным! Полагаться на удачу – дело рискованное, и если не повезёт, результат может оказаться очень плачевным.
-</p>
-
-<p class="intro">
-Бросьте 2К6, если результат меньше или равен Вашему значению Удачи в данный момент, Вам повезло, и ситуация оборачивается в Вашу пользу. Если выпало больше Вашего значения Удачи в данный момент, Вам не повезло.
-</p>
-
-<p class="intro">
-Этот раунд называется «Проверка удачи». Каждый раз после такой проверки вычтите 1 из своей нынешней Удачи. Таким образом становится понятно, что чем больше полагаться на везение, тем более рискованным делом это становится.
-</p>
-
-</div>
-
-
-
-
-
-
-
-
-
-<div>
-<a name="par001"></a>
-<p class="number">1</p>
-<p>
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-</p>
-<p>
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-</p>
-<p>
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Вы зашли в комнату. У вас 3 варианта пути:<br><br>
-пойти прямо - 21,<br>
-пойти налево - <a href="#par024">24</a>,<br>
-пойти направо - 27,
-</p>
-</div>
-
-
-<div>
-<a name="par024"></a>
-<p class="number">24</p>
-<p>
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-</p>
-<p>
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-</p>
-<p>
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Вы зашли в комнату. У вас 3 варианта пути:<br><br>
-пойти прямо - 21,<br>
-пойти налево - <a href="#par001">1</a>,<br>
-пойти направо - 27,
-</p>
-</div>
-
-
-
-<div>
-<a name="par000"></a>
-<p class="number">35</p>
-<p>
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-</p>
-<p>
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Вы зашли в комнату. У вас 3 варианта пути:<br><br>
-пойти прямо - 21,<br>
-пойти налево - <a href="#par024">24</a>,<br>
-пойти направо - 27,
-</p>
-</div>
-
-<div>
-<a name="par000"></a>
-<p class="number">243</p>
-<p>
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Вы зашли в комнату. У вас 3 варианта пути:<br><br>
-пойти прямо - 21,<br>
-пойти налево - <a href="#par024">24</a>,<br>
-пойти направо - 27,
-</p>
-</div>
-
-<div>
-<a name="par000"></a>
-<p class="number">999</p>
-<p>
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-</p>
-<br>
-<p class="number">
-THE END
-<br><br><br>
-</p>
-</div>
-
-<div>
-<a name="par000"></a>
-<p class="number">999</p>
-<p>
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-</p>
-<br>
-<p class="number">
-THE END
-<br><br><br>
-</p>
-</div>
-
-<div>
-<a name="par000"></a>
-<p class="number">999</p>
-<p>
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Oorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-</p>
-<br>
-<p class="number">
-THE END
-<br><br><br>
-</p>
-</div>
-
-
-
-
-
-<footer>
 <hr>
-<p class="footer">Text copyright © 2016 Paul Stein<br>
-Illustrations copyright © 2016 Unknown Painter<br><br></p>
+<br>
+
+<!--   НАЧАЛЬНЫЙ БЛОК ПРАВИЛА   -->
+<div id="rules" style="display:block;">
+<p class="paragraph_number">Правила игры</p>
+<p class="paragraph_text">
+Прежде чем начать играть, прочитите правила. Знание правил позволит Вам получить большее удовольствие от игры.
+</p>
+<p class="paragraph_text">
+Если Вы уже с ними занкомы, то можете сразу <a href="#" onclick="viewdiv('intro'); hidediv('rules');">начать игру</a>.
+</p>
+<p class="paragraph_text">
+Если Вы ещё не знаете правил, то читайте дальше.
+</p>
+<p class="paragraph_text">
+Правила в игре очень простые. Вы ходите по залам и ищите pices of crap. Если очень захочется упороться skooma, то для этого есть специальный зал в центре древнего замка. Продолжайте искать pices of crap и упарываться skooma, пока Вам не надоест. После чего можете покинутть замок через любой из двух выходов. Тогда игра на этом закончится.</p>
+<p class="paragraph_text">
+Правила в игре очень простые. Вы ходите по залам и ищите pices of crap. Если очень захочется упороться skooma, то для этого есть специальный зал в центре древнего замка. Продолжайте искать pices of crap и упарываться skooma, пока Вам не надоест. После чего можете покинутть замок через любой из двух выходов. Тогда игра на этом закончится.</p>
+<p class="paragraph_text">
+Правила в игре очень простые. Вы ходите по залам и ищите pices of crap. Если очень захочется упороться skooma, то для этого есть специальный зал в центре древнего замка. Продолжайте искать pices of crap и упарываться skooma, пока Вам не надоест. После чего можете покинутть замок через любой из двух выходов. Тогда игра на этом закончится.</p>
+<p class="paragraph_text">
+Правила в игре очень простые. Вы ходите по залам и ищите pices of crap. Если очень захочется упороться skooma, то для этого есть специальный зал в центре древнего замка. Продолжайте искать pices of crap и упарываться skooma, пока Вам не надоест. После чего можете покинутть замок через любой из двух выходов. Тогда игра на этом закончится.</p>
+<p class="paragraph_text">
+Правила в игре очень простые. Вы ходите по залам и ищите pices of crap. Если очень захочется упороться skooma, то для этого есть специальный зал в центре древнего замка. Продолжайте искать pices of crap и упарываться skooma, пока Вам не надоест. После чего можете покинутть замок через любой из двух выходов. Тогда игра на этом закончится.</p>
+<p class="paragraph_text">
+Теперь, повторив правила пять раз, Вы можете <a href="#" onclick="viewdiv('intro'); hidediv('rules');">начать игру</a>.
+</p>
+</div>
+
+<!--   НАЧАЛЬНЫЙ БЛОК ПРЕДИСЛОВИЕ   -->
+<div id="intro" style="display:none;">
+<p class="paragraph_number">Предисловие</p>
+<p class="paragraph_text">
+Вам надоело заниматься тем, чем Вы занимаетесь и Вы пришли в древний замок, чтобы ходить кругами по залам и собирать pieces of crap. А если особо повезёт, то ещё и coins. С собой вы прихватили несколько бутылей skooma, чтобы изрядно упороться при наличии подходящего места.
+</p>
+<p class="paragraph_text">
+Вы открываете двери и входите в древний замок. Удачи!
+</p>
+<p><center><a href="#" onclick="viewdiv('0001'); hidediv('intro');">Начать игру</a></center></p>
+</div>
+<!--   ХХХХХХ  -->
+
+<div id="0001" style="display:none;">
+<p class="paragraph_number">0001</p>
+<p class="paragraph_text">
+Вы пришли в комнату №1. Здесь Вы начали свой путь. Комната чистая и пустая. Вы можете, ориентируясь по сторонам света:<br><br>
+- <a href="#" onclick="viewdiv('0002'); hidediv('0001');">пойти на запад</a>,<br>
+- <a href="#" onclick="viewdiv('0008'); hidediv('0001');">пойти на восток</a>.<br>
+- <a href="#" onclick="viewdiv('0011'); hidediv('0001');">выйти из древнего замка</a>.
+</p>
+</div>
+
+<div id="0002" style="display:none;">
+<p class="paragraph_number">0002</p>
+<p class="paragraph_text">
+Вы пришли в комнату №2. Здесь повсюду shit и видны следы pieces of crap. Вы можете:<br><br>
+- <a href="#" onclick="viewdiv('0003'); hidediv('0002');">пойти на север</a>,<br>
+- <a href="#" onclick="viewdiv('0001'); hidediv('0002');">пойти на восток</a>.
+</p>
+</div>
+
+<div id="0003" style="display:none;">
+<p class="paragraph_number">0003</p>
+<p class="paragraph_text">
+Вы пришли в комнату №3. Здесь ещё больше shit, но в основном на стенах. Вы можете:<br><br>
+- <a href="#" onclick="viewdiv('0004'); hidediv('0003');">пойти на север</a>,<br>
+- <a href="#" onclick="viewdiv('0009'); hidediv('0003');">пойти на восток</a>,<br>
+- <a href="#" onclick="viewdiv('0002'); hidediv('0003');">пойти на юг</a>.
+</p>
+</div>
+
+<div id="0004" style="display:none;">
+<p class="paragraph_number">0004</p>
+<p class="paragraph_text">
+Вы пришли в комнату №4. Вы, вляповшись в shit, понимаете, что чем дальше вы идёте по залам, тем больше его становится, но pieces of crap здесь не видно. Вы можете:<br><br>
+- <a href="#" onclick="viewdiv('0005'); hidediv('0004');">пойти на восток</a>,<br>
+- <a href="#" onclick="viewdiv('0003'); hidediv('0004');">пойти на юг</a>.
+</p>
+</div>
+
+<div id="0005" style="display:none;">
+<p class="paragraph_number">0005</p>
+<p class="paragraph_text">
+Вы пришли в комнату №5. Запах shit наполняет помещение, а следы pieces of crap ведут Вас дальше. Вы можете:<br><br>
+- <a href="#" onclick="viewdiv('0006'); hidediv('0005');">пойти на восток</a>,<br>
+- <a href="#" onclick="viewdiv('0004'); hidediv('0005');">пойти на запад</a>,<br>
+- <a href="#" onclick="viewdiv('0009'); hidediv('0005');">пойти на юг</a>,<br>
+- <a href="#" onclick="viewdiv('0011'); hidediv('0005');">выйти из древнего замка</a>.
+</p>
+</div>
+
+<div id="0006" style="display:none;">
+<p class="paragraph_number">0006</p>
+<p class="paragraph_text">
+Вы пришли в комнату №6. Понимание того, что pieces of crap где-то близко, вселяет в Вас надежду на успех. Вы можете:<br><br>
+- <a href="#" onclick="viewdiv('0005'); hidediv('0006');">пойти на запад</a>,<br>
+- <a href="#" onclick="viewdiv('0007'); hidediv('0006');">пойти на юг</a>.
+</p>
+</div>
+
+<div id="0007" style="display:none;">
+<p class="paragraph_number">0007</p>
+<p class="paragraph_text">
+Вы пришли в комнату №7. Вы вспоминаете, что pieces of crap - единственное, что необходимо человеку в жизни, и ускоряете свой шаг. Вы можете:<br><br>
+- <a href="#" onclick="viewdiv('0006'); hidediv('0007');">пойти на север</a>,<br>
+- <a href="#" onclick="viewdiv('0009'); hidediv('0007');">пойти на запад</a>,<br>
+- <a href="#" onclick="viewdiv('0008'); hidediv('0007');">пойти на юг</a>.
+</p>
+</div>
+
+<div id="0008" style="display:none;">
+<p class="paragraph_number">0008</p>
+<p class="paragraph_text">
+Вы пришли в комнату №8. Здесь присутствует изрядное количество shit, но Вас это не тревожит. Вы можете:<br><br>
+- <a href="#" onclick="viewdiv('0001'); hidediv('0008');">пойти на запад</a>,<br>
+- <a href="#" onclick="viewdiv('0007'); hidediv('0008');">пойти на север</a>.
+</p>
+</div>
+
+<div id="0009" style="display:none;">
+<p class="paragraph_number">0009</p>
+<p class="paragraph_text">
+Вы пришли в комнату №9 - Центральный зал. Вы пристально рассматриваете фрески цвета shit и видите на полу следы pieces of crap. Под ногами разбросано большое количество пустых бутылок от skooma. Вы можете:<br><br>
+- сесть посреди зала в shit и <a href="#" onclick="viewdiv('0010'); hidediv('0009');">упороться skooma</a>,<br>
+- <a href="#" onclick="viewdiv('0005'); hidediv('0009');">пойти на север</a>,<br>
+- <a href="#" onclick="viewdiv('0003'); hidediv('0009');">пойти на запад</a>,<br>
+- <a href="#" onclick="viewdiv('0007'); hidediv('0009');">пойти на восток</a>.
+</p>
+</div>
+
+<div id="0010" style="display:none;">
+<p class="paragraph_number">0010</p>
+<p class="paragraph_text">
+Сев на пол в shit, Вы достаёте из заднего кармана свои бутыли skooma и <a href="#" onclick="take.play(); console.log('drink_skooma');">начинаете упарываться</a>.</p>
+<p class="paragraph_text">
+Если Вы упоролись достаточно, то можете, разбросав пустые бутыли, <a href="#" onclick="viewdiv('0009'); hidediv('0010');">продолжить поиск pices of crap</a>.
+</p>
+</div>
+
+<div id="0011" style="display:none;">
+<p class="paragraph_number">0011</p>
+<p class="paragraph_number">Послесловие</p>
+<p class="paragraph_text">
+Не найдя ни одной coins и изрядно упоровшись от таких поисков, Вы покидаете древний замок, но подумываете как-нибудь вернуться сюда вновь, чтобы опять ощутить запах shit и испытать азарт от поисков coins в pices of crap.
+</p>
+<br>
+<p class="paragraph_number">КОНЕЦ</p>
+</div>
+<br>
+
+<!--
+<hr>
+<footer>
+<p class="paragraph_number">
+Text copyright © 2016 Paul Stein<br>
+Illustrations copyright © 2016 Paul Stein
+</p>
 </footer>
+-->
 
 </body>
 
