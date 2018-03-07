@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="images/dice_favicon.png" type="image/png">
+<link rel="stylesheet" href="dice5_style.css">
+<title>Dices</title>
+</head>
+
+<body>
+
+<script src="dice5_script.js"></script>
+
+<label>Число кубиков:</label><br>
+<input type="radio" name="btn_count" value="1" onchange="selectCount(1);" onclick="console.log('Выбран 1 кубик');" /> 1
+<input type="radio" name="btn_count" value="2" onchange="selectCount(2);" onclick="console.log('Выбрано 2 кубика');" /> 2
+<input type="radio" name="btn_count" value="3" onchange="selectCount(3);" onclick="console.log('Выбрано 3 кубика');" /> 3
+<input type="radio" name="btn_count" value="4" onchange="selectCount(4);" onclick="console.log('Выбрано 4 кубика');" /> 4
+<input type="radio" name="btn_count" value="4" onchange="selectCount(5);" onclick="console.log('Выбрано 5 кубиков');" /> 5<br>
+<input type="radio" name="btn_count" value="6" onchange="selectCount(6);" onclick="console.log('Выбран 6 кубик');" /> 6
+<input type="radio" name="btn_count" value="7" onchange="selectCount(7);" onclick="console.log('Выбрано 7 кубика');" /> 7
+<input type="radio" name="btn_count" value="8" onchange="selectCount(8);" onclick="console.log('Выбрано 8 кубика');" /> 8
+<input type="radio" name="btn_count" value="9" onchange="selectCount(9);" onclick="console.log('Выбрано 9 кубика');" /> 9
+<input type="radio" name="btn_count" value="10" onchange="selectCount(10);" onclick="console.log('Выбрано 10 кубиков');" /> 10<br><br>
+
+<!-- <button onclick="delay(); move.play();">Бросить кубики</button><br><br> -->
+<button onclick="delay();">Бросить кубики</button><br><br>
+
+<div id="itog"></div><div id="totalValue"></div><br>
+
+<div id="dice1"></div>
+<div id="dice2"></div>
+<div id="dice3"></div>
+<div id="dice4"></div>
+<div id="dice5"></div>
+<!-- <br><br><br><br><br><br><br><br><br> -->
+<div id="dice6"></div>
+<div id="dice7"></div>
+<div id="dice8"></div>
+<div id="dice9"></div>
+<div id="dice10"></div>
+
+</body>
+</html>
