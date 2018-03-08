@@ -3,13 +3,252 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="shortcut icon" href="images/dice_favicon.png" type="image/png">
-<link rel="stylesheet" href="dice5_style.css">
+<!-- <link rel="stylesheet" href="dice5_style.css"> -->
 <title>Dices</title>
+
+<style>
+@font-face {
+    font-family: PressStart2P;
+    src: url(fonts/PressStart2P.ttf);
+}
+
+body {
+    font-family: "PressStart2P";
+    font-size: 12px;
+    background-color: #f5f5f5;
+    color: #000000;
+}
+
+button {
+    font-family: "PressStart2P";
+    font-size: 12px;
+    background-color: #f5f5f5;
+    color: #000000;
+    float1: right;
+    position: relative;
+    text-align: center;
+    border: 2px solid #000000 ;
+    width: 100px;
+    height: 50px;
+    margin-bottom: 5px;
+}
+
+/*button:hover {
+    color: #ffffff;
+    background: #000000;
+}*/
+
+button:active {
+    color: #ffff00;
+    background: #cc0000;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.redTotal {
+    color: #cc0000;
+    font-size: 24px;
+}
+
+.dice {
+    border: 0px solid #000000;
+    width: 118px;
+    height: 118px;
+    border-radius: 30px;
+    background-color: #cccccc;
+    float: left;
+    margin: 5px;
+}
+
+.dice_inner {
+    border: 0px solid #000000;
+    width: 112px;
+    height: 112px;
+    background: #ffffff;
+    position: relative;
+    top: 3px;
+    left: 3px;
+    border-radius: 45px;
+}
+
+.circle {
+    position: relative;
+    border-radius: 50%;
+    width: 23px;
+    height: 23px;
+    background: #000000;
+}
+
+</style>
+
 </head>
 
-<body>
+<!-- <script src="dice5_script.js"></script> -->
 
-<script src="dice5_script.js"></script>
+<script>
+
+var count =0;
+
+var diceArr = [];
+
+diceArr[1] = '<div class="dice"><div class="dice_inner"><div class="circle" style="left: 44px;top: 44px;"></div></div></div>';
+diceArr[2] = '<div class="dice"><div class="dice_inner"><div class="circle" style="left: 16px;top: 73px;"></div><div class="circle" style="left: 73px;top: -7px;"></div></div></div>';
+diceArr[3] = '<div class="dice"><div class="dice_inner"><div class="circle" style="left: 16px;top: 73px;"></div><div class="circle" style="left: 44px;top: 21px;"></div><div class="circle" style="left: 73px;top: -30px;"></div></div>';
+diceArr[4] = '<div class="dice"><div class="dice_inner"><div class="circle" style="left: 16px;top: 73px;"></div><div class="circle" style="left: 73px;top: 50px;"></div><div class="circle" style="left: 16px;top: -30px;"></div><div class="circle" style="left: 73px;top: -53px;"></div></div></div>';
+diceArr[5] = '<div class="dice"><div class="dice_inner"><div class="circle" style="left: 44px;top: 44px;"></div><div class="circle" style="left: 16px;top: 50px"></div><div class="circle" style="left: 73px;top: 27px;"></div><div class="circle" style="left: 16px;top: -53px;"></div><div class="circle" style="left: 73px;top: -76px;"></div></div></div>';
+diceArr[6] = '<div class="dice"><div class="dice_inner"><div class="circle" style="left: 16px;top: 44px;"></div><div class="circle" style="left: 16px;top: 50px;"></div><div class="circle" style="left: 73px;top: 27px;"></div><div class="circle" style="left: 16px;top: -53px;"></div><div class="circle" style="left: 73px;top: -76px;"></div><div class="circle" style="left: 73px;top: -71px;"></div></div></div>';
+
+var consoleTotal;
+
+function rollOneDice(){
+
+    let dices = [];
+
+    for (let i = 1; i <= count; i++) {
+        let oneDice = document.getElementById("dice" + i);
+        oneDice.innerHTML = "";
+        dices.push(oneDice);
+
+    }
+    
+    hit.play();
+
+    let dices_values = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+    for (let i = 0; i < count; i++) { 
+        var rnd = Math.floor((Math.random() * 6) + 1);
+        dices[i].innerHTML = diceArr[rnd];
+        dices_values[i] = rnd;
+
+    }
+
+    let sum = 0;
+    for (let i=0; i < dices_values.length; i++) {
+        sum += dices_values[i];
+    }
+    consoleTotal = sum;
+
+}
+
+var stopRoll = false;
+
+function delay() {
+
+    var delaySpin = Math.floor((Math.random() * (100-50)) + 50);
+    var delayTimer = setInterval(rollOneDice, delaySpin);
+    
+    for (i = 1; i <= count; i++) {
+        var delayRnd = Math.floor((Math.random() * (3000 - 100)) + 100);
+        console.log('Бросок кубиков');
+    }
+
+    setTimeout(function() {
+        clearInterval(delayTimer);
+        take.play();
+        console.log('Кубики остановились');
+        console.log('Длительность вращения: ' + delaySpin + ' мс');
+        console.log('Длительность броска: ' + delayRnd/1000 + ' с');
+        console.log('Результат: ' + consoleTotal + '\n' + '------');
+       
+       showResult();
+       // console.log('Результат: ' + consoleTotal);
+    }, delayRnd);
+
+}
+
+function selectCount(c) {
+
+    count = c;
+
+    for (let i = 2; i <= 5; i++) {
+        let div = document.getElementById("dice" + i);
+        div.classList.add("invisible");
+    }
+
+    for (let i = 2; i <= count; i++) {
+        let div = document.getElementById("dice" + i);
+        div.classList.remove("invisible"); 
+    }
+
+    rollOneDice();
+
+}
+
+function showResult(){
+
+    stopRoll = true;
+
+    var itogDice = document.getElementById('itog');
+    var totalValue = document.getElementById('totalValue');
+
+    itog.classList.add("invisible");
+    totalValue.classList.add("redTotal");
+
+    if (stopRoll = true) {
+        itog.classList.remove("invisible");
+        itog.innerHTML = 'Результат: ';
+        totalValue.classList.remove("invisible");
+        totalValue.innerHTML = consoleTotal;
+    }
+
+}
+
+// function shiowNumberOfDices(){
+// 	var numberOfDice = document.getElementById('diceNumber');
+//     numberOfDice.innerHTML = 'Выбрано кубиков: ' + count;
+// }
+
+// AUDIO ---------------------------------------------------
+
+function loadAudio(arr) {
+
+	var audio = document.createElement('audio');
+
+	for (var i = 0, len = arr.length; i < len; i += 1) {
+		var source = document.createElement('source');
+		source.src = arr[i];
+		audio.appendChild(source);
+	}
+
+	var o = {
+		dom : false,
+		state : 'stop',
+
+		play : function () {
+			this.dom.currentTime = 0;
+			this.dom.play();
+			this.state = 'play';
+		},
+
+		pause : function () {
+			this.dom.pause();
+			this.state = 'pause';
+		},
+
+		stop : function () {
+			this.dom.pause();
+			this.dom.currentTime = 0;
+			this.state = 'stop';
+		}
+	};
+
+	o.dom = audio;
+
+	return o;
+
+}
+
+var theme = loadAudio(['sounds/theme.ogg']);
+var move = loadAudio(['sounds/move.ogg']);
+var take = loadAudio(['sounds/take.ogg']);
+var hit = loadAudio(['sounds/hit.ogg']);
+
+// END AUDIO -----------------------------------------------
+
+</script>
+
+<body>
 
 <label>Число кубиков:</label><br>
 <input type="radio" name="btn_count" value="1" onchange="selectCount(1);" onclick="console.log('Выбран 1 кубик');" /> 1
@@ -17,14 +256,10 @@
 <input type="radio" name="btn_count" value="3" onchange="selectCount(3);" onclick="console.log('Выбрано 3 кубика');" /> 3
 <input type="radio" name="btn_count" value="4" onchange="selectCount(4);" onclick="console.log('Выбрано 4 кубика');" /> 4
 <input type="radio" name="btn_count" value="4" onchange="selectCount(5);" onclick="console.log('Выбрано 5 кубиков');" /> 5<br>
-<input type="radio" name="btn_count" value="6" onchange="selectCount(6);" onclick="console.log('Выбран 6 кубик');" /> 6
-<input type="radio" name="btn_count" value="7" onchange="selectCount(7);" onclick="console.log('Выбрано 7 кубика');" /> 7
-<input type="radio" name="btn_count" value="8" onchange="selectCount(8);" onclick="console.log('Выбрано 8 кубика');" /> 8
-<input type="radio" name="btn_count" value="9" onchange="selectCount(9);" onclick="console.log('Выбрано 9 кубика');" /> 9
-<input type="radio" name="btn_count" value="10" onchange="selectCount(10);" onclick="console.log('Выбрано 10 кубиков');" /> 10<br><br>
 
-<!-- <button onclick="delay(); move.play();">Бросить кубики</button><br><br> -->
-<button onclick="delay();">Бросить кубики</button><br><br>
+<br>
+
+<button onclick="delay(); move.play();">Бросить кубики</button><br><br>
 
 <div id="itog"></div><div id="totalValue"></div><br>
 
@@ -33,12 +268,6 @@
 <div id="dice3"></div>
 <div id="dice4"></div>
 <div id="dice5"></div>
-<!-- <br><br><br><br><br><br><br><br><br> -->
-<div id="dice6"></div>
-<div id="dice7"></div>
-<div id="dice8"></div>
-<div id="dice9"></div>
-<div id="dice10"></div>
 
 </body>
 </html>
