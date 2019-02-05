@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="images/matrixrain_favicon.png" type="image/png">
+<title>Matrix Rain</title>
+
+<style>
+@font-face {
+    font-family: PressStart2P;
+    src: url(fonts/PressStart2P.ttf);
+}
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: "PressStart2P";
+    font-size1: 12px;
+}
+canvas {
+    display: block;
+    position: absolute;
+    border: 2px solid #ffffff; 
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+button {
+    font-family: "PressStart2P";
+    font-size1: 12px;
+   /* background-color1: #f5f5f5;*/
+    color1: #0066ff; /* Цвет ссылок */
+    cursor: pointer;
+	font-weight: bold;  /* Толщина текста */
+/*    float1: right;
+    position1: relative;*/
+    text-align: center;
+	text-decoration1: underline;
+    border: 2px solid #ffffff;
+	border1: none;
+/*    width1: 100px;
+    height1: 50px;
+    margin-bottom1: 2px;*/
+	margin1: 2px;
+}
+
+button:hover {
+	color: #ffcc00; /* Цвет ссылок при наведении курсора */
+	background: #6699ff;
+	border: 2px solid #cc0000;
+}
+</style>
+
+</head>
+
+<body>
+
+<script>
+
+var COLS = 40;
+var ROWS = 20;
+var TILE_WIDTH = 20;
+var SCOREBOARD_WIDTH = 100;
+var font_size = 20;
+
+var canvas;
+var ctx;
+
+var CANVAS_BGCOLOR = "#000000";
+
+canvas = document.createElement("canvas");
+ctx = canvas.getContext("2d");
+canvas.width = COLS*TILE_WIDTH+SCOREBOARD_WIDTH;
+canvas.height = ROWS*TILE_WIDTH;
+canvas.style.backgroundColor = CANVAS_BGCOLOR;
+
+document.body.appendChild(canvas);
+
+ctx.fillStyle = "#000000";
+ctx.lineWidth = 1;
+ctx.beginPath();
+ctx.moveTo(canvas.width-SCOREBOARD_WIDTH+0.5, 0+0.5);
+ctx.lineTo(canvas.width-SCOREBOARD_WIDTH+0.5, canvas.height+0.5);
+ctx.stroke();
+
+//making the canvas full screen
+// canvas.width = window.innerWidth;
+// canvas.height = window.innerHeight;
+
+var columns = canvas.width/font_size;
+
+var drops = [];
+
+for (var x = 0; x < columns; x++) {
+    drops[x] = 0;
+}
+
+function draw() {
+
+    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "#00ff00";
+
+    for(var i = 0; i < drops.length; i++) {
+        ctx.clearRect(i*font_size, drops[i]*font_size, font_size, font_size);
+        ctx.fillRect(i*font_size+1, drops[i]*font_size+1, font_size-2, font_size-2);
+        ctx.clearRect(i*font_size+4, drops[i]*font_size+4, font_size-8, font_size-8);
+        ctx.fillRect(i*font_size+6, drops[i]*font_size+6, font_size-12, font_size-12);
+
+        if(drops[i]*font_size > canvas.height && Math.random() > 0.975) {
+            drops[i] = -1;
+        }
+        
+        drops[i]++;
+    }
+
+}
+
+// 1000/17 = ~60 times a second 1000/33 = ~30 1000/50 = ~20 1000/65 = ~15
+
+function runMatrix() {
+
+    if (typeof Game_Interval != "undefined") {
+        clearInterval(Game_Interval);
+    }
+
+    Game_Interval = setInterval(draw, 65);
+    console.log("run_matrix");
+
+}
+
+function stopMatrix() {
+
+    clearInterval(Game_Interval);
+    console.log("stop_matrix");
+
+}
+
+runMatrix();
+
+</script>
+
+<center>
+<br>
+Super Brick Game Color Advance: Matrix Rain<br><br>
+<button onclick="runMatrix();">Пуск!</button>
+<button onclick="stopMatrix();">Стоп!</button>
+</center>
+
+</body>
+</html>
