@@ -1,16 +1,17 @@
 <!doctype html>
 <html lang="en">
+
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rel="shortcut icon" href="images/matrixrain_favicon.png" type="image/png">
+<link rel="shortcut icon" href="../images/matrixrain_favicon.png" type="image/png">
 <title>Matrix Rain</title>
 
 <style>
 @font-face {
     font-family: PressStart2P;
-    src: url(PressStart2P.ttf);
+    src: url(../fonts/PressStart2P.ttf);
 }
-body {
+body1 {
     background-color: #000000;
     color: #ffffff;
     font-family: "PressStart2P";
@@ -19,16 +20,17 @@ body {
 canvas {
     display: block;
     position: absolute;
-    border: 2px solid #ffffff; 
+    border: 0px solid #ffffff; 
     margin: auto;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
 }
-
 button {
     font-family: "PressStart2P";
+    width: 50px;
+    height: 50px;
     font-size1: 12px;
    /* background-color1: #f5f5f5;*/
     color1: #0066ff; /* Цвет ссылок */
@@ -44,12 +46,17 @@ button {
     height1: 50px;
     margin-bottom1: 2px;*/
 	margin1: 2px;
+    position: relative;
+    z-index: 10;
 }
-
 button:hover {
-	color: #ffcc00; /* Цвет ссылок при наведении курсора */
-	background: #6699ff;
-	border: 2px solid #cc0000;
+	color: #6699ff; /* Цвет ссылок при наведении курсора */
+	background: #ffffff;
+	border: 2px solid #ffcc00;
+    text-decoration: underline;
+}
+.buttontocenter {
+    text-align: right;
 }
 </style>
 
@@ -72,22 +79,25 @@ var CANVAS_BGCOLOR = "#000000";
 
 canvas = document.createElement("canvas");
 ctx = canvas.getContext("2d");
-canvas.width = COLS*TILE_WIDTH+SCOREBOARD_WIDTH;
-canvas.height = ROWS*TILE_WIDTH;
+//making the canvas full screen
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+// canvas.width = COLS*TILE_WIDTH+SCOREBOARD_WIDTH;
+// canvas.height = ROWS*TILE_WIDTH;
 canvas.style.backgroundColor = CANVAS_BGCOLOR;
+
+
 
 document.body.appendChild(canvas);
 
-ctx.fillStyle = "#000000";
-ctx.lineWidth = 1;
-ctx.beginPath();
-ctx.moveTo(canvas.width-SCOREBOARD_WIDTH+0.5, 0+0.5);
-ctx.lineTo(canvas.width-SCOREBOARD_WIDTH+0.5, canvas.height+0.5);
-ctx.stroke();
+// ctx.fillStyle = "#000000";
+// ctx.lineWidth = 1;
+// ctx.beginPath();
+// ctx.moveTo(canvas.width-SCOREBOARD_WIDTH+0.5, 0+0.5);
+// ctx.lineTo(canvas.width-SCOREBOARD_WIDTH+0.5, canvas.height+0.5);
+// ctx.stroke();
 
-//making the canvas full screen
-// canvas.width = window.innerWidth;
-// canvas.height = window.innerHeight;
+
 
 var columns = canvas.width/font_size;
 
@@ -109,9 +119,9 @@ function draw() {
         ctx.fillRect(i*font_size+1, drops[i]*font_size+1, font_size-2, font_size-2);
         ctx.clearRect(i*font_size+4, drops[i]*font_size+4, font_size-8, font_size-8);
         ctx.fillRect(i*font_size+6, drops[i]*font_size+6, font_size-12, font_size-12);
-
+                                                                //0.975
         if(drops[i]*font_size > canvas.height && Math.random() > 0.975) {
-            drops[i] = -1;
+            drops[i] = -30; // = -1
         }
         
         drops[i]++;
@@ -127,7 +137,7 @@ function runMatrix() {
         clearInterval(Game_Interval);
     }
 
-    Game_Interval = setInterval(draw, 65);
+    Game_Interval = setInterval(draw, 1000/16,5);
     console.log("run_matrix");
 
 }
@@ -143,12 +153,10 @@ runMatrix();
 
 </script>
 
-<center>
-<br>
-Super Brick Game Color Advance: Matrix Rain<br><br>
+<div class="buttontocenter">
 <button onclick="runMatrix();">Пуск!</button>
 <button onclick="stopMatrix();">Стоп!</button>
-</center>
+</div>
 
 </body>
 </html>
