@@ -32,7 +32,7 @@ var colorArray = [
 function draw() {
     ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = "#00ff00";
+    // ctx.fillStyle = "#00ff00";
     // ctx.fillStyle = "#000000";
 
     for(var i = 0; i < drops.length; i++) {
